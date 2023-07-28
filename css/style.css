@@ -1,0 +1,120 @@
+:root {
+  --blue: #1e90ff;
+  --blue01: rgb(217, 238, 249);
+  --white: #ffffff;
+  --gray: rgb(226 226 226);
+  --banner01: rgb(0, 113, 155);
+  --black: #000000;
+}
+
+html, body {
+  background-color: var(--white);
+  padding: 0;
+  margin: 0;
+}
+
+nav.menu {
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  z-index: 500;
+  box-shadow: 0px 4px 8px 0px #C5C5C580;
+  background-color: var(--white);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--black);
+}
+nav a:hover {
+  color: var(--banner01);
+}
+
+
+section {
+  position: relative;
+  padding-top: 50px;
+}
+section:nth-child(2n+1) {
+
+}
+section:nth-child(2n) {
+  background-color: var(--gray);
+}
+.container {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+}
+#bannerSection{
+  background-color: var(--banner01);
+}
+#bannerArea{
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.banner-wrap{
+  position: relative;
+  width: 70%;
+  color: var(--white);
+}
+.banner-wrap-img{
+  position: relative;
+  width: 30%;
+  height: 300px;
+}
+.banner-wrap-img{
+  background-image: url(../assets/banner02.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.ex-contain {
+  position: relative;
+  box-sizing: border-box;
+  padding: 40px 0;
+  border-bottom: 1px solid #565656;
+}
+
+.ex-image{
+  max-width: 100%;
+}
+
+li {
+  position: relative;
+}
+a{
+  text-decoration: none;
+  color: var(--black);
+}
+a:hover {
+  color: var(--banner01);
+}
+
+a::after {
+  content: " →"; /* 箭头样式，可以自定义为您喜欢的样式 */
+  /* position: absolute;
+  right: -15px;
+  top: 50%; */
+  transform: translateY(-50%);
+  opacity: 0; /* 初始不显示 */
+  transition: opacity 0.3s ease;
+}
+
+a:hover::after {
+  opacity: 1; /* 鼠标hover时显示箭头 */
+}
+
+div.codeArea {
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 10px;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 10px;
+}

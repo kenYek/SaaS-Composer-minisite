@@ -1,11 +1,278 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>SaaS Composer Minisite</title>
-      </head>
-      
-      <body>
-        test
-      </body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>SaaS Composer Minisite</title>
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body>
+  <section id="bannerSection">
+    <div class="container" id="bannerArea">
+      <div class="banner-wrap">
+        <h1>SaaS Composer</h1>
+        <h2>The cloud based graphical control tool</h2>
+      </div>
+      <div class="banner-wrap-img">
+
+      </div>
+    </div>
+  </section>
+  <nav class="menu">
+    <div class="container">
+      <a href="#FAQ">Frequently Asked Question</a> |
+      <a href="#Example">Examples</a>
+    </div>
+  </nav>
+  <section id="FAQ">
+    <div class="container">
+      <h2>Frequently Asked Question</h2>
+      <ul>
+        <li>
+          <h3>General</h3>
+          <ul>
+            <li><a href="#f01">如何取的物件(Node)的<mark>tag</mark></a></li>
+            <li><a href="#f02">如何取的<mark>GraphView</mark>物件</a></li>
+            <li><a href="#f03">如何取的圖紙、場景<mark>dataModel</mark></a></li>
+            <li><a href="#f04">物件屬性改值</a></li>
+            <li><a href="#f05">物件動態添加</a></li>
+            <li><a href="#f06">物件動態添加事件</a></li>
+            <li><a href="#f07">SVG顯示錯誤</a></li>
+            <li><a href="#f08">導出匯出場景、圖紙時，失敗</a></li>
+            <li><a href="#f09">元素屬性變化事件監聽器</a></li>
+            <li><a href="#f10">數據綁定相關資訊，含request、response</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>2D</h3>
+          <ul>
+          </ul>
+        </li>
+        <li>
+          <h3>3D</h3>
+          <ul>
+            <li><a href="#f_3d_01">圖紙步進距離設定</a></li>
+            <li><a href="#f_3d_02">3D 貼皮重複 UV</a></li>
+            <li><a href="#f_3d_03">3D 場景優化</a></li>
+            <li><a href="#f_3d_04">3D 模型簡化</a></li>
+            <li><a href="#f_3d_05">3D obj模型大小超過20m，如何壓縮呢？</a></li>
+            <li><a href="#f_3d_06">3D 調適訊息，效能資訊顯示</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>Overlay</h3>
+          <ul>
+          </ul>
+        </li>
+      </ul>
+      <div class="ex-contain" id="f01">
+        <h3>如何設定物件(Node)的 tag及取得物件</h3>
+        <img class="ex-image" src="./assets/f01_01.png">
+        <p>在物件屬性中進行設定 Tag. 若設定為 tag_name.</p>
+        <div class="codeArea">
+          <code>
+            dataModel.getDataByTag('tag_name')
+          </code>
+        </div>
+      </div>
+      <div class="ex-contain" id="f02">
+        <h3>如何取的<mark>GraphView</mark>物件</h3>
+        <p>
+          In 2D page (display.html) : graphView<br>
+          In 3D page (scene.html) : g3d<br>
+          In Overlay page (sceneAndDisplay.html) : graphView or g3d<br>
+          Or<br>
+          commonViewUtil.getFileObjByFileName(dataRefreshUtil.currentFile).graphView<br>
+          或是在每個事件 function 中傳入的 "gv"、"view"<br>
+          使用疊加層時盡量使用事件函數傳入的 graphview.
+        </p>
+      </div>
+      <div class="ex-contain" id="f03">
+        <h3>如何取的圖紙、場景<mark>dataModel</mark></h3>
+        <p>
+          In 2D page (display.html) : dataModel<br>
+          In 3D page (scene.html) : dataModel<br>
+          In Overlay page (sceneAndDisplay.html) : dataModel<br>
+          Or<br>
+          commonViewUtil.getFileObjByFileName(dataRefreshUtil.currentFile).dataModel<br>
+          或是在每個事件 function 中傳入的 "dm"<br>
+          或是從 graphview 物件下使用 graphview.dm()<br>
+          使用疊加層時盡量使用事件函數傳入的 graphview 或是 dm.
+        </p>
+      </div>
+      <div class="ex-contain" id="f04">
+        <h3>物件屬性改值</h3>
+        <img class="ex-image" src="./assets/f04_01.png">
+        <p>
+          可透過 dataModel.getDataByTag('tag_name') 取得物件，物件屬姓分為 property(p), style(s), attribute(a)，
+          使用以下取的當前值：<br>
+          dataModel.getDataByTag('tagName').s('style_name')<br>
+          dataModel.getDataByTag('tagName').a('attribute_name')<br>
+          dataModel.getDataByTag('tagName')[ht.Default.getter('property_name')](); <br>
+          使用以下設定當前值：<br>
+          dataModel.getDataByTag('tagName').s('style_name', value)<br>
+          dataModel.getDataByTag('tagName').a('attribute_name', value)<br>
+          dataModel.getDataByTag('tagName')[ht.Default.getter('property_name')](value); <br>
+        </p>
+      </div>
+      <div class="ex-contain" id="f05">
+        <h3>物件(圖標)動態添加</h3>
+        <textarea disabled style="width:100%;resize: none;" rows="12">
+          添加文字  
+            var d = new ht.Text()
+            d.s('text','AAA')
+            dataModel.add(d)
+
+          添加圖標  
+            var node = new ht.Node();
+            node.setImage('symbols/builtIn/fan/fan3.json'); // 加入圖標路徑  
+            node.p({x:200,y:200})
+            dataModel.add(da)
+        </textarea>
+      </div>
+      <div class="ex-contain" id="f06">
+        <h3>物件動態添加事件</h3>
+        <textarea disabled style="width:100%;resize: none;" rows="6">
+          node.s({
+            'interactive': true,
+            'onClick': function(event, data, view) {
+            }
+          })
+        </textarea>
+      </div>
+      <div class="ex-contain" id="f07">
+        <h3>SVG顯示錯誤</h3>
+        <p>
+          SVG 中的內容如果不是向量圖形，而是 `image` 這種多png組成的，
+          在添加入HT編輯器時可能會出現無法顯示，進入到瀏覽模式時會看不見這張 svg。  
+          此時請直接使用 png 進行貼圖。  
+        </p>
+        <textarea disabled style="width:100%;resize: none;" rows="6">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="997" height="1217" viewBox="0 0 997 1217">
+            <image id="图层_2" data-name="图层 2" x="111" y="62" width="742" height="1088" xlink:href="data:img/png;base64"/>
+          </svg>
+        </textarea>
+      </div>
+      <div class="ex-contain" id="f08">
+        <h3>導出匯出場景、圖紙時，失敗</h3>
+        <p>
+          1. 如果只有特定圖紙無法匯出，可能是圖紙上物件中含有亂碼造成無法解析，請找出並移除該物件。<br>
+          2. 如果是所有圖紙均無法匯出，可能是部屬空間資源不足。需要請平台調整部屬資源。<br>
+        </p>
+      </div>
+      <div class="ex-contain" id="f09">
+        <h3>元素屬性變化事件監聽器</h3>
+        <textarea disabled style="width:100%;resize: none;" rows="11">
+          dataModel.md(function(event) {
+            //event格式：
+            {
+              property: "name",//发生变化的属性
+              data: data,//属性发生变化的data
+              oldValue: 0,//旧值
+              newValue: 1//新值
+            }
+          });
+        </textarea>
+      </div>
+      <div class="ex-contain" id="f10">
+        <h3>Viewer 數據綁定相關資訊，含request、response</h3>
+        <img class="ex-image" src="./assets/f10_01.png">
+        <textarea disabled style="width:100%;resize: none;" rows="11">
+          // 使用已下可讀取到當前所有開啟過的圖紙數據綁定設定
+          dataRefreshUtil.filesMap
+          // 對應當前圖紙名稱
+          dataRefreshUtil.currentFile
+          // 收集所有數據綁定對照(上圖中)  
+          collectSource
+          // 發送取值前request整理(上圖中)
+          reqCollect
+          // 數據回應的response儲存(上圖中)  
+          resCollect
+        </textarea>
+      </div>
+      <div class="ex-contain" id="f_3d_01">
+        <h3>圖紙步進距離設定</h3>
+        <textarea disabled style="width:100%;resize: none;" rows="4">
+          g3d.setMoveStep(number)
+          g3d.getMoveStep()
+        </textarea>
+      </div>
+      <div class="ex-contain" id="f_3d_02">
+        <h3>3D 貼皮重複 UV</h3>
+        <p>
+          要正確貼皮，圖片大小有限制，
+          贴图大小要是2的n次方，如: 128 * 256  
+        </p>
+      </div>
+      <div class="ex-contain" id="f_3d_03">
+        <h3>3D 場景優化</h3>
+        <p>
+          場景可以從以下幾個方面優化：  <br>
+          1、讓設計師輕量化模型，對模型進行減面，不必要的細節不要精細建模，使用貼圖代替，ht的3d場景模型總面數不建議超過 200 萬面。  <br>
+          2、做批量優化：https://www.hightopo.com/guide/guide/core/batch/ht-batch-guide.html  <br>
+          3、節點做矢量緩存 node.s('texture.cache',true) <br>
+        </p>
+      </div>
+      <div class="ex-contain" id="f_3d_04">
+        <h3>3D 模型簡化</h3>
+        <p>
+          Web 上撐不住那麽大模型，哪怕純裸寫 WebGL 繪制三角面極限也就在哪里，這種情況有幾條路： <br> 
+          1、簡化模型，這是最有效的，我們大部分外包的項目模型都會重新設計  <br>
+          2、業務分級，例如數據中心，打開機櫃再顯示里面的服務器和端口細節  <br>
+          3、算法上簡模的定制化<br>
+          官網例子的模型基本都沒超過 10m，單個設備一般構建在 m 以內，甚至小到幾十k，定位的大部分還是運維的系統，用戶只需要看得清是個什麽樣的設備即可。 <br> 
+          所以大部分情況下，用戶說有模型可以給我們用的項目，一般都可以直接告訴客戶，現有的模型只能做參考，<br>
+          大部分情況下我們需要重新建模，因為用戶手頭的模型基本都是 SolidWorks 之類的工程建模模型，是非常精確的為了可制造生產的建模精度，但作為運維一般會極大的簡化建模。 <br>        
+        </p>
+      </div>
+      <div class="ex-contain" id="f_3d_05">
+        <h3>3D obj模型大小超過20m，如何壓縮呢？ </h3>
+        <p>
+          模型的大小是由模型的面數控制的，面數和模型大小成正比，需要設計師在建模軟件中對模型進行減面處理。<br>        
+        </p>
+      </div>
+      <div class="ex-contain" id="f_3d_06">
+        <h3>3D 調適訊息，效能資訊顯示</h3>
+        <textarea disabled style="width:100%;resize: none;" rows="6">
+          // 2D
+          graphView.showDebugTip();
+          // 3D
+          graph3dView.showDebugTip();
+        </textarea>
+      </div>
+    </div>
+  </section>
+  <section id="Example">
+    <div class="container">
+      <h2>Examples</h2>
+      <ul>
+        <li>
+          <h3>2D</h3>
+          <ul>
+            <li>2D閃爍</li>
+            <li>2D動態換圖</li>
+            <li>2D船顯示方向</li>
+          </ul>
+        </li>
+        <li>
+          <h3>3D</h3>
+          <ul>
+            <li>3D水管流動</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Overlay</h3>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="ex-contain"></div>
+      <div class="ex-contain"></div>
+    </div>
+  </section>
+  <script src="./js/main.js"></script>
+</body>
+
 </html>
