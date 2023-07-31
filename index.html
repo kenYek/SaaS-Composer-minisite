@@ -21,10 +21,20 @@
   </section>
   <nav class="menu">
     <div class="container">
+      <a href="#about">About</a> |
       <a href="#FAQ">Frequently Asked Question</a> |
       <a href="#Example">Examples</a>
     </div>
   </nav>
+  <section id="about">
+    <div class="container">
+      <article>
+        以下內容為 SaaS Composer 產品使用分享技術交流，可能依照版本不同而有使用上的差異。<br>
+        SaaS Compoer 繪圖核心使用到 Hightopo SDK & 2D Editor & 3D Editor，針對應用場域管理及數據綁定做二次開發加值。<br>
+        由於使用的是標準網頁瀏覽器javascript語法與canvas技術，可以透過前端技術進行擴展開發客製的圖標、組件進行整合。<br>
+      </article>
+    </div>
+  </section>
   <section id="FAQ">
     <div class="container">
       <h2>Frequently Asked Question</h2>
@@ -42,11 +52,15 @@
             <li><a href="#f08">導出匯出場景、圖紙時，失敗</a></li>
             <li><a href="#f09">元素屬性變化事件監聽器</a></li>
             <li><a href="#f10">數據綁定相關資訊，含request、response</a></li>
+            <li><a href="#f11">HTML DOM元素和 canvas上的繪制圖形是兩個不同的層，它們無法交錯層疊。</a></li>
+            <li><a href="#f12">腳本語法僅支持：javascript</a></li>
           </ul>
         </li>
         <li>
           <h3>2D</h3>
           <ul>
+            <li><a href="#f_2d_01">map、video等，與繪制圖形是兩個不同的層，它們無法交錯層疊。</a></li>
+            <li><a href="#f_2d_02">事件無法觸發</a></li>
           </ul>
         </li>
         <li>
@@ -58,14 +72,21 @@
             <li><a href="#f_3d_04">3D 模型簡化</a></li>
             <li><a href="#f_3d_05">3D obj模型大小超過20m，如何壓縮呢？</a></li>
             <li><a href="#f_3d_06">3D 調適訊息，效能資訊顯示</a></li>
+            <li><a href="#f_3d_07">3D 如何複製內建obj模型進行修改</a></li>
           </ul>
         </li>
         <li>
           <h3>Overlay</h3>
           <ul>
+            <li><a href="#f_layer_01">取得各層 graphview 或 dataModel</a></li>
           </ul>
         </li>
       </ul>
+    </div>
+  </section>
+  <section id="FAQList">
+    <div class="container">
+      <h2>General</h2>
       <div class="ex-contain" id="f01">
         <h3>如何設定物件(Node)的 tag及取得物件</h3>
         <img class="ex-image" src="./assets/f01_01.png">
@@ -191,6 +212,40 @@
           resCollect
         </textarea>
       </div>
+      <div class="ex-contain" id="f11">
+        <h3>HTML DOM元素和 canvas上的繪制圖形是兩個不同的層，它們無法交錯層疊。</h3>
+        <textarea disabled style="width:100%;resize: none;" rows="15">
+HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、圖像、按鈕等，它們是由HTML代碼創建的並且可以通過CSS樣式進行布局和樣式化。而<canvas>元素是一個HTML5提供的元素，它是一個繪圖區域，可以通過JavaScript繪制2D圖形、圖像和動畫。
+簡而言之，HTML DOM元素和<canvas>上的繪制圖形是兩個不同的層，它們無法交錯層疊。具體原因是因為HTML DOM元素是由HTML代碼創建並渲染的，它們是瀏覽器的文檔對象的一部分。而<canvas>元素是一個特殊的繪圖區域，它是通過JavaScript繪制的，繪制的內容與HTML文檔無關，也無法直接與HTML DOM元素進行交互。
+如果想要在<canvas>上繪制與HTML DOM元素交互的圖形，可以使用JavaScript繪制的方法，例如使用繪制庫（如Canvas API）來實現繪圖效果，並通過JavaScript來響應用戶交互。但是，繪制在<canvas>上的圖形不會影響到HTML DOM元素，它們仍然是分開的兩個層級，無法直接交錯疊加。
+因此，如果想要在頁面中同時使用HTML DOM元素和<canvas>繪制圖形，需要將它們分別放置在不同的位置，並理解它們是兩個獨立的層，無法直接交錯疊加。
+        </textarea>
+      </div>
+      <div class="ex-contain" id="f12">
+        <h3>腳本語法僅支持：javascript</h3>
+        <p>
+          頁面完全使用標準html, javascript語法，依瀏覽器支援進行渲染。<br>
+          所有的開發技術請參考Javascript前端網頁進行學習。<br>
+        </p>
+      </div>
+      <h2>2D</h2>
+      <div class="ex-contain" id="f_2d_01">
+        <h3>map、video等，與繪制圖形是兩個不同的層，它們無法交錯層疊。</h3>
+        <textarea disabled style="width:100%;resize: none;" rows="15">
+HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、圖像、按鈕等，它們是由HTML代碼創建的並且可以通過CSS樣式進行布局和樣式化。而<canvas>元素是一個HTML5提供的元素，它是一個繪圖區域，可以通過JavaScript繪制2D圖形、圖像和動畫。
+簡而言之，HTML DOM元素和<canvas>上的繪制圖形是兩個不同的層，它們無法交錯層疊。具體原因是因為HTML DOM元素是由HTML代碼創建並渲染的，它們是瀏覽器的文檔對象的一部分。而<canvas>元素是一個特殊的繪圖區域，它是通過JavaScript繪制的，繪制的內容與HTML文檔無關，也無法直接與HTML DOM元素進行交互。
+如果想要在<canvas>上繪制與HTML DOM元素交互的圖形，可以使用JavaScript繪制的方法，例如使用繪制庫（如Canvas API）來實現繪圖效果，並通過JavaScript來響應用戶交互。但是，繪制在<canvas>上的圖形不會影響到HTML DOM元素，它們仍然是分開的兩個層級，無法直接交錯疊加。
+因此，如果想要在頁面中同時使用HTML DOM元素和<canvas>繪制圖形，需要將它們分別放置在不同的位置，並理解它們是兩個獨立的層，無法直接交錯疊加。
+        </textarea>
+      </div>
+      <div class="ex-contain" id="f_2d_02">
+        <h3>事件無法觸發</h3>
+        <textarea disabled style="width:100%;resize: none;" rows="4">
+          點擊事件或其他事件無法被觸發，請確認物件是否有啟用。可交互(interactive)。
+          如果只是針對單一事件無法觸發，請透過瀏覽器開發者工具確認是否有語法撰寫錯誤情況發生。
+        </textarea>
+      </div>
+      <h2>3D</h2>
       <div class="ex-contain" id="f_3d_01">
         <h3>圖紙步進距離設定</h3>
         <textarea disabled style="width:100%;resize: none;" rows="4">
@@ -239,6 +294,26 @@
           graphView.showDebugTip();
           // 3D
           graph3dView.showDebugTip();
+        </textarea>
+      </div>
+      <div class="ex-contain" id="f_3d_07">
+        <h3>3D 如何複製內建obj模型進行修改。 </h3>
+        <img class="ex-image" src="./assets/f_3d_07_01.png">
+        <p>
+          開啟模型，依照模型路徑至assets目錄下將檔案匯出即可進行修改。<br>    
+          修改完成之後，請重新建立新的Model。<br>    
+          對應的貼皮圖檔紀錄在mtl檔中，需先下載後再找對應的檔案。<br> 
+        </p>
+      </div>
+      <h2>Overlay</h2>
+      <div class="ex-contain" id="f_layer_01">
+        <h3>取得各層 graphview 或 dataModel</h3>
+        <img class="ex-image" src="./assets/f_overlay_01_01.png">
+        <img class="ex-image" src="./assets/f_overlay_01_02.png">
+        <textarea disabled style="width:100%;resize: none;" rows="6">
+          可以透過每個事件function中傳入的gv,view,dm等參數取得。  
+          graph2d = gv;
+          之後可以從全域變數中提取。
         </textarea>
       </div>
     </div>
