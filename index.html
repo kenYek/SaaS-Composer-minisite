@@ -3,8 +3,25 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>SaaS Composer Minisite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The cloud based graphical control tool">
+  <title>SaaS Composer</title>
   <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="apple-touch-icon" href="./assets/banner01.png">
+  <link rel="icon" type="image/png" href="./assets/banner01.png">
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="SaaS Composer" />
+  <meta property="og:description" content="The cloud based graphical control tool">
+  <meta property="og:site_name" content="SaaS Composer">
+  <meta property="og:image" content="./assets/banner01.png">
+  <meta name="twitter:card" content="website">
+  <meta name="twitter:title" content="SaaS Composer">
+  <meta name="twitter:description" content="The cloud based graphical control tool">
+  <!-- <meta name="twitter:site" content="帳號">
+  <meta name="twitter:creator" content="作者"> -->
+  <!-- <meta name="twitter:url" content="https://XXXX.com/XXXX.html"> -->
+  <meta name="twitter:image" content="./assets/banner01.png">
 </head>
 
 <body>
@@ -84,6 +101,42 @@
           </ul>
         </li>
       </ul>
+    </div>
+  </section>
+  <section id="Example">
+    <div class="container">
+      <h2>Examples</h2>
+      <ul>
+        <li>
+          <h3>2D</h3>
+          <ul>
+            <li><a href="#e_2d_01">2D 閃爍</a></li>
+            <li><a href="#e_2d_02">2D 動態換圖</a></li>
+            <li><a href="#e_2d_03">2D 船顯示方向</a></li>
+            <li><a href="#e_2d_04">2D AR 手機相機互動</a></li>
+            <li><a href="#e_2d_05">2D 錄音撥放</a></li>
+            <li>
+              <h3>圖標</h3>
+              <ul>
+                <li><a href="#e_2d_s_01">整合Echart第三方擴充套件</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3>3D</h3>
+          <ul>
+            <li><a href="#e_3d_01">3D 水管流動</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>Overlay</h3>
+          <ul>
+            <li><a href="#e_overlay_01">疊加層遙控面板</a></li>
+            <li><a href="#e_overlay_02">疊加層圓形拖拽遙控面板</a></li>
+          </ul>
+        </li>
+      </ul> 
     </div>
   </section>
   <section id="FAQList">
@@ -276,7 +329,10 @@ HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、�
         <h3>2D 整合Echart第三方擴充套件</h3>
         <p>第三方圖形可以參考: <a href="https://www.isqqw.com/" target="_blank">Echart Demo</a></p>
         <img class="ex-image" src="./assets/f_2d_03_01.png">
-        <p>在設定頁引入第三方套件。<br/></p>
+        <p>
+          在設定頁引入第三方套件。<br/>
+          https://cdn.jsdelivr.net/npm/echarts-liquidfill@3/dist/echarts-liquidfill.min.js<br>
+        </p>
         <img class="ex-image" src="./assets/f_2d_03_02.png"><br/>
         <p>
           新建圖標，並且在<mark>Render HTML</mark>撰寫相關引用 Echart 的代碼，及設定可數據綁定的參數<br>
@@ -437,32 +493,159 @@ HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、�
       </div>
     </div>
   </section>
-  <section id="Example">
+  <section id="ExampleList">
     <div class="container">
-      <h2>Examples</h2>
-      <ul>
-        <li>
-          <h3>2D</h3>
-          <ul>
-            <li>2D閃爍</li>
-            <li>2D動態換圖</li>
-            <li>2D船顯示方向</li>
-          </ul>
-        </li>
-        <li>
-          <h3>3D</h3>
-          <ul>
-            <li>3D水管流動</li>
-          </ul>
-        </li>
-        <li>
-          <h3>Overlay</h3>
-          <ul>
-            <li></li>
-          </ul>
-        </li>
-      </ul>
-      <div class="ex-contain"></div>
+      <div class="ex-contain" id="e_2d_01">
+        <h3>2D 閃爍</h3>
+        <a href="./example/e_2d_01.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_2d_02">
+        <h3>2D 動態換圖</h3>
+        <img class="ex-image" src="./assets/e_2d_02_01.png"><br/>
+        <a href="./example/e_2d_02.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_2d_03">
+        <h3>2D 船顯示方向</h3>
+        <img class="ex-image" src="./assets/e_2d_03_01.png"><br/>
+        <a href="./example/e_2d_03.zip" target="_blank">Download</a>
+        <p>
+          需要數據源：  <br>
+          一般地圖座標 [“經度, 緯度”, timestamp] <br> 
+          目前寫法是直接修改格式多添加方向  [“經度, 緯度, 方向角度”, timestamp]   <br>
+        </p>
+        <p>開啟場景中加入:</p>
+        <textarea disabled style="width:100%;resize: none;" rows="10">
+          window.LeafIcon = L.Icon.extend({
+            options: {
+                // shadowUrl: 'assets/leaf-orange.png?org_id=9',
+                iconSize:     [50, 50],
+                iconAnchor:   [0, 0],
+                popupAnchor:  [-3, -76],
+                degrees: 45
+            },
+            // PROPERTIES
+          x: 66,
+          y: 85,
+          x_fac: 0.18,
+          y_fac: 0.18,
+          ctx: null,
+          lastHeading: 0,
+          lastWindDirection: 0,
+            createIcon: function () {
+            var s = this.options.iconSize;
+                const canvas = document.createElement('canvas')
+                canvas.width = 100;
+                canvas.height = 100;
+                canvas.style.width = 100 + 'px'
+                canvas.style.height = 100 + 'px'
+                canvas.style.marginLeft = '-25px';
+                canvas.style.marginTop  = '-25px';
+                var ctx = canvas.getContext("2d");
+                ctx.save();
+                ctx.translate(s[0] / 2, s[1] / 2);
+                ctx.rotate(this.options.degrees * Math.PI / 180);
+                ctx.restore();
+                ctx.strokeStyle = '#FF0000'
+                ctx.beginPath();
+                var theta = this.options.degrees * Math.PI / 180
+                var theta120 = 120 * Math.PI / 180
+                var r = Math.min(s[0], s[1]) / 2
+                var dx = r * Math.cos(theta)
+                var dy = r * Math.sin(theta)
+                var dx1 = r * Math.cos(theta - theta120)
+                var dy1 = r * Math.sin(theta - theta120)
+                var dx2 = r * Math.cos(theta + theta120)
+                var dy2 = r * Math.sin(theta + theta120)
+                ctx.moveTo(25 + dx, 25 + dy);
+                ctx.lineTo(25 + dx1, 25 + dy1);
+                ctx.lineTo(25, 25);
+                ctx.lineTo(25 + dx2, 25 + dy2);
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+                return canvas;
+            }
+          });
+          
+          
+          window.changeStringtoMapArray = function(strArray){
+            var geographicArrays = []
+            if (Array.isArray(strArray)){
+              strArray.forEach(element => {
+                var arr = element.split(',')
+                geographicArrays.push([arr[1],arr[0],arr[2]])
+                // geographicArrays.push([arr[0],arr[1]])
+              });
+            }
+            return geographicArrays
+          }
+          
+          window.boatMarker = function(leafletMap, markerLayer, data, jsonData, infomation, open){
+              var d = changeStringtoMapArray(data);
+              var degree = (d[d.length - 1] && d[d.length - 1][2]) ? d[d.length - 1][2] : 0
+              var a0 = (d[d.length - 1] && d[d.length - 1][0]) ? d[d.length - 1][0] : 0
+              var a1 = (d[d.length - 1] && d[d.length - 1][1]) ? d[d.length - 1][1] : 0
+              var greenIcon = new LeafIcon({degrees: degree})
+              var marker = L.marker([a0, a1], {icon: greenIcon}).addTo(markerLayer);
+              if (infomation){
+                  marker.bindPopup(infomation)
+              }
+              if (open) marker.openPopup();
+              return marker;
+          }
+        </textarea>
+      </div>
+      <div class="ex-contain" id="e_2d_04">
+        <h3>2D AR 手機相機互動</h3>
+        <img class="ex-image" src="./assets/e_2d_04_01.png"><br/>
+        <a href="./example/e_2d_04.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_2d_05">
+        <h3>2D 錄音撥放</h3>
+        <img class="ex-image" src="./assets/e_2d_05_01.png"><br/>
+        <a href="./example/e_2d_05.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_2d_s_01">
+        <h3>整合Echart第三方擴充套件</h3>
+        <img class="ex-image" src="./assets/f_2d_03_02.png"><br/>
+        <a href="./example/e_2d_s_01.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_3d_01">
+        <h3>3D 水管流動</h3>
+        <textarea disabled style="width:100%;resize: none;" rows="10">
+        主要是修改貼皮的offset
+        1. 使用管線 tag = line
+        2. 設定貼皮
+        3. 在執行期間：
+        if(!window.offset) {window.offset = 0}
+        window.offset = window.offset > 0 ? 0 : 0.1
+        dataModel.getDataByTag('line').s('shape3d.uv.offset', [window.offset, 0])
+        </textarea>
+        <img class="ex-image" src="./assets/e_3d_01_01.png"><br/>
+        <p>
+          <a href="./example/e_3d_01_01.zip" target="_blank">Download</a>
+        </p>
+        <img class="ex-image" src="./assets/e_3d_01_02.png"><br/>
+        <p>
+          <a href="./example/e_3d_01_02.zip" target="_blank">Download</a>
+        </p>
+      </div>
+      <div class="ex-contain" id="e_3d_02">
+        <h3>整合Echart第三方擴充套件</h3>
+        <img class="ex-image" src="./assets/e_3d_02_01.png"><br/>
+        <a href="./example/e_3d_02.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_overlay_01">
+        <h3>疊加層遙控面板</h3>
+        <img class="ex-image" src="./assets/e_overlay_01.png"><br/>
+        <a href="./example/e_overlay_01.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_overlay_02">
+        <h3>疊加層圓形拖拽遙控面板</h3>
+        <img class="ex-image" src="./assets/e_overlay_02.png"><br/>
+        <p>本範例只提供可拖拽的圖標圖紙，可參考前例改寫</p>
+        <a href="./example/e_overlay_02.zip" target="_blank">Download</a>
+      </div>
       <div class="ex-contain"></div>
     </div>
   </section>
