@@ -54,13 +54,15 @@
             <li><a href="#f10">數據綁定相關資訊，含request、response</a></li>
             <li><a href="#f11">HTML DOM元素和 canvas上的繪制圖形是兩個不同的層，它們無法交錯層疊。</a></li>
             <li><a href="#f12">腳本語法僅支持：javascript</a></li>
+            <li><a href="#f13">透過生成json產生圖紙及數據綁訂</a></li>
           </ul>
         </li>
         <li>
           <h3>2D</h3>
           <ul>
-            <li><a href="#f_2d_01">map、video等，與繪制圖形是兩個不同的層，它們無法交錯層疊。</a></li>
-            <li><a href="#f_2d_02">事件無法觸發</a></li>
+            <li><a href="#f_2d_01">2D map、video等，與繪制圖形是兩個不同的層，它們無法交錯層疊。</a></li>
+            <li><a href="#f_2d_02">2D 事件無法觸發</a></li>
+            <li><a href="#f_2d_03">2D 整合Echart第三方擴充套件</a></li>
           </ul>
         </li>
         <li>
@@ -96,6 +98,10 @@
             dataModel.getDataByTag('tag_name')
           </code>
         </div>
+        <p>
+          取得 Node data 的方式除了透過 tag 之外，在事件傳入的 "data"，也可直接獲取當前 Node Data。
+        </p>
+        <img class="ex-image" src="./assets/f01_02.png">
       </div>
       <div class="ex-contain" id="f02">
         <h3>如何取的<mark>GraphView</mark>物件</h3>
@@ -228,9 +234,30 @@ HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、�
           所有的開發技術請參考Javascript前端網頁進行學習。<br>
         </p>
       </div>
+      <div class="ex-contain" id="f13">
+        <h3>透過生成json產生圖紙及數據綁訂</h3>
+        <img class="ex-image" src="./assets/f13_01.png">
+        <p>
+          可將相關物件配置完成後，複製右下角的數據進行查看各屬性資訊。<br>
+          依json格式生成新的json即可。<br>
+        </p>
+        <textarea disabled style="width:100%;resize: none;" rows="13">
+          使用api上傳可以呼叫 "POST /upload"
+          Body:
+          {
+            path: scenes/****.json,
+            content: { **數據json** }
+          }
+          注意需要登入"POST　/api/login"後取得token才能呼叫驗證成功
+          {
+            "password": "******",
+            "username": "******"
+          }
+        </textarea>
+      </div>
       <h2>2D</h2>
       <div class="ex-contain" id="f_2d_01">
-        <h3>map、video等，與繪制圖形是兩個不同的層，它們無法交錯層疊。</h3>
+        <h3>2D map、video等，與繪制圖形是兩個不同的層，它們無法交錯層疊。</h3>
         <textarea disabled style="width:100%;resize: none;" rows="15">
 HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、圖像、按鈕等，它們是由HTML代碼創建的並且可以通過CSS樣式進行布局和樣式化。而<canvas>元素是一個HTML5提供的元素，它是一個繪圖區域，可以通過JavaScript繪制2D圖形、圖像和動畫。
 簡而言之，HTML DOM元素和<canvas>上的繪制圖形是兩個不同的層，它們無法交錯層疊。具體原因是因為HTML DOM元素是由HTML代碼創建並渲染的，它們是瀏覽器的文檔對象的一部分。而<canvas>元素是一個特殊的繪圖區域，它是通過JavaScript繪制的，繪制的內容與HTML文檔無關，也無法直接與HTML DOM元素進行交互。
@@ -239,10 +266,100 @@ HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、�
         </textarea>
       </div>
       <div class="ex-contain" id="f_2d_02">
-        <h3>事件無法觸發</h3>
+        <h3>2D 事件無法觸發</h3>
         <textarea disabled style="width:100%;resize: none;" rows="4">
           點擊事件或其他事件無法被觸發，請確認物件是否有啟用。可交互(interactive)。
           如果只是針對單一事件無法觸發，請透過瀏覽器開發者工具確認是否有語法撰寫錯誤情況發生。
+        </textarea>
+      </div>
+      <div class="ex-contain" id="f_2d_03">
+        <h3>2D 整合Echart第三方擴充套件</h3>
+        <p>第三方圖形可以參考: <a href="https://www.isqqw.com/" target="_blank">Echart Demo</a></p>
+        <img class="ex-image" src="./assets/f_2d_03_01.png">
+        <p>在設定頁引入第三方套件。<br/></p>
+        <img class="ex-image" src="./assets/f_2d_03_02.png"><br/>
+        <p>
+          新建圖標，並且在<mark>Render HTML</mark>撰寫相關引用 Echart 的代碼，及設定可數據綁定的參數<br>
+          在圖指引用之後即可在預覽時呈現。<br>
+          需要注意 Echart 是使用獨立的 HTML 元件，不可與繪製的圖進行交錯排列。
+        </p>
+        <textarea disabled style="width:100%;resize: none;" rows="10">
+    let value = data.a('value');
+    if (value > 1) {
+        value = (value % 100) / 100;
+    } else if (value < 0) {
+        value = 0
+    }
+
+    var option = {
+      backgroundColor: '#fff',
+      title: {
+        left: 'center',
+        bottom: 20,
+        text: '申请方',
+        textStyle: {
+          fontWeight: 'bold',
+          fontSize: 25,
+          color: '#333'
+        },
+        subtext: '满意度',
+        subtextStyle: {
+          color: '#333'
+        }
+      },
+      series: [
+        {
+          type: "liquidFill",
+          name: '申请方',
+          radius: "85%",
+          center: ['50%', '45%'],
+          shape: "path://M657.462,490.835c-21.359-45.771-82.071-35.092-82.471,18.032-0.221,29.177,28.91,40.083,48.306,51.747,18.807,11.312,32.193,26.786,34.291,33.373,1.8-6.454,16.705-22.366,34.115-33.689,19.036-12.382,48.527-22.572,48.306-51.748C739.607,455.294,677.839,446.889,657.462,490.835Z",
+          data: [value, value, value], //datat
+          color: ['#fc8b8b'],
+          outline: {
+            show: false,
+          },
+          backgroundStyle: {
+            color: '#edd4d4',
+            borderColor: "#fff",
+            borderWidth: 1,
+            shadowColor: "rgba(0, 0, 0, 0.4)",
+            shadowBlur: 0,
+          },
+          label: {
+            normal: {
+              position: ["50%", "40%"],
+              formatter: () => {
+                return Math.round(value * 100) + '%'
+              },
+              textStyle: {
+                fontSize: 30,
+              },
+            },
+          },
+        },
+      ],
+    };
+
+    if (!cache.htmlView) {
+        cache.htmlView = document.createElement('div');
+        cache.htmlView.style.position = 'absolute';
+        cache.htmlChart = echarts.init(cache.htmlView);
+
+        // layoutHTML will be called when the data needs to be drawing
+        cache.htmlView.layoutHTML = function() {
+            gv.layoutHTML(data, cache.htmlView, false);
+            cache.htmlChart.resize();
+        };
+    }
+
+    // update data
+    option.color = [data.a('lineColor1'), data.a('lineColor2')];
+    option.textStyle = { color: data.a('textColor') };
+    cache.htmlChart.setOption(option);
+
+    // html for showing
+    return cache.htmlView;
         </textarea>
       </div>
       <h2>3D</h2>
@@ -313,7 +430,9 @@ HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、�
         <textarea disabled style="width:100%;resize: none;" rows="6">
           可以透過每個事件function中傳入的gv,view,dm等參數取得。  
           graph2d = gv;
-          之後可以從全域變數中提取。
+          之後可以從全域變數中提取，此方法可以避免因檔案複製路徑檔名不同而需要修改的問題。
+          其次，可透過全域變數 "commonViewUtil.currentFiles" 取得當前所有開啟的圖紙場景物件，
+          包含 graphView 與 dataModel ，使用此方式需要知道要操控的是哪個疊加層檔案名稱。
         </textarea>
       </div>
     </div>
