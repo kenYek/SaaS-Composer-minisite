@@ -28,8 +28,8 @@
   <section id="bannerSection">
     <div class="container" id="bannerArea">
       <div class="banner-wrap">
-        <h1>SaaS Composer</h1>
-        <h2>The cloud based graphical control tool</h2>
+        <h1>SaaS Composer FAQ</h1>
+        <h2>Frequently Asked Question & Examples</h2>
       </div>
       <div class="banner-wrap-img">
 
@@ -47,8 +47,29 @@
     <div class="container">
       <article>
         以下內容為 SaaS Composer 產品使用分享技術交流，可能依照版本不同而有使用上的差異。<br>
-        SaaS Compoer 繪圖核心使用到 Hightopo SDK & 2D Editor & 3D Editor，針對應用場域管理及數據綁定做二次開發加值。<br>
-        由於使用的是標準網頁瀏覽器javascript語法與canvas技術，可以透過前端技術進行擴展開發客製的圖標、組件進行整合。<br>
+        SaaS Compoer 繪圖核心使用到 Hightopo SDK & 2D Editor & 3D Editor ，針對應用場域管理及數據綁定做二次開發加值。<br>
+        由於使用的是標準網頁瀏覽器 javascript 語法與 canvas 技術，可以透過前端技術進行擴展開發客製的圖標、組件進行整合。<br>
+      </article>
+      <article>
+        <h3>Reference</h3>
+        <ul>
+          <li>
+            <a href="https://docs.wise-paas.advantech.com/en/Guides_and_API_References/ApplicationServices/SaaS_Composer/1641432206032601142/v3.1.5" target="_blank">
+              <span>Technical Documentation</span>
+            </a>
+          </li>
+          <li><a href="https://www.w3schools.com/js/default.asp" target="_blank">w3schools JavaScript Tutorial</a></li>
+          <li><a href="https://www.w3schools.com/graphics/canvas_intro.asp" target="_blank">w3schools Canvas Tutorial</a></li>
+          <li><a href="https://www.w3schools.com/html/html5_canvas.asp" target="_blank">w3schools Canvas Graphics</a></li>
+          <li><a href="https://www.hightopo.com/index.html" target="_blank">HT 图扑软件</a></li>
+          <li><a href="https://hightopo.com/guide/sdkeditor/#/zh/editor/" target="_blank">HT 編輯器使用</a></li>
+          <li><a href="https://www.hightopo.com/guide/guide/core/treetableview/examples/example_structure.html" target="_blank">HT 範例手冊</a></li>
+          <li><a href="https://www.hightopo.com/guide/doc/" target="_blank">HT API查詢頁面</a></li>
+          <li><a href="https://hightopo.com/guide/sdkeditor/#/zh/SDK/" target="_blank">HT SDK 物件結構 & HT widget</a></li>
+          <li><a href="https://hightopo.com/ui/guide/zh/nav.html" target="_blank">HT UI範例手册导航</a></li>
+          <li><a href="https://hightopo.com/ui/jsdoc/zh/" target="_blank">HT UI API 文件</a></li>
+          <li><a href="https://hightopo.com/guide/sdkeditor/#/zh/UI/README" target="_blank">HT 入门手册</a></li>
+        </ul>
       </article>
     </div>
   </section>
@@ -68,16 +89,19 @@
             <li><a href="#f07">SVG顯示錯誤</a></li>
             <li><a href="#f08">導出匯出場景、圖紙時，失敗</a></li>
             <li><a href="#f09">元素屬性變化事件監聽器</a></li>
-            <li><a href="#f10">數據綁定相關資訊，含request、response</a></li>
+            <li><a href="#f10">數據綁定相關資訊，含 request、response</a></li>
             <li><a href="#f11">HTML DOM元素和 canvas上的繪制圖形是兩個不同的層，它們無法交錯層疊。</a></li>
-            <li><a href="#f12">腳本語法僅支持：javascript</a></li>
+            <li><a href="#f12">腳本語法僅支持： javascript</a></li>
             <li><a href="#f13">透過生成json產生圖紙及數據綁訂</a></li>
+            <li><a href="#f14">資料綁定 Set Match ，設定顏色不要用 Direct feed</a></li>
+            <li><a href="#f15">不同 view HTML 頁面功能對應</a></li>
+            <li><a href="#f16">非數值型屬性綁定數據或動態填資料</a></li>
           </ul>
         </li>
         <li>
           <h3>2D</h3>
           <ul>
-            <li><a href="#f_2d_01">2D map、video等，與繪制圖形是兩個不同的層，它們無法交錯層疊。</a></li>
+            <li><a href="#f_2d_01">2D map、video 等，與繪制圖形是兩個不同的層，它們無法交錯層疊。</a></li>
             <li><a href="#f_2d_02">2D 事件無法觸發</a></li>
             <li><a href="#f_2d_03">2D 整合Echart第三方擴充套件</a></li>
           </ul>
@@ -308,14 +332,74 @@ HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、�
           }
         </textarea>
       </div>
+      <div class="ex-contain" id="f14">
+        <h3>資料綁定 Set Match，設定顏色不要用Direct feed</h3>
+        <p>
+          Direct feed 的功能是為了快速處理 0,1 與 true, false 對應使用<br>
+          0 => false<br>
+          1 => true<br>
+          勾選 direct feed 則不需額外配置 treu, false
+        </p>
+      </div>
+      <div class="ex-contain" id="f15">
+        <h3>不同 view HTML 頁面功能對應</h3>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>HTML</th>
+                <th>功能</th>
+                <th>說明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>display.html</td>
+                <td>2D 顯示</td>
+                <td>2D 預設預覽</td>
+              </tr>
+              <tr>
+                <td>scene.html</td>
+                <td>3D 顯示</td>
+                <td>3D 預設預覽</td>
+              </tr>
+              <tr>
+                <td>sceneAndDisplay.html</td>
+                <td>2D & 3D 疊加層顯示</td>
+                <td>預設預覽、選單開啟疊加層</td>
+              </tr>
+              <tr>
+                <td>view.html</td>
+                <td>2D 或 3D 顯示</td>
+                <td>選單預設，未開啟疊加層</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="ex-contain" id="f16">
+        <h3>非數值型屬性綁定數據或動態填資料</h3>
+        <img class="ex-image" src="./assets/f16_01.png"><br/>
+        <p>
+          以下拉選單為例，需要的格式是 (label, value) 陣列資料。<br>
+          可透過 script 動態填入相同格式的 json，達到動態換資料。<br>
+          即可透過 fetch, XMLHttpRequest 等方式動態改動下拉選單內容
+        </p>
+        <textarea disabled style="width:100%;resize: none;" rows="5">
+          data.a('ht.dataSource', [
+            { 'label': 'tag 1', value: 'tag_name_1' },
+            { 'label': 'tag 2', value: 'tag_name_2' }
+          ])
+        </textarea>
+      </div>
       <h2>2D</h2>
       <div class="ex-contain" id="f_2d_01">
-        <h3>2D map、video等，與繪制圖形是兩個不同的層，它們無法交錯層疊。</h3>
+        <h3>2D map、video 等，與繪制圖形是兩個不同的層，它們無法交錯層疊。</h3>
         <textarea disabled style="width:100%;resize: none;" rows="15">
-HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、圖像、按鈕等，它們是由HTML代碼創建的並且可以通過CSS樣式進行布局和樣式化。而<canvas>元素是一個HTML5提供的元素，它是一個繪圖區域，可以通過JavaScript繪制2D圖形、圖像和動畫。
-簡而言之，HTML DOM元素和<canvas>上的繪制圖形是兩個不同的層，它們無法交錯層疊。具體原因是因為HTML DOM元素是由HTML代碼創建並渲染的，它們是瀏覽器的文檔對象的一部分。而<canvas>元素是一個特殊的繪圖區域，它是通過JavaScript繪制的，繪制的內容與HTML文檔無關，也無法直接與HTML DOM元素進行交互。
-如果想要在<canvas>上繪制與HTML DOM元素交互的圖形，可以使用JavaScript繪制的方法，例如使用繪制庫（如Canvas API）來實現繪圖效果，並通過JavaScript來響應用戶交互。但是，繪制在<canvas>上的圖形不會影響到HTML DOM元素，它們仍然是分開的兩個層級，無法直接交錯疊加。
-因此，如果想要在頁面中同時使用HTML DOM元素和<canvas>繪制圖形，需要將它們分別放置在不同的位置，並理解它們是兩個獨立的層，無法直接交錯疊加。
+HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本、圖像、按鈕等，它們是由 HTML 代碼創建的並且可以通過CSS樣式進行布局和樣式化。而<canvas>元素是一個 HTML5 提供的元素，它是一個繪圖區域，可以通過 JavaScript 繪制 2D 圖形、圖像和動畫。
+簡而言之， HTML DOM 元素和 <canvas> 上的繪制圖形是兩個不同的層，它們無法交錯層疊。具體原因是因為 HTML DOM 元素是由 HTML 代碼創建並渲染的，它們是瀏覽器的文檔對象的一部分。而 <canvas> 元素是一個特殊的繪圖區域，它是通過 JavaScript 繪制的，繪制的內容與 HTML 文檔無關，也無法直接與 HTML DOM 元素進行交互。
+如果想要在<canvas>上繪制與 HTML DOM 元素交互的圖形，可以使用 JavaScript 繪制的方法，例如使用繪制庫（ 如Canvas API ）來實現繪圖效果，並通過 JavaScript 來響應用戶交互。但是，繪制在 <canvas> 上的圖形不會影響到 HTML DOM 元素，它們仍然是分開的兩個層級，無法直接交錯疊加。
+因此，如果想要在頁面中同時使用 HTML DOM 元素和<canvas>繪制圖形，需要將它們分別放置在不同的位置，並理解它們是兩個獨立的層，無法直接交錯疊加。
         </textarea>
       </div>
       <div class="ex-contain" id="f_2d_02">
@@ -449,7 +533,7 @@ HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、�
           1、簡化模型，這是最有效的，我們大部分外包的項目模型都會重新設計  <br>
           2、業務分級，例如數據中心，打開機櫃再顯示里面的服務器和端口細節  <br>
           3、算法上簡模的定制化<br>
-          官網例子的模型基本都沒超過 10m，單個設備一般構建在 m 以內，甚至小到幾十k，定位的大部分還是運維的系統，用戶只需要看得清是個什麽樣的設備即可。 <br> 
+          官網例子的模型基本都沒超過 10m，單個設備一般構建在 m 以內，甚至小到幾10k，定位的大部分還是運維的系統，用戶只需要看得清是個什麽樣的設備即可。 <br> 
           所以大部分情況下，用戶說有模型可以給我們用的項目，一般都可以直接告訴客戶，現有的模型只能做參考，<br>
           大部分情況下我們需要重新建模，因為用戶手頭的模型基本都是 SolidWorks 之類的工程建模模型，是非常精確的為了可制造生產的建模精度，但作為運維一般會極大的簡化建模。 <br>        
         </p>
@@ -649,6 +733,10 @@ HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、�
       <div class="ex-contain"></div>
     </div>
   </section>
+  <!-- Scroll to Top Button -->
+  <div id="scrollToTopBtn" onclick="scrollToTop()">
+    &#8679;
+  </div>
   <script src="./js/main.js"></script>
 </body>
 
