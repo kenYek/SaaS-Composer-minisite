@@ -25,6 +25,7 @@
 </head>
 
 <body>
+  <div class="gradient-div"></div>
   <section id="bannerSection">
     <div class="container" id="bannerArea">
       <div class="banner-wrap">
@@ -41,6 +42,8 @@
       <a href="#about">About</a> |
       <a href="#FAQ">Frequently Asked Question</a> |
       <a href="#Example">Examples</a>
+      <a href="#reference">Reference</a>
+      <button id="switchButton" class="isMainColor"></button>
     </div>
   </nav>
   <section id="about">
@@ -49,27 +52,6 @@
         以下內容為 SaaS Composer 產品使用分享技術交流，可能依照版本不同而有使用上的差異。<br>
         SaaS Compoer 繪圖核心使用到 Hightopo SDK & 2D Editor & 3D Editor ，針對應用場域管理及數據綁定做二次開發加值。<br>
         由於使用的是標準網頁瀏覽器 javascript 語法與 canvas 技術，可以透過前端技術進行擴展開發客製的圖標、組件進行整合。<br>
-      </article>
-      <article>
-        <h3>Reference</h3>
-        <ul>
-          <li>
-            <a href="https://docs.wise-paas.advantech.com/en/Guides_and_API_References/ApplicationServices/SaaS_Composer/1641432206032601142/v3.1.5" target="_blank">
-              <span>Technical Documentation</span>
-            </a>
-          </li>
-          <li><a href="https://www.w3schools.com/js/default.asp" target="_blank">w3schools JavaScript Tutorial</a></li>
-          <li><a href="https://www.w3schools.com/graphics/canvas_intro.asp" target="_blank">w3schools Canvas Tutorial</a></li>
-          <li><a href="https://www.w3schools.com/html/html5_canvas.asp" target="_blank">w3schools Canvas Graphics</a></li>
-          <li><a href="https://www.hightopo.com/index.html" target="_blank">HT 图扑软件</a></li>
-          <li><a href="https://hightopo.com/guide/sdkeditor/#/zh/editor/" target="_blank">HT 編輯器使用</a></li>
-          <li><a href="https://www.hightopo.com/guide/guide/core/treetableview/examples/example_structure.html" target="_blank">HT 範例手冊</a></li>
-          <li><a href="https://www.hightopo.com/guide/doc/" target="_blank">HT API查詢頁面</a></li>
-          <li><a href="https://hightopo.com/guide/sdkeditor/#/zh/SDK/" target="_blank">HT SDK 物件結構 & HT widget</a></li>
-          <li><a href="https://hightopo.com/ui/guide/zh/nav.html" target="_blank">HT UI範例手册导航</a></li>
-          <li><a href="https://hightopo.com/ui/jsdoc/zh/" target="_blank">HT UI API 文件</a></li>
-          <li><a href="https://hightopo.com/guide/sdkeditor/#/zh/UI/README" target="_blank">HT 入门手册</a></li>
-        </ul>
       </article>
     </div>
   </section>
@@ -124,6 +106,12 @@
             <li><a href="#f_layer_01">取得各層 graphview 或 dataModel</a></li>
           </ul>
         </li>
+        <li>
+          <h3>Data surce plugin</h3>
+          <ul>
+            <li><a href="#f_data_01">sourceFormPane 使用一般 html 設計</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </section>
@@ -139,6 +127,7 @@
             <li><a href="#e_2d_03">2D 船顯示方向</a></li>
             <li><a href="#e_2d_04">2D AR 手機相機互動</a></li>
             <li><a href="#e_2d_05">2D 錄音撥放</a></li>
+            <li><a href="#e_2d_06">2D 輸入框讀值、改值</a></li>
             <li>
               <h3>圖標</h3>
               <ul>
@@ -151,6 +140,7 @@
           <h3>3D</h3>
           <ul>
             <li><a href="#e_3d_01">3D 水管流動</a></li>
+            <li><a href="#e_3d_02">3D 物件改顏色</a></li>
           </ul>
         </li>
         <li>
@@ -575,6 +565,74 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
           包含 graphView 與 dataModel ，使用此方式需要知道要操控的是哪個疊加層檔案名稱。
         </textarea>
       </div>
+      <h2>Data surce plugin</h2>
+      <div class="ex-contain" id="f_data_01">
+        <h3>sourceFormPane 使用一般 html 設計</h3>
+        <p>例如添加連結 a</p>
+        <textarea disabled style="width:100%;resize: none;" rows="8">
+          var href = document.createElement('a');
+          href.setAttribute('href', 'http://www.******.com');
+          href.innerHTML = 'http://www.*****.com';
+          href.style.font = sourceFormPane.getLabelFont();
+          href.style.lineHeight = sourceFormPane.getRowHeight() + 'px';
+          href.style.textAlign = 'right';
+          sourceFormPane.addRow([href], [0.1]);
+        </textarea>
+        <p>
+          dataBindingUI ，使用 input & datalist 做測點下拉篩選功能<br>
+        </p>
+        <textarea disabled style="width:100%;resize: none;" rows="8">
+          var div = document.createElement('div');
+          div.id = 'divID';
+          var input = document.createElement('input');
+          input.type = 'text';
+          input.style.font = sourceFormPane.getLabelFont();
+          input.style.height = sourceFormPane.getRowHeight() + 'px';
+          input.style.lineHeight = sourceFormPane.getRowHeight() + 'px';
+          input.id = 'testInput';
+          input.setAttribute('list', 'tags');
+          input.addEventListener('input', (e) => {
+              const userInput = e.target.value;
+              console.log(userInput)
+              const tagsDatalist = document.getElementById('tags');
+              const options = tagsDatalist.querySelectorAll('option');
+              options.forEach(option => {
+                  if (option.value.indexOf(userInput) === -1) {
+                    option.style.display = 'none';
+                  } else {
+                    option.style.display = 'block';
+                  }
+              });
+          });
+          const tags = [
+              'dv_tag_01',
+              'adam_tag_01',
+              'iot_tag_01',
+              'wise_tag_01'
+          ];
+          var datalist = document.createElement('datalist');
+          datalist.id = 'tags';
+          tags.forEach(city => {
+              const option = document.createElement('option');
+              option.value = city;
+              datalist.appendChild(option);
+          });
+          div.appendChild(input);
+          div.appendChild(datalist);
+          sourceFormPane.addRow([{
+              element: ''
+          }, {element: div, id: 'divID'}], [55, 0.1]);
+        </textarea>
+        <p>
+          applyDataBindingUI 時需要將對應的值讀取返回到 target 物件下存取。
+        </p>
+        <textarea disabled style="width:100%;resize: none;" rows="8">
+          var targets = [];
+          target.tags = document.getElementById('testInput').value;
+          targets.push(target);
+          return targets;
+        </textarea>
+      </div>
     </div>
   </section>
   <section id="ExampleList">
@@ -689,6 +747,11 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
         <img class="ex-image" src="./assets/e_2d_05_01.png"><br/>
         <a href="./example/e_2d_05.zip" target="_blank">Download</a>
       </div>
+      <div class="ex-contain" id="e_2d_06">
+        <h3>2D 輸入框讀值、改值</h3>
+        <img class="ex-image" src="./assets/e_2d_06_01.png"><br/>
+        <a href="./example/e_2d_06.zip" target="_blank">Download</a>
+      </div>
       <div class="ex-contain" id="e_2d_s_01">
         <h3>整合Echart第三方擴充套件</h3>
         <img class="ex-image" src="./assets/f_2d_03_02.png"><br/>
@@ -715,7 +778,7 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
         </p>
       </div>
       <div class="ex-contain" id="e_3d_02">
-        <h3>整合Echart第三方擴充套件</h3>
+        <h3>3D 物件改顏色</h3>
         <img class="ex-image" src="./assets/e_3d_02_01.png"><br/>
         <a href="./example/e_3d_02.zip" target="_blank">Download</a>
       </div>
@@ -731,6 +794,31 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
         <a href="./example/e_overlay_02.zip" target="_blank">Download</a>
       </div>
       <div class="ex-contain"></div>
+    </div>
+  </section>
+  <section id="reference">
+    <div class="container">
+      <article>
+        <h2>Reference</h2>
+        <ul>
+          <li>
+            <a href="https://docs.wise-paas.advantech.com/en/Guides_and_API_References/ApplicationServices/SaaS_Composer/1641432206032601142/v3.1.5" target="_blank">
+              <span>Technical Documentation</span>
+            </a>
+          </li>
+          <li><a href="https://www.w3schools.com/js/default.asp" target="_blank">w3schools JavaScript Tutorial</a></li>
+          <li><a href="https://www.w3schools.com/graphics/canvas_intro.asp" target="_blank">w3schools Canvas Tutorial</a></li>
+          <li><a href="https://www.w3schools.com/html/html5_canvas.asp" target="_blank">w3schools Canvas Graphics</a></li>
+          <li><a href="https://www.hightopo.com/index.html" target="_blank">HT 图扑软件</a></li>
+          <li><a href="https://hightopo.com/guide/sdkeditor/#/zh/editor/" target="_blank">HT 編輯器使用</a></li>
+          <li><a href="https://www.hightopo.com/guide/guide/core/treetableview/examples/example_structure.html" target="_blank">HT 範例手冊</a></li>
+          <li><a href="https://www.hightopo.com/guide/doc/" target="_blank">HT API查詢頁面</a></li>
+          <li><a href="https://hightopo.com/guide/sdkeditor/#/zh/SDK/" target="_blank">HT SDK 物件結構 & HT widget</a></li>
+          <li><a href="https://hightopo.com/ui/guide/zh/nav.html" target="_blank">HT UI範例手册导航</a></li>
+          <li><a href="https://hightopo.com/ui/jsdoc/zh/" target="_blank">HT UI API 文件</a></li>
+          <li><a href="https://hightopo.com/guide/sdkeditor/#/zh/UI/README" target="_blank">HT 入门手册</a></li>
+        </ul>
+      </article>
     </div>
   </section>
   <!-- Scroll to Top Button -->
