@@ -78,6 +78,7 @@
             <li><a href="#f14">資料綁定 Set Match ，設定顏色不要用 Direct feed</a></li>
             <li><a href="#f15">不同 view HTML 頁面功能對應</a></li>
             <li><a href="#f16">非數值型屬性綁定數據或動態填資料</a></li>
+            <li><a href="#f17">不支持變量的數據源動態切換綁訂數據 </a></li>
           </ul>
         </li>
         <li>
@@ -86,6 +87,7 @@
             <li><a href="#f_2d_01">2D map、video 等，與繪制圖形是兩個不同的層，它們無法交錯層疊。</a></li>
             <li><a href="#f_2d_02">2D 事件無法觸發</a></li>
             <li><a href="#f_2d_03">2D 整合Echart第三方擴充套件</a></li>
+            <li><a href="#f_2d_04">2D Table 圖標客製化欄位內容</a></li>
           </ul>
         </li>
         <li>
@@ -148,6 +150,12 @@
           <ul>
             <li><a href="#e_overlay_01">疊加層遙控面板</a></li>
             <li><a href="#e_overlay_02">疊加層圓形拖拽遙控面板</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>Other</h3>
+          <ul>
+            <li><a href="#e_other_01">Product configuration Sample</a></li>
           </ul>
         </li>
       </ul> 
@@ -382,6 +390,42 @@ HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、�
           ])
         </textarea>
       </div>
+      <div class="ex-contain" id="f17">
+        <h3>不支持變量的數據源動態切換綁訂數據</h3>
+        <p>
+          1. 在 Userdefined 的數據綁定中，預先定義可能會使用到被切換的數據，以便在取值時會預先讀取。 <br>
+          2. 在綁定的數據的彈窗屬性裡修改"id"，在標簽頁 Information > id。本例中修改為 test_change <br>
+          3. 修改物件綁定的數據物件：
+        </p>
+        <textarea disabled style="width:100%;resize: none;" rows="15">
+          dataRefreshUtil.filesMap.forEach((item) => {
+            if (dataRefreshUtil.currentFile === item.filename) {
+                item.collectSource.forEach((obj) => {
+                    if (obj.db.id === 'test_change') {
+                        if (obj.db.targets[0].target === 'upper_0') {
+                            obj.db.targets[0] = {sourceType: 'SimpleJson', formatType: 'timeseries', scDataType: 'value', target: 'upper_1'};
+                        } else {
+                            obj.db.targets[0] = {sourceType: 'SimpleJson', formatType: 'timeseries', scDataType: 'value', target: 'upper_0'};
+                        }
+                        console.log(obj.db.id, obj.db.targets[0].target)
+                    }
+                })
+            }
+          })
+        </textarea>
+        <p>
+          修改 dataRefreshUtil.filesMap 中的 collectSource，找到對應物件的 ***target*** 並進行修改。 <br> 
+          注意：不同數據源的 targets 物件格式可能不同，請依照個數據源參數進行改寫。  <br>
+
+          target物件中的必要欄位：  <br>
+          - sourceType  <br>
+          - formatType  <br>
+          - scDataType  <br>
+          - target  <br>
+        </p>
+        <img class="ex-image" src="./assets/f17_01.png"><br/>
+        <img class="ex-image" src="./assets/f17_02.png"><br/>
+      </div>
       <h2>2D</h2>
       <div class="ex-contain" id="f_2d_01">
         <h3>2D map、video 等，與繪制圖形是兩個不同的層，它們無法交錯層疊。</h3>
@@ -491,6 +535,19 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
     // html for showing
     return cache.htmlView;
         </textarea>
+      </div>
+      <div class="ex-contain" id="f_2d_04">
+        <h3>2D Table 圖標客製化欄位內容</h3>
+        <p>
+          可參考內漸圖紙： displays/builtIn/table.json<br>
+        </p>
+        <img class="ex-image" src="./assets/f_2d_04_01.png">
+        <p>
+          或是參考 Technical Documentation
+          <a href="https://docs.wise-paas.advantech.com/en/Guides_and_API_References/ApplicationServices/SaaS_Composer/1649740919078715559/v3.1.8" target="_blank">
+            表格章節
+          </a>
+        </p>
       </div>
       <h2>3D</h2>
       <div class="ex-contain" id="f_3d_01">
@@ -792,6 +849,12 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
         <img class="ex-image" src="./assets/e_overlay_02.png"><br/>
         <p>本範例只提供可拖拽的圖標圖紙，可參考前例改寫</p>
         <a href="./example/e_overlay_02.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_other_01">
+        <h3>Product configuration Sample</h3>
+        <p>可參考本例改寫，修改 UI 上配置</p>
+        <img class="ex-image" src="./assets/e_other_01.png"><br/>
+        <a href="./example/productConfig.zip" target="_blank">Download</a>
       </div>
       <div class="ex-contain"></div>
     </div>
