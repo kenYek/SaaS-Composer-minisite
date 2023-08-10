@@ -100,6 +100,7 @@
             <li><a href="#f_3d_05">3D obj模型大小超過20m，如何壓縮呢？</a></li>
             <li><a href="#f_3d_06">3D 調適訊息，效能資訊顯示</a></li>
             <li><a href="#f_3d_07">3D 如何複製內建obj模型進行修改</a></li>
+            <li><a href="#f_3d_08">3D FBX 模型動態置換材質</a></li>
           </ul>
         </li>
         <li>
@@ -608,6 +609,23 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
           修改完成之後，請重新建立新的Model。<br>    
           對應的貼皮圖檔紀錄在mtl檔中，需先下載後再找對應的檔案。<br> 
         </p>
+      </div>
+      <div class="ex-contain" id="f_3d_08">
+        <h3>3D FBX 模型動態置換材質。 </h3>
+        <img class="ex-image" src="./assets/f_3d_08_01.png">
+        <p>
+          一般方式如果要置換模型材質需要動態產生模型，給予材質，並在場景上取代舊模型<br>
+          比較簡易的方式是針對 Node 進行屬性替換，針對 <mark>matDef</mark> 屬性修改。<br>
+          matDef 中的 key 值為 fbx 內部定義。
+        </p>
+        <textarea disabled style="width:100%;resize: none;" rows="6">
+          dataModel.getDataByTag('aaa').s(
+            'matDef',
+            { 
+              外墙: "materials/builtIn/building/brickPillar.json"
+            }
+          )
+        </textarea>
       </div>
       <h2>Overlay</h2>
       <div class="ex-contain" id="f_layer_01">
