@@ -115,6 +115,7 @@
           <h3>Data surce plugin</h3>
           <ul>
             <li><a href="#f_data_01">sourceFormPane 使用一般 html 設計</a></li>
+            <li><a href="#f_data_02">APM 網路傳輸有資料畫面沒有</a></li>
           </ul>
         </li>
       </ul>
@@ -152,6 +153,8 @@
             <li><a href="#e_3d_02">3D 物件改顏色</a></li>
             <li><a href="#e_3d_03">3D 機器手臂</a></li>
             <li><a href="#e_3d_04">3D 裁切</a></li>
+            <li><a href="#e_3d_05">3D 天空球 (背景圖)</a></li>
+            <li><a href="#e_3d_06">3D 動態載入 models</a></li>
           </ul>
         </li>
         <li>
@@ -761,6 +764,21 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
           return targets;
         </textarea>
       </div>
+      <div class="ex-contain" id="f_data_02">
+        <h3>APM 網路傳輸有資料畫面沒有</h3>
+        <p>
+          SaaS Composer的APM數據源中，默認要求數據要在五分鐘之內，
+          如果超出五分鐘了就會被認為是無效數據而丟棄處理。
+          數據時間落後與實際時間有6、7分鐘以上了，數據會被當作無效數據。
+          可以从两个方面处理此问题<br>
+          1.	確認網關時間是否落後與實際時間，如果有落後同步一下實際時間就可以，
+          還有就是邊緣端上傳數據的時間要在五分鐘之內，
+          超出五分鐘的話後面時間就會被認為是無效數據了<br>
+          2.	加大數據源五分鐘有效範圍，在SaaS Composer中點擊時間屬性，
+          根據實際情況設定大一些的範圍，也可解決此問題（如下圖）
+        </p>
+        <img class="ex-image" src="./assets/f_data_02_01.png"><br/>
+      </div>
     </div>
   </section>
   <section id="ExampleList">
@@ -966,6 +984,29 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
           4. 記得將裁切體物件設置為不可見。
         </p>
         <a href="./example/e_3d_04.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_3d_05">
+        <h3>3D 天空球 (背景圖)</h3>
+        <img class="ex-image" src="./assets/e_3d_05_01.png"><br/>
+        <p>
+          1. 在屬性天空球設定： cube, sphere, color<br>
+          2. 依設定添入背景或是顏色。<br>
+          ※ 3.3.0以前版本需要額外添加球體作為天空。
+        </p>
+        <a href="./example/e_3d_05.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_3d_06">
+        <h3>3D 動態載入 models</h3>
+        <img class="ex-image" src="./assets/e_3d_06_01.png"><br/>
+        <textarea disabled style="width:100%;resize: none;" rows="12">
+          const node = new ht.Node();
+          node.s({
+              'shape3d': 'models/elevator.json'
+          });
+          node.p3(0, 0, 0);
+          dm.add(node);
+        </textarea>
+        <a href="./example/e_3d_06.zip" target="_blank">Download</a>
       </div>
       <div class="ex-contain" id="e_overlay_01">
         <h3>疊加層遙控面板</h3>
