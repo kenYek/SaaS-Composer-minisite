@@ -180,11 +180,11 @@
         <h3>如何設定物件(Node)的 tag及取得物件</h3>
         <img class="ex-image" src="./assets/f01_01.png">
         <p>在物件屬性中進行設定 Tag. 若設定為 tag_name.</p>
-        <div class="codeArea">
+        <pre class="codeArea">
           <code>
             dataModel.getDataByTag('tag_name')
           </code>
-        </div>
+        </pre>
         <p>
           取得 Node data 的方式除了透過 tag 之外，在事件傳入的 "data"，也可直接獲取當前 Node Data。
         </p>
@@ -193,67 +193,79 @@
       <div class="ex-contain" id="f02">
         <h3>如何取的<mark>GraphView</mark>物件</h3>
         <p>
-          In 2D page (display.html) : graphView<br>
-          In 3D page (scene.html) : g3d<br>
-          In Overlay page (sceneAndDisplay.html) : graphView or g3d<br>
+          In 2D page (display.html) : <var>graphView</var><br>
+          In 3D page (scene.html) : <var>g3d</var><br>
+          In Overlay page (sceneAndDisplay.html) : <var>graphView</var> or <var>g3d</var><br>
           Or<br>
-          commonViewUtil.getFileObjByFileName(dataRefreshUtil.currentFile).graphView<br>
-          或是在每個事件 function 中傳入的 "gv"、"view"<br>
-          使用疊加層時盡量使用事件函數傳入的 graphview.
+          <code>commonViewUtil.getFileObjByFileName(dataRefreshUtil.currentFile).graphView</code><br>
+          或是在每個事件 function 中傳入的 <var>gv</var>、<var>view</var><br>
+          使用疊加層時盡量使用事件函數傳入的 <var>graphview</var>.
         </p>
       </div>
       <div class="ex-contain" id="f03">
         <h3>如何取的圖紙、場景<mark>dataModel</mark></h3>
         <p>
-          In 2D page (display.html) : dataModel<br>
-          In 3D page (scene.html) : dataModel<br>
-          In Overlay page (sceneAndDisplay.html) : dataModel<br>
+          In 2D page (display.html) : <var>dataModel</var><br>
+          In 3D page (scene.html) : <var>dataModel</var><br>
+          In Overlay page (sceneAndDisplay.html) : <var>dataModel</var><br>
           Or<br>
-          commonViewUtil.getFileObjByFileName(dataRefreshUtil.currentFile).dataModel<br>
-          或是在每個事件 function 中傳入的 "dm"<br>
-          或是從 graphview 物件下使用 graphview.dm()<br>
-          使用疊加層時盡量使用事件函數傳入的 graphview 或是 dm.
+          <code>commonViewUtil.getFileObjByFileName(dataRefreshUtil.currentFile).dataModel</code><br>
+          或是在每個事件 function 中傳入的 <var>dm</var><br>
+          或是從 <var>graphview</var> 物件下使用 <code>graphview.dm()</code><br>
+          使用疊加層時盡量使用事件函數傳入的 <var>graphview</var> 或是 <var>dm</var>.
         </p>
       </div>
       <div class="ex-contain" id="f04">
         <h3>物件屬性改值</h3>
         <img class="ex-image" src="./assets/f04_01.png">
         <p>
-          可透過 dataModel.getDataByTag('tag_name') 取得物件，物件屬姓分為 property(p), style(s), attribute(a)，
+          可透過 <code>dataModel.getDataByTag('tag_name')</code> 取得物件，物件屬姓分為 property(p), style(s), attribute(a)，
           使用以下取的當前值：<br>
-          dataModel.getDataByTag('tagName').s('style_name')<br>
-          dataModel.getDataByTag('tagName').a('attribute_name')<br>
-          dataModel.getDataByTag('tagName')[ht.Default.getter('property_name')](); <br>
+          <pre class="codeArea">
+            <code>
+              dataModel.getDataByTag('tagName').s('style_name')
+              dataModel.getDataByTag('tagName').a('attribute_name')
+              dataModel.getDataByTag('tagName')[ht.Default.getter('property_name')]();
+            </code>
+          </pre>
           使用以下設定當前值：<br>
-          dataModel.getDataByTag('tagName').s('style_name', value)<br>
-          dataModel.getDataByTag('tagName').a('attribute_name', value)<br>
-          dataModel.getDataByTag('tagName')[ht.Default.getter('property_name')](value); <br>
+          <pre class="codeArea">
+            <code>
+              dataModel.getDataByTag('tagName').s('style_name', value)
+              dataModel.getDataByTag('tagName').a('attribute_name', value)
+              dataModel.getDataByTag('tagName')[ht.Default.getter('property_name')](value);
+            </code>
+          </pre>
         </p>
       </div>
       <div class="ex-contain" id="f05">
         <h3>物件(圖標)動態添加</h3>
-        <textarea disabled style="width:100%;resize: none;" rows="12">
-          添加文字  
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            // 添加文字  
             var d = new ht.Text()
             d.s('text','AAA')
             dataModel.add(d)
 
-          添加圖標  
+            // 添加圖標  
             var node = new ht.Node();
             node.setImage('symbols/builtIn/fan/fan3.json'); // 加入圖標路徑  
             node.p({x:200,y:200})
             dataModel.add(da)
-        </textarea>
+          </code>
+        </pre>
       </div>
       <div class="ex-contain" id="f06">
         <h3>物件動態添加事件</h3>
-        <textarea disabled style="width:100%;resize: none;" rows="6">
-          node.s({
-            'interactive': true,
-            'onClick': function(event, data, view) {
-            }
-          })
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            node.s({
+              'interactive': true,
+              'onClick': function(event, data, view) {
+              }
+            })
+          </code>
+        </pre>
       </div>
       <div class="ex-contain" id="f07">
         <h3>SVG顯示錯誤</h3>
@@ -262,11 +274,13 @@
           在添加入HT編輯器時可能會出現無法顯示，進入到瀏覽模式時會看不見這張 svg。  
           此時請直接使用 png 進行貼圖。  
         </p>
-        <textarea disabled style="width:100%;resize: none;" rows="6">
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="997" height="1217" viewBox="0 0 997 1217">
-            <image id="图层_2" data-name="图层 2" x="111" y="62" width="742" height="1088" xlink:href="data:img/png;base64"/>
-          </svg>
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="997" height="1217" viewBox="0 0 997 1217"&gt;
+              &lt;image id="图层_2" data-name="图层 2" x="111" y="62" width="742" height="1088" xlink:href="data:img/png;base64"/&gt;
+            &lt;/svg&gt;
+          </code>
+        </pre>
       </div>
       <div class="ex-contain" id="f08">
         <h3>導出匯出場景、圖紙時，失敗</h3>
@@ -277,42 +291,54 @@
       </div>
       <div class="ex-contain" id="f09">
         <h3>元素屬性變化事件監聽器</h3>
-        <textarea disabled style="width:100%;resize: none;" rows="11">
-          dataModel.md(function(event) {
-            //event格式：
-            {
-              property: "name",//发生变化的属性
-              data: data,//属性发生变化的data
-              oldValue: 0,//旧值
-              newValue: 1//新值
-            }
-          });
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            dataModel.md(function(event) {
+              //event格式：
+              {
+                property: "name",//发生变化的属性
+                data: data,//属性发生变化的data
+                oldValue: 0,//旧值
+                newValue: 1//新值
+              }
+            });
+          </code>
+        </pre>
       </div>
       <div class="ex-contain" id="f10">
         <h3>Viewer 數據綁定相關資訊，含request、response</h3>
         <img class="ex-image" src="./assets/f10_01.png">
-        <textarea disabled style="width:100%;resize: none;" rows="11">
-          // 使用已下可讀取到當前所有開啟過的圖紙數據綁定設定
-          dataRefreshUtil.filesMap
-          // 對應當前圖紙名稱
-          dataRefreshUtil.currentFile
-          // 收集所有數據綁定對照(上圖中)  
-          collectSource
-          // 發送取值前request整理(上圖中)
-          reqCollect
-          // 數據回應的response儲存(上圖中)  
-          resCollect
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            // 使用已下可讀取到當前所有開啟過的圖紙數據綁定設定
+            dataRefreshUtil.filesMap
+            // 對應當前圖紙名稱
+            dataRefreshUtil.currentFile
+            // 收集所有數據綁定對照(上圖中)  
+            collectSource
+            // 發送取值前request整理(上圖中)
+            reqCollect
+            // 數據回應的response儲存(上圖中)  
+            resCollect
+          </code>
+        </pre>
       </div>
       <div class="ex-contain" id="f11">
         <h3>HTML DOM元素和 canvas上的繪制圖形是兩個不同的層，它們無法交錯層疊。</h3>
-        <textarea disabled style="width:100%;resize: none;" rows="15">
-HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、圖像、按鈕等，它們是由HTML代碼創建的並且可以通過CSS樣式進行布局和樣式化。而<canvas>元素是一個HTML5提供的元素，它是一個繪圖區域，可以通過JavaScript繪制2D圖形、圖像和動畫。
-簡而言之，HTML DOM元素和<canvas>上的繪制圖形是兩個不同的層，它們無法交錯層疊。具體原因是因為HTML DOM元素是由HTML代碼創建並渲染的，它們是瀏覽器的文檔對象的一部分。而<canvas>元素是一個特殊的繪圖區域，它是通過JavaScript繪制的，繪制的內容與HTML文檔無關，也無法直接與HTML DOM元素進行交互。
-如果想要在<canvas>上繪制與HTML DOM元素交互的圖形，可以使用JavaScript繪制的方法，例如使用繪制庫（如Canvas API）來實現繪圖效果，並通過JavaScript來響應用戶交互。但是，繪制在<canvas>上的圖形不會影響到HTML DOM元素，它們仍然是分開的兩個層級，無法直接交錯疊加。
-因此，如果想要在頁面中同時使用HTML DOM元素和<canvas>繪制圖形，需要將它們分別放置在不同的位置，並理解它們是兩個獨立的層，無法直接交錯疊加。
-        </textarea>
+        <q>
+            HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、圖像、按鈕等，
+            它們是由HTML代碼創建的並且可以通過CSS樣式進行布局和樣式化。而 &lt;canvas&gt; 元素是一個HTML5提供的元素，
+            它是一個繪圖區域，可以通過JavaScript繪制2D圖形、圖像和動畫。
+            簡而言之，HTML DOM元素和&lt;canvas&gt;上的繪制圖形是兩個不同的層，
+            它們無法交錯層疊。具體原因是因為HTML DOM元素是由HTML代碼創建並渲染的，
+            它們是瀏覽器的文檔對象的一部分。而&lt;canvas&gt;元素是一個特殊的繪圖區域，
+            它是通過JavaScript繪制的，繪制的內容與HTML文檔無關，也無法直接與HTML DOM元素進行交互。
+            如果想要在&lt;canvas&gt;上繪制與HTML DOM元素交互的圖形，可以使用JavaScript繪制的方法，
+            例如使用繪制庫（如Canvas API）來實現繪圖效果，並通過JavaScript來響應用戶交互。但是，
+            繪制在&lt;canvas&gt;上的圖形不會影響到HTML DOM元素，它們仍然是分開的兩個層級，無法直接交錯疊加。
+            因此，如果想要在頁面中同時使用HTML DOM元素和&lt;canvas&gt;繪制圖形，
+            需要將它們分別放置在不同的位置，並理解它們是兩個獨立的層，無法直接交錯疊加。
+        </q>
       </div>
       <div class="ex-contain" id="f12">
         <h3>腳本語法僅支持：javascript</h3>
@@ -328,19 +354,21 @@ HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、�
           可將相關物件配置完成後，複製右下角的數據進行查看各屬性資訊。<br>
           依json格式生成新的json即可。<br>
         </p>
-        <textarea disabled style="width:100%;resize: none;" rows="13">
-          使用api上傳可以呼叫 "POST /upload"
-          Body:
-          {
-            path: scenes/****.json,
-            content: { **數據json** }
-          }
-          注意需要登入"POST　/api/login"後取得token才能呼叫驗證成功
-          {
-            "password": "******",
-            "username": "******"
-          }
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            使用api上傳可以呼叫 "POST /upload"
+            Body:
+            {
+              path: scenes/****.json,
+              content: { **數據json** }
+            }
+            注意需要登入"POST　/api/login"後取得token才能呼叫驗證成功
+            {
+              "password": "******",
+              "username": "******"
+            }
+          </code>
+        </pre>
       </div>
       <div class="ex-contain" id="f14">
         <h3>資料綁定 Set Match，設定顏色不要用Direct feed</h3>
@@ -348,7 +376,7 @@ HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、�
           Direct feed 的功能是為了快速處理 0,1 與 true, false 對應使用<br>
           0 => false<br>
           1 => true<br>
-          勾選 direct feed 則不需額外配置 treu, false
+          勾選 direct feed 則不需額外配置 true, false
         </p>
       </div>
       <div class="ex-contain" id="f15">
@@ -395,12 +423,14 @@ HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、�
           可透過 script 動態填入相同格式的 json，達到動態換資料。<br>
           即可透過 fetch, XMLHttpRequest 等方式動態改動下拉選單內容
         </p>
-        <textarea disabled style="width:100%;resize: none;" rows="5">
-          data.a('ht.dataSource', [
-            { 'label': 'tag 1', value: 'tag_name_1' },
-            { 'label': 'tag 2', value: 'tag_name_2' }
-          ])
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            data.a('ht.dataSource', [
+              { 'label': 'tag 1', value: 'tag_name_1' },
+              { 'label': 'tag 2', value: 'tag_name_2' }
+            ])
+          </code>
+        </pre>
       </div>
       <div class="ex-contain" id="f17">
         <h3>不支持變量的數據源動態切換綁訂數據</h3>
@@ -409,31 +439,35 @@ HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、�
           2. 在綁定的數據的彈窗屬性裡修改"id"，在標簽頁 Information > id。本例中修改為 test_change <br>
           3. 修改物件綁定的數據物件：
         </p>
-        <textarea disabled style="width:100%;resize: none;" rows="15">
-          dataRefreshUtil.filesMap.forEach((item) => {
-            if (dataRefreshUtil.currentFile === item.filename) {
-                item.collectSource.forEach((obj) => {
-                    if (obj.db.id === 'test_change') {
-                        if (obj.db.targets[0].target === 'upper_0') {
-                            obj.db.targets[0] = {sourceType: 'SimpleJson', formatType: 'timeseries', scDataType: 'value', target: 'upper_1'};
-                        } else {
-                            obj.db.targets[0] = {sourceType: 'SimpleJson', formatType: 'timeseries', scDataType: 'value', target: 'upper_0'};
-                        }
-                        console.log(obj.db.id, obj.db.targets[0].target)
-                    }
-                })
-            }
-          })
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            dataRefreshUtil.filesMap.forEach((item) => {
+              if (dataRefreshUtil.currentFile === item.filename) {
+                  item.collectSource.forEach((obj) => {
+                      if (obj.db.id === 'test_change') {
+                          if (obj.db.targets[0].target === 'upper_0') {
+                              obj.db.targets[0] = {sourceType: 'SimpleJson', formatType: 'timeseries', scDataType: 'value', target: 'upper_1'};
+                          } else {
+                              obj.db.targets[0] = {sourceType: 'SimpleJson', formatType: 'timeseries', scDataType: 'value', target: 'upper_0'};
+                          }
+                          console.log(obj.db.id, obj.db.targets[0].target)
+                      }
+                  })
+              }
+            })
+          </code>
+        </pre>
         <p>
           修改 dataRefreshUtil.filesMap 中的 collectSource，找到對應物件的 ***target*** 並進行修改。 <br> 
           注意：不同數據源的 targets 物件格式可能不同，請依照個數據源參數進行改寫。  <br>
 
           target物件中的必要欄位：  <br>
-          - sourceType  <br>
-          - formatType  <br>
-          - scDataType  <br>
-          - target  <br>
+          <ul>
+            <li>sourceType</li>
+            <li>formatType</li>
+            <li>scDataType</li>
+            <li>target</li>
+          </ul>
         </p>
         <img class="ex-image" src="./assets/f17_01.png"><br/>
         <img class="ex-image" src="./assets/f17_02.png"><br/>
@@ -486,19 +520,31 @@ HTML DOM（文檔對象模型）元素是網頁中的HTML元素，如文本、�
       <h2>2D</h2>
       <div class="ex-contain" id="f_2d_01">
         <h3>2D map、video 等，與繪制圖形是兩個不同的層，它們無法交錯層疊。</h3>
-        <textarea disabled style="width:100%;resize: none;" rows="15">
-HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本、圖像、按鈕等，它們是由 HTML 代碼創建的並且可以通過CSS樣式進行布局和樣式化。而<canvas>元素是一個 HTML5 提供的元素，它是一個繪圖區域，可以通過 JavaScript 繪制 2D 圖形、圖像和動畫。
-簡而言之， HTML DOM 元素和 <canvas> 上的繪制圖形是兩個不同的層，它們無法交錯層疊。具體原因是因為 HTML DOM 元素是由 HTML 代碼創建並渲染的，它們是瀏覽器的文檔對象的一部分。而 <canvas> 元素是一個特殊的繪圖區域，它是通過 JavaScript 繪制的，繪制的內容與 HTML 文檔無關，也無法直接與 HTML DOM 元素進行交互。
-如果想要在<canvas>上繪制與 HTML DOM 元素交互的圖形，可以使用 JavaScript 繪制的方法，例如使用繪制庫（ 如Canvas API ）來實現繪圖效果，並通過 JavaScript 來響應用戶交互。但是，繪制在 <canvas> 上的圖形不會影響到 HTML DOM 元素，它們仍然是分開的兩個層級，無法直接交錯疊加。
-因此，如果想要在頁面中同時使用 HTML DOM 元素和<canvas>繪制圖形，需要將它們分別放置在不同的位置，並理解它們是兩個獨立的層，無法直接交錯疊加。
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本、圖像、按鈕等，
+            它們是由 HTML 代碼創建的並且可以通過CSS樣式進行布局和樣式化。而 &lt;canvas&gt; 元素是一個 HTML5 提供的元素，
+            它是一個繪圖區域，可以通過 JavaScript 繪制 2D 圖形、圖像和動畫。
+            簡而言之， HTML DOM 元素和 &lt;canvas&gt; 上的繪制圖形是兩個不同的層，
+            它們無法交錯層疊。具體原因是因為 HTML DOM 元素是由 HTML 代碼創建並渲染的，
+            它們是瀏覽器的文檔對象的一部分。而 &lt;canvas&gt; 元素是一個特殊的繪圖區域，
+            它是通過 JavaScript 繪制的，繪制的內容與 HTML 文檔無關，也無法直接與 HTML DOM 元素進行交互。
+            如果想要在 &lt;canvas&gt; 上繪制與 HTML DOM 元素交互的圖形，可以使用 JavaScript 繪制的方法，
+            例如使用繪制庫（ 如Canvas API ）來實現繪圖效果，並通過 JavaScript 來響應用戶交互。但是，
+            繪制在 &lt;canvas&gt; 上的圖形不會影響到 HTML DOM 元素，它們仍然是分開的兩個層級，無法直接交錯疊加。
+            因此，如果想要在頁面中同時使用 HTML DOM 元素和 &lt;canvas&gt; 繪制圖形，
+            需要將它們分別放置在不同的位置，並理解它們是兩個獨立的層，無法直接交錯疊加。
+        </code>
+        </pre>
       </div>
       <div class="ex-contain" id="f_2d_02">
         <h3>2D 事件無法觸發</h3>
-        <textarea disabled style="width:100%;resize: none;" rows="4">
-          點擊事件或其他事件無法被觸發，請確認物件是否有啟用。可交互(interactive)。
-          如果只是針對單一事件無法觸發，請透過瀏覽器開發者工具確認是否有語法撰寫錯誤情況發生。
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            點擊事件或其他事件無法被觸發，請確認物件是否有啟用。可交互(interactive)。
+            如果只是針對單一事件無法觸發，請透過瀏覽器開發者工具確認是否有語法撰寫錯誤情況發生。
+          </code>
+        </pre>
       </div>
       <div class="ex-contain" id="f_2d_03">
         <h3>2D 整合Echart第三方擴充套件</h3>
@@ -514,89 +560,91 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
           在圖指引用之後即可在預覽時呈現。<br>
           需要注意 Echart 是使用獨立的 HTML 元件，不可與繪製的圖進行交錯排列。
         </p>
-        <textarea disabled style="width:100%;resize: none;" rows="10">
-    let value = data.a('value');
-    if (value > 1) {
-        value = (value % 100) / 100;
-    } else if (value < 0) {
-        value = 0
-    }
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            let value = data.a('value');
+            if (value > 1) {
+                value = (value % 100) / 100;
+            } else if (value < 0) {
+                value = 0
+            }
 
-    var option = {
-      backgroundColor: '#fff',
-      title: {
-        left: 'center',
-        bottom: 20,
-        text: '申请方',
-        textStyle: {
-          fontWeight: 'bold',
-          fontSize: 25,
-          color: '#333'
-        },
-        subtext: '满意度',
-        subtextStyle: {
-          color: '#333'
-        }
-      },
-      series: [
-        {
-          type: "liquidFill",
-          name: '申请方',
-          radius: "85%",
-          center: ['50%', '45%'],
-          shape: "path://M657.462,490.835c-21.359-45.771-82.071-35.092-82.471,18.032-0.221,29.177,28.91,40.083,48.306,51.747,18.807,11.312,32.193,26.786,34.291,33.373,1.8-6.454,16.705-22.366,34.115-33.689,19.036-12.382,48.527-22.572,48.306-51.748C739.607,455.294,677.839,446.889,657.462,490.835Z",
-          data: [value, value, value], //datat
-          color: ['#fc8b8b'],
-          outline: {
-            show: false,
-          },
-          backgroundStyle: {
-            color: '#edd4d4',
-            borderColor: "#fff",
-            borderWidth: 1,
-            shadowColor: "rgba(0, 0, 0, 0.4)",
-            shadowBlur: 0,
-          },
-          label: {
-            normal: {
-              position: ["50%", "40%"],
-              formatter: () => {
-                return Math.round(value * 100) + '%'
+            var option = {
+              backgroundColor: '#fff',
+              title: {
+                left: 'center',
+                bottom: 20,
+                text: '申请方',
+                textStyle: {
+                  fontWeight: 'bold',
+                  fontSize: 25,
+                  color: '#333'
+                },
+                subtext: '满意度',
+                subtextStyle: {
+                  color: '#333'
+                }
               },
-              textStyle: {
-                fontSize: 30,
-              },
-            },
-          },
-        },
-      ],
-    };
+              series: [
+                {
+                  type: "liquidFill",
+                  name: '申请方',
+                  radius: "85%",
+                  center: ['50%', '45%'],
+                  shape: "path://M657.462,490.835c-21.359-45.771-82.071-35.092-82.471,18.032-0.221,29.177,28.91,40.083,48.306,51.747,18.807,11.312,32.193,26.786,34.291,33.373,1.8-6.454,16.705-22.366,34.115-33.689,19.036-12.382,48.527-22.572,48.306-51.748C739.607,455.294,677.839,446.889,657.462,490.835Z",
+                  data: [value, value, value], //datat
+                  color: ['#fc8b8b'],
+                  outline: {
+                    show: false,
+                  },
+                  backgroundStyle: {
+                    color: '#edd4d4',
+                    borderColor: "#fff",
+                    borderWidth: 1,
+                    shadowColor: "rgba(0, 0, 0, 0.4)",
+                    shadowBlur: 0,
+                  },
+                  label: {
+                    normal: {
+                      position: ["50%", "40%"],
+                      formatter: () => {
+                        return Math.round(value * 100) + '%'
+                      },
+                      textStyle: {
+                        fontSize: 30,
+                      },
+                    },
+                  },
+                },
+              ],
+            };
 
-    if (!cache.htmlView) {
-        cache.htmlView = document.createElement('div');
-        cache.htmlView.style.position = 'absolute';
-        cache.htmlChart = echarts.init(cache.htmlView);
+            if (!cache.htmlView) {
+                cache.htmlView = document.createElement('div');
+                cache.htmlView.style.position = 'absolute';
+                cache.htmlChart = echarts.init(cache.htmlView);
 
-        // layoutHTML will be called when the data needs to be drawing
-        cache.htmlView.layoutHTML = function() {
-            gv.layoutHTML(data, cache.htmlView, false);
-            cache.htmlChart.resize();
-        };
-    }
+                // layoutHTML will be called when the data needs to be drawing
+                cache.htmlView.layoutHTML = function() {
+                    gv.layoutHTML(data, cache.htmlView, false);
+                    cache.htmlChart.resize();
+                };
+            }
 
-    // update data
-    option.color = [data.a('lineColor1'), data.a('lineColor2')];
-    option.textStyle = { color: data.a('textColor') };
-    cache.htmlChart.setOption(option);
+            // update data
+            option.color = [data.a('lineColor1'), data.a('lineColor2')];
+            option.textStyle = { color: data.a('textColor') };
+            cache.htmlChart.setOption(option);
 
-    // html for showing
-    return cache.htmlView;
-        </textarea>
+            // html for showing
+            return cache.htmlView;
+        </code>
+        </pre>
       </div>
       <div class="ex-contain" id="f_2d_04">
         <h3>2D Table 圖標客製化欄位內容</h3>
         <p>
-          可參考內漸圖紙： displays/builtIn/table.json<br>
+          可參考內建圖紙： displays/builtIn/table.json<br>
         </p>
         <img class="ex-image" src="./assets/f_2d_04_01.png">
         <p>
@@ -609,16 +657,18 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
       <h2>3D</h2>
       <div class="ex-contain" id="f_3d_01">
         <h3>圖紙步進距離設定</h3>
-        <textarea disabled style="width:100%;resize: none;" rows="4">
-          g3d.setMoveStep(number)
-          g3d.getMoveStep()
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            g3d.setMoveStep(number)
+            g3d.getMoveStep()
+          </code>
+        </pre>
       </div>
       <div class="ex-contain" id="f_3d_02">
         <h3>3D 貼皮重複 UV</h3>
         <p>
           要正確貼皮，圖片大小有限制，
-          贴图大小要是2的n次方，如: 128 * 256  
+          贴图大小要是2的n次方，如: 128 * 256 = 2<sup>7</sup>*2<sup>8</sup>  
         </p>
       </div>
       <div class="ex-contain" id="f_3d_03">
@@ -627,7 +677,7 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
           場景可以從以下幾個方面優化：  <br>
           1、讓設計師輕量化模型，對模型進行減面，不必要的細節不要精細建模，使用貼圖代替，ht的3d場景模型總面數不建議超過 200 萬面。  <br>
           2、做批量優化：https://www.hightopo.com/guide/guide/core/batch/ht-batch-guide.html  <br>
-          3、節點做矢量緩存 node.s('texture.cache',true) <br>
+          3、節點做矢量緩存 <code>node.s('texture.cache',true) </code><br>
         </p>
       </div>
       <div class="ex-contain" id="f_3d_04">
@@ -650,12 +700,14 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
       </div>
       <div class="ex-contain" id="f_3d_06">
         <h3>3D 調適訊息，效能資訊顯示</h3>
-        <textarea disabled style="width:100%;resize: none;" rows="6">
-          // 2D
-          graphView.showDebugTip();
-          // 3D
-          graph3dView.showDebugTip();
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            // 2D
+            graphView.showDebugTip();
+            // 3D
+            graph3dView.showDebugTip();
+          </code>
+        </pre>
       </div>
       <div class="ex-contain" id="f_3d_07">
         <h3>3D 如何複製內建obj模型進行修改。 </h3>
@@ -674,95 +726,105 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
           比較簡易的方式是針對 Node 進行屬性替換，針對 <mark>matDef</mark> 屬性修改。<br>
           matDef 中的 key 值為 fbx 內部定義。
         </p>
-        <textarea disabled style="width:100%;resize: none;" rows="6">
-          dataModel.getDataByTag('aaa').s(
-            'matDef',
-            { 
-              外墙: "materials/builtIn/building/brickPillar.json"
-            }
-          )
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            dataModel.getDataByTag('aaa').s(
+              'matDef',
+              { 
+                外墙: "materials/builtIn/building/brickPillar.json"
+              }
+            )
+          </code>
+        </pre>
       </div>
       <h2>Overlay</h2>
       <div class="ex-contain" id="f_layer_01">
         <h3>取得各層 graphview 或 dataModel</h3>
         <img class="ex-image" src="./assets/f_overlay_01_01.png">
         <img class="ex-image" src="./assets/f_overlay_01_02.png">
-        <textarea disabled style="width:100%;resize: none;" rows="6">
-          可以透過每個事件function中傳入的gv,view,dm等參數取得。  
-          graph2d = gv;
-          之後可以從全域變數中提取，此方法可以避免因檔案複製路徑檔名不同而需要修改的問題。
-          其次，可透過全域變數 "commonViewUtil.currentFiles" 取得當前所有開啟的圖紙場景物件，
-          包含 graphView 與 dataModel ，使用此方式需要知道要操控的是哪個疊加層檔案名稱。
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            可以透過每個事件function中傳入的gv,view,dm等參數取得。  
+            graph2d = gv;
+            之後可以從全域變數中提取，此方法可以避免因檔案複製路徑檔名不同而需要修改的問題。
+            其次，可透過全域變數 "commonViewUtil.currentFiles" 取得當前所有開啟的圖紙場景物件，
+            包含 graphView 與 dataModel ，使用此方式需要知道要操控的是哪個疊加層檔案名稱。
+          </code>
+        </pre>
       </div>
       <h2>Data surce plugin</h2>
       <div class="ex-contain" id="f_data_01">
         <h3>sourceFormPane 使用一般 html 設計</h3>
         <p>例如添加連結 a</p>
-        <textarea disabled style="width:100%;resize: none;" rows="8">
-          var href = document.createElement('a');
-          href.setAttribute('href', 'http://www.******.com');
-          href.innerHTML = 'http://www.*****.com';
-          href.style.font = sourceFormPane.getLabelFont();
-          href.style.lineHeight = sourceFormPane.getRowHeight() + 'px';
-          href.style.textAlign = 'right';
-          sourceFormPane.addRow([href], [0.1]);
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            var href = document.createElement('a');
+            href.setAttribute('href', 'http://www.******.com');
+            href.innerHTML = 'http://www.*****.com';
+            href.style.font = sourceFormPane.getLabelFont();
+            href.style.lineHeight = sourceFormPane.getRowHeight() + 'px';
+            href.style.textAlign = 'right';
+            sourceFormPane.addRow([href], [0.1]);
+          </code>
+        </pre>
         <p>
           dataBindingUI ，使用 input & datalist 做測點下拉篩選功能<br>
         </p>
-        <textarea disabled style="width:100%;resize: none;" rows="8">
-          var div = document.createElement('div');
-          div.id = 'divID';
-          var input = document.createElement('input');
-          input.type = 'text';
-          input.style.font = sourceFormPane.getLabelFont();
-          input.style.height = sourceFormPane.getRowHeight() + 'px';
-          input.style.lineHeight = sourceFormPane.getRowHeight() + 'px';
-          input.id = 'testInput';
-          input.setAttribute('list', 'tags');
-          input.addEventListener('input', (e) => {
-              const userInput = e.target.value;
-              console.log(userInput)
-              const tagsDatalist = document.getElementById('tags');
-              const options = tagsDatalist.querySelectorAll('option');
-              options.forEach(option => {
-                  if (option.value.indexOf(userInput) === -1) {
-                    option.style.display = 'none';
-                  } else {
-                    option.style.display = 'block';
-                  }
-              });
-          });
-          const tags = [
-              'dv_tag_01',
-              'adam_tag_01',
-              'iot_tag_01',
-              'wise_tag_01'
-          ];
-          var datalist = document.createElement('datalist');
-          datalist.id = 'tags';
-          tags.forEach(city => {
-              const option = document.createElement('option');
-              option.value = city;
-              datalist.appendChild(option);
-          });
-          div.appendChild(input);
-          div.appendChild(datalist);
-          sourceFormPane.addRow([{
-              element: ''
-          }, {element: div, id: 'divID'}], [55, 0.1]);
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            var div = document.createElement('div');
+            div.id = 'divID';
+            var input = document.createElement('input');
+            input.type = 'text';
+            input.style.font = sourceFormPane.getLabelFont();
+            input.style.height = sourceFormPane.getRowHeight() + 'px';
+            input.style.lineHeight = sourceFormPane.getRowHeight() + 'px';
+            input.id = 'testInput';
+            input.setAttribute('list', 'tags');
+            input.addEventListener('input', (e) => {
+                const userInput = e.target.value;
+                console.log(userInput)
+                const tagsDatalist = document.getElementById('tags');
+                const options = tagsDatalist.querySelectorAll('option');
+                options.forEach(option => {
+                    if (option.value.indexOf(userInput) === -1) {
+                      option.style.display = 'none';
+                    } else {
+                      option.style.display = 'block';
+                    }
+                });
+            });
+            const tags = [
+                'dv_tag_01',
+                'adam_tag_01',
+                'iot_tag_01',
+                'wise_tag_01'
+            ];
+            var datalist = document.createElement('datalist');
+            datalist.id = 'tags';
+            tags.forEach(city => {
+                const option = document.createElement('option');
+                option.value = city;
+                datalist.appendChild(option);
+            });
+            div.appendChild(input);
+            div.appendChild(datalist);
+            sourceFormPane.addRow([{
+                element: ''
+            }, {element: div, id: 'divID'}], [55, 0.1]);
+          </code>
+        </pre>
         <p>
           applyDataBindingUI 時需要將對應的值讀取返回到 target 物件下存取。
         </p>
-        <textarea disabled style="width:100%;resize: none;" rows="8">
-          var targets = [];
-          target.tags = document.getElementById('testInput').value;
-          targets.push(target);
-          return targets;
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            var targets = [];
+            target.tags = document.getElementById('testInput').value;
+            targets.push(target);
+            return targets;
+          </code>
+        </pre>
       </div>
       <div class="ex-contain" id="f_data_02">
         <h3>APM 網路傳輸有資料畫面沒有</h3>
@@ -770,7 +832,7 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
           SaaS Composer的APM數據源中，默認要求數據要在五分鐘之內，
           如果超出五分鐘了就會被認為是無效數據而丟棄處理。
           數據時間落後與實際時間有6、7分鐘以上了，數據會被當作無效數據。
-          可以从两个方面处理此问题<br>
+          可以可以從兩個方面處理此問題<br>
           1.	確認網關時間是否落後與實際時間，如果有落後同步一下實際時間就可以，
           還有就是邊緣端上傳數據的時間要在五分鐘之內，
           超出五分鐘的話後面時間就會被認為是無效數據了<br>
@@ -802,86 +864,88 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
           目前寫法是直接修改格式多添加方向  [“經度, 緯度, 方向角度”, timestamp]   <br>
         </p>
         <p>開啟場景中加入:</p>
-        <textarea disabled style="width:100%;resize: none;" rows="10">
-          window.LeafIcon = L.Icon.extend({
-            options: {
-                // shadowUrl: 'assets/leaf-orange.png?org_id=9',
-                iconSize:     [50, 50],
-                iconAnchor:   [0, 0],
-                popupAnchor:  [-3, -76],
-                degrees: 45
-            },
-            // PROPERTIES
-          x: 66,
-          y: 85,
-          x_fac: 0.18,
-          y_fac: 0.18,
-          ctx: null,
-          lastHeading: 0,
-          lastWindDirection: 0,
-            createIcon: function () {
-            var s = this.options.iconSize;
-                const canvas = document.createElement('canvas')
-                canvas.width = 100;
-                canvas.height = 100;
-                canvas.style.width = 100 + 'px'
-                canvas.style.height = 100 + 'px'
-                canvas.style.marginLeft = '-25px';
-                canvas.style.marginTop  = '-25px';
-                var ctx = canvas.getContext("2d");
-                ctx.save();
-                ctx.translate(s[0] / 2, s[1] / 2);
-                ctx.rotate(this.options.degrees * Math.PI / 180);
-                ctx.restore();
-                ctx.strokeStyle = '#FF0000'
-                ctx.beginPath();
-                var theta = this.options.degrees * Math.PI / 180
-                var theta120 = 120 * Math.PI / 180
-                var r = Math.min(s[0], s[1]) / 2
-                var dx = r * Math.cos(theta)
-                var dy = r * Math.sin(theta)
-                var dx1 = r * Math.cos(theta - theta120)
-                var dy1 = r * Math.sin(theta - theta120)
-                var dx2 = r * Math.cos(theta + theta120)
-                var dy2 = r * Math.sin(theta + theta120)
-                ctx.moveTo(25 + dx, 25 + dy);
-                ctx.lineTo(25 + dx1, 25 + dy1);
-                ctx.lineTo(25, 25);
-                ctx.lineTo(25 + dx2, 25 + dy2);
-                ctx.closePath();
-                ctx.fill();
-                ctx.stroke();
-                return canvas;
-            }
-          });
-          
-          
-          window.changeStringtoMapArray = function(strArray){
-            var geographicArrays = []
-            if (Array.isArray(strArray)){
-              strArray.forEach(element => {
-                var arr = element.split(',')
-                geographicArrays.push([arr[1],arr[0],arr[2]])
-                // geographicArrays.push([arr[0],arr[1]])
-              });
-            }
-            return geographicArrays
-          }
-          
-          window.boatMarker = function(leafletMap, markerLayer, data, jsonData, infomation, open){
-              var d = changeStringtoMapArray(data);
-              var degree = (d[d.length - 1] && d[d.length - 1][2]) ? d[d.length - 1][2] : 0
-              var a0 = (d[d.length - 1] && d[d.length - 1][0]) ? d[d.length - 1][0] : 0
-              var a1 = (d[d.length - 1] && d[d.length - 1][1]) ? d[d.length - 1][1] : 0
-              var greenIcon = new LeafIcon({degrees: degree})
-              var marker = L.marker([a0, a1], {icon: greenIcon}).addTo(markerLayer);
-              if (infomation){
-                  marker.bindPopup(infomation)
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            window.LeafIcon = L.Icon.extend({
+              options: {
+                  // shadowUrl: 'assets/leaf-orange.png?org_id=9',
+                  iconSize:     [50, 50],
+                  iconAnchor:   [0, 0],
+                  popupAnchor:  [-3, -76],
+                  degrees: 45
+              },
+              // PROPERTIES
+            x: 66,
+            y: 85,
+            x_fac: 0.18,
+            y_fac: 0.18,
+            ctx: null,
+            lastHeading: 0,
+            lastWindDirection: 0,
+              createIcon: function () {
+              var s = this.options.iconSize;
+                  const canvas = document.createElement('canvas')
+                  canvas.width = 100;
+                  canvas.height = 100;
+                  canvas.style.width = 100 + 'px'
+                  canvas.style.height = 100 + 'px'
+                  canvas.style.marginLeft = '-25px';
+                  canvas.style.marginTop  = '-25px';
+                  var ctx = canvas.getContext("2d");
+                  ctx.save();
+                  ctx.translate(s[0] / 2, s[1] / 2);
+                  ctx.rotate(this.options.degrees * Math.PI / 180);
+                  ctx.restore();
+                  ctx.strokeStyle = '#FF0000'
+                  ctx.beginPath();
+                  var theta = this.options.degrees * Math.PI / 180
+                  var theta120 = 120 * Math.PI / 180
+                  var r = Math.min(s[0], s[1]) / 2
+                  var dx = r * Math.cos(theta)
+                  var dy = r * Math.sin(theta)
+                  var dx1 = r * Math.cos(theta - theta120)
+                  var dy1 = r * Math.sin(theta - theta120)
+                  var dx2 = r * Math.cos(theta + theta120)
+                  var dy2 = r * Math.sin(theta + theta120)
+                  ctx.moveTo(25 + dx, 25 + dy);
+                  ctx.lineTo(25 + dx1, 25 + dy1);
+                  ctx.lineTo(25, 25);
+                  ctx.lineTo(25 + dx2, 25 + dy2);
+                  ctx.closePath();
+                  ctx.fill();
+                  ctx.stroke();
+                  return canvas;
               }
-              if (open) marker.openPopup();
-              return marker;
-          }
-        </textarea>
+            });
+            
+            
+            window.changeStringtoMapArray = function(strArray){
+              var geographicArrays = []
+              if (Array.isArray(strArray)){
+                strArray.forEach(element => {
+                  var arr = element.split(',')
+                  geographicArrays.push([arr[1],arr[0],arr[2]])
+                  // geographicArrays.push([arr[0],arr[1]])
+                });
+              }
+              return geographicArrays
+            }
+            
+            window.boatMarker = function(leafletMap, markerLayer, data, jsonData, infomation, open){
+                var d = changeStringtoMapArray(data);
+                var degree = (d[d.length - 1] && d[d.length - 1][2]) ? d[d.length - 1][2] : 0
+                var a0 = (d[d.length - 1] && d[d.length - 1][0]) ? d[d.length - 1][0] : 0
+                var a1 = (d[d.length - 1] && d[d.length - 1][1]) ? d[d.length - 1][1] : 0
+                var greenIcon = new LeafIcon({degrees: degree})
+                var marker = L.marker([a0, a1], {icon: greenIcon}).addTo(markerLayer);
+                if (infomation){
+                    marker.bindPopup(infomation)
+                }
+                if (open) marker.openPopup();
+                return marker;
+            }
+          </code>
+        </pre>
       </div>
       <div class="ex-contain" id="e_2d_04">
         <h3>2D AR 手機相機互動</h3>
@@ -938,19 +1002,22 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
       <div class="ex-contain" id="e_2d_s_01">
         <h3>整合Echart第三方擴充套件</h3>
         <img class="ex-image" src="./assets/f_2d_03_02.png"><br/>
+        <p>說明請參考FAQ.</p>
         <a href="./example/e_2d_s_01.zip" target="_blank">Download</a>
       </div>
       <div class="ex-contain" id="e_3d_01">
         <h3>3D 水管流動</h3>
-        <textarea disabled style="width:100%;resize: none;" rows="10">
-        主要是修改貼皮的offset
-        1. 使用管線 tag = line
-        2. 設定貼皮
-        3. 在執行期間：
-        if(!window.offset) {window.offset = 0}
-        window.offset = window.offset > 0 ? 0 : 0.1
-        dataModel.getDataByTag('line').s('shape3d.uv.offset', [window.offset, 0])
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            主要是修改貼皮的offset
+            1. 使用管線 tag = line
+            2. 設定貼皮
+            3. 在執行期間：
+            if(!window.offset) {window.offset = 0}
+            window.offset = window.offset > 0 ? 0 : 0.1
+            dataModel.getDataByTag('line').s('shape3d.uv.offset', [window.offset, 0])
+          </code>
+        </pre>
         <img class="ex-image" src="./assets/e_3d_01_01.png"><br/>
         <p>
           <a href="./example/e_3d_01_01.zip" target="_blank">Download</a>
@@ -998,14 +1065,16 @@ HTML DOM （文檔對象模型）元素是網頁中的 HTML 元素，如文本�
       <div class="ex-contain" id="e_3d_06">
         <h3>3D 動態載入 models</h3>
         <img class="ex-image" src="./assets/e_3d_06_01.png"><br/>
-        <textarea disabled style="width:100%;resize: none;" rows="12">
-          const node = new ht.Node();
-          node.s({
-              'shape3d': 'models/elevator.json'
-          });
-          node.p3(0, 0, 0);
-          dm.add(node);
-        </textarea>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            const node = new ht.Node();
+            node.s({
+                'shape3d': 'models/elevator.json'
+            });
+            node.p3(0, 0, 0);
+            dm.add(node);
+          </code>
+        </pre>
         <a href="./example/e_3d_06.zip" target="_blank">Download</a>
       </div>
       <div class="ex-contain" id="e_overlay_01">

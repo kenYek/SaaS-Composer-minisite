@@ -6,6 +6,7 @@
   --gray1: #ddd;
   --gray2: #f2f2f2;
   --gray3: #f5f5f5;
+  --gray4: #787878;
   --banner01: rgb(0, 113, 155);
   --black: #000000;
   --black1: #333333;
@@ -41,6 +42,10 @@ nav a:hover {
   color: var(--banner01);
 }
 
+mark {
+  background-color: var(--gray4);
+  color: var(--white)
+}
 
 section {
   position: relative;
@@ -121,7 +126,7 @@ a:hover::after {
   opacity: 1; /* 鼠标hover时显示箭头 */
 }
 
-div.codeArea {
+.codeArea {
   position: relative;
   box-sizing: border-box;
   margin-top: 10px;
@@ -129,6 +134,8 @@ div.codeArea {
   color: var(--white);
   padding: 10px;
 }
+
+
 
 table {
   width: 100%;

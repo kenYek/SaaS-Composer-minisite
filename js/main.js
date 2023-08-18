@@ -28,6 +28,7 @@ switchButton.addEventListener('click', () => {
     root.style.setProperty('--gray1', '#ddd');
     root.style.setProperty('--gray2', '#f2f2f2');
     root.style.setProperty('--gray3', '#f5f5f5');
+    root.style.setProperty('--gray4', '#787878');
     root.style.setProperty('--black', '#000000');
     root.style.setProperty('--black1', '#333333');
   } else {
@@ -36,6 +37,7 @@ switchButton.addEventListener('click', () => {
     root.style.setProperty('--gray1', '#222');
     root.style.setProperty('--gray2', '#0d0d0d');
     root.style.setProperty('--gray3', '#0a0a0a');
+    root.style.setProperty('--gray4', '#787878');
     root.style.setProperty('--black', '#ffffff');
     root.style.setProperty('--black1', '#cccccc');
   }
