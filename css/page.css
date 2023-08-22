@@ -1,0 +1,66 @@
+@page {
+  size: A4;
+  /* 或 size: 210mm 297mm; */
+  margin-top: 1cm;
+  margin-right: 1.5cm;
+  margin-bottom: 1cm;
+  margin-left: 1.5cm;
+
+  @bottom-left {
+    content: "Advantech";
+  }
+
+  @bottom-center {
+    content: "Page " counter(page);
+  }
+}
+
+
+@media print {
+  .page-break {
+    page-break-before: always;
+  }
+  .no-print {
+    display: none;
+  }
+  .show-in-print {
+    display: block; /* 或 display: inline; 或其他顯示屬性 */
+  }
+
+  #bannerSection{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+    height: 100vh; /* 視窗高度 */
+  }
+  #bannerArea {
+    width: 100%;
+    text-align: center;
+  }
+  .banner-wrap {
+    width: 100%;
+    text-align: center;
+    color: var(--black);
+  }
+  mark {
+    background-color: var(--white);
+    color: var(--black);
+    font-style:oblique;
+  }
+  #about{
+    text-align: center; /* 水平置中 */
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+    height: 100vh; /* 視窗高度 */
+  }
+}
+
+/* 在非打印模式下隱藏 */
+@media not print {
+  .hide-in-print {
+    display: none;
+  }
+}

@@ -7,6 +7,7 @@
   <meta name="description" content="The cloud based graphical control tool">
   <title>SaaS Composer</title>
   <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href="./css/page.css">
   <link rel="apple-touch-icon" href="./assets/banner01.png">
   <link rel="icon" type="image/png" href="./assets/banner01.png">
   <meta property="og:type" content="website" />
@@ -25,19 +26,20 @@
 </head>
 
 <body>
-  <div class="gradient-div"></div>
+  <div class="gradient-div no-print"></div>
   <section id="bannerSection">
     <div class="container" id="bannerArea">
       <div class="banner-wrap">
         <h1>SaaS Composer FAQ</h1>
         <h2>Frequently Asked Question & Examples</h2>
       </div>
-      <div class="banner-wrap-img">
+      <div class="banner-wrap-img no-print">
 
       </div>
     </div>
   </section>
-  <nav class="menu">
+  <div class="page-break"></div>
+  <nav class="menu no-print">
     <div class="container">
       <a href="#about">About</a> |
       <a href="#FAQ">Frequently Asked Question</a> |
@@ -55,6 +57,7 @@
       </article>
     </div>
   </section>
+  <div class="page-break"></div>
   <section id="FAQ">
     <div class="container">
       <h2>Frequently Asked Question</h2>
@@ -121,7 +124,7 @@
       </ul>
     </div>
   </section>
-  <section id="Example">
+  <section id="Example" class="no-print">
     <div class="container">
       <h2>Examples</h2>
       <ul>
@@ -173,6 +176,7 @@
       </ul> 
     </div>
   </section>
+  <div class="page-break"></div>
   <section id="FAQList">
     <div class="container">
       <h2>General</h2>
@@ -843,7 +847,7 @@
       </div>
     </div>
   </section>
-  <section id="ExampleList">
+  <section id="ExampleList" class="no-print">
     <div class="container">
       <div class="ex-contain" id="e_2d_01">
         <h3>2D 閃爍</h3>
@@ -1097,6 +1101,7 @@
       <div class="ex-contain"></div>
     </div>
   </section>
+  <div class="page-break"></div>
   <section id="reference">
     <div class="container">
       <article>
@@ -1106,24 +1111,58 @@
             <a href="https://docs.wise-paas.advantech.com/en/Guides_and_API_References/ApplicationServices/SaaS_Composer/1641432206032601142/v3.1.5" target="_blank">
               <span>Technical Documentation</span>
             </a>
+            <span class="hide-in-print show-in-print">(https://docs.wise-paas.advantech.com/en/Guides_and_API_References/ApplicationServices/SaaS_Composer/1641432206032601142/v3.1.5)</span>
           </li>
-          <li><a href="https://www.w3schools.com/js/default.asp" target="_blank">w3schools JavaScript Tutorial</a></li>
-          <li><a href="https://www.w3schools.com/graphics/canvas_intro.asp" target="_blank">w3schools Canvas Tutorial</a></li>
-          <li><a href="https://www.w3schools.com/html/html5_canvas.asp" target="_blank">w3schools Canvas Graphics</a></li>
-          <li><a href="https://www.hightopo.com/index.html" target="_blank">HT 图扑软件</a></li>
-          <li><a href="https://hightopo.com/guide/sdkeditor/#/zh/editor/" target="_blank">HT 編輯器使用</a></li>
-          <li><a href="https://www.hightopo.com/guide/guide/core/treetableview/examples/example_structure.html" target="_blank">HT 範例手冊</a></li>
-          <li><a href="https://www.hightopo.com/guide/doc/" target="_blank">HT API查詢頁面</a></li>
-          <li><a href="https://hightopo.com/guide/sdkeditor/#/zh/SDK/" target="_blank">HT SDK 物件結構 & HT widget</a></li>
-          <li><a href="https://hightopo.com/ui/guide/zh/nav.html" target="_blank">HT UI範例手册导航</a></li>
-          <li><a href="https://hightopo.com/ui/jsdoc/zh/" target="_blank">HT UI API 文件</a></li>
-          <li><a href="https://hightopo.com/guide/sdkeditor/#/zh/UI/README" target="_blank">HT 入门手册</a></li>
+          <li>
+            <a href="https://www.w3schools.com/js/default.asp" target="_blank">w3schools JavaScript Tutorial</a>
+            <span class="hide-in-print show-in-print">(https://www.w3schools.com/js/default.asp)</span>
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/graphics/canvas_intro.asp" target="_blank">w3schools Canvas Tutorial</a>
+            <span class="hide-in-print show-in-print">(https://www.w3schools.com/graphics/canvas_intro.asp)</span>
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/html/html5_canvas.asp" target="_blank">w3schools Canvas Graphics</a>
+            <span class="hide-in-print show-in-print">(https://www.w3schools.com/html/html5_canvas.asp)</span>
+          </li>
+          <li>
+            <a href="https://www.hightopo.com/index.html" target="_blank">HT 图扑软件</a>
+            <span class="hide-in-print show-in-print">(https://www.hightopo.com/index.html)</span>
+          </li>
+          <li>
+            <a href="https://hightopo.com/guide/sdkeditor/#/zh/editor/" target="_blank">HT 編輯器使用</a>
+            <span class="hide-in-print show-in-print">(https://hightopo.com/guide/sdkeditor/#/zh/editor/)</span>
+          </li>
+          <li>
+            <a href="https://www.hightopo.com/guide/guide/core/treetableview/examples/example_structure.html" target="_blank">HT 範例手冊</a>
+            <span class="hide-in-print show-in-print">(https://www.hightopo.com/guide/guide/core/treetableview/examples/example_structure.html)</span>
+          </li>
+          <li>
+            <a href="https://www.hightopo.com/guide/doc/" target="_blank">HT API查詢頁面</a>
+            <span class="hide-in-print show-in-print">(https://www.hightopo.com/guide/doc/)</span>
+          </li>
+          <li>
+            <a href="https://hightopo.com/guide/sdkeditor/#/zh/SDK/" target="_blank">HT SDK 物件結構 & HT widget</a>
+            <span class="hide-in-print show-in-print">(https://hightopo.com/guide/sdkeditor/#/zh/SDK/)</span>
+          </li>
+          <li>
+            <a href="https://hightopo.com/ui/guide/zh/nav.html" target="_blank">HT UI範例手册导航</a>
+            <span class="hide-in-print show-in-print">(https://hightopo.com/ui/guide/zh/nav.html)</span>
+          </li>
+          <li>
+            <a href="https://hightopo.com/ui/jsdoc/zh/" target="_blank">HT UI API 文件</a>
+            <span class="hide-in-print show-in-print">(https://hightopo.com/ui/jsdoc/zh/)</span>
+          </li>
+          <li>
+            <a href="https://hightopo.com/guide/sdkeditor/#/zh/UI/README" target="_blank">HT 入门手册</a>
+            <span class="hide-in-print show-in-print">(https://hightopo.com/guide/sdkeditor/#/zh/UI/README)</span>
+          </li>
         </ul>
       </article>
     </div>
   </section>
   <!-- Scroll to Top Button -->
-  <div id="scrollToTopBtn" onclick="scrollToTop()">
+  <div id="scrollToTopBtn" onclick="scrollToTop()" class="no-print">
     &#8679;
   </div>
   <script src="./js/main.js"></script>

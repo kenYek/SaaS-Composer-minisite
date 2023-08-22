@@ -44,7 +44,7 @@ nav a:hover {
 
 mark {
   background-color: var(--gray4);
-  color: var(--white)
+  color: var(--white);
 }
 
 section {
@@ -213,5 +213,17 @@ tbody tr:hover {
   }
   100% {
     background-position: 0 0;
+  }
+}
+
+pre{
+  overflow: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    box-sizing: border-box;
+    padding: 0px 10px;
+    width: 100%;
   }
 }
