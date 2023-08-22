@@ -45,6 +45,7 @@
       <a href="#FAQ">Frequently Asked Question</a> |
       <a href="#Example">Examples</a>
       <a href="#reference">Reference</a>
+      <a href="manual.html">Manual</a>
       <button id="switchButton" class="isMainColor"></button>
     </div>
   </nav>
@@ -141,10 +142,12 @@
             <li><a href="#e_2d_08">2D 圖標捲動軸範例</a></li>
             <li><a href="#e_2d_09">2D 表格與分頁連動</a></li>
             <li><a href="#e_2d_10">2D 表格與分頁連動 2</a></li>
+            <li><a href="#e_2d_11">2D 熱點圖</a></li>
             <li>
               <h3>圖標</h3>
               <ul>
                 <li><a href="#e_2d_s_01">整合Echart第三方擴充套件</a></li>
+                <li><a href="#e_2d_s_02">2D 圖標中使用 ht.ui</a></li>
               </ul>
             </li>
           </ul>
@@ -158,6 +161,9 @@
             <li><a href="#e_3d_04">3D 裁切</a></li>
             <li><a href="#e_3d_05">3D 天空球 (背景圖)</a></li>
             <li><a href="#e_3d_06">3D 動態載入 models</a></li>
+            <li><a href="#e_3d_07">3D 熱點圖</a></li>
+            <li><a href="#e_3d_08">3D 導航巡視</a></li>
+            <li><a href="#e_3d_08">3D 燈光控制</a></li>
           </ul>
         </li>
         <li>
@@ -1003,11 +1009,95 @@
         </p>
         <a href="./example/e_2d_10.zip" target="_blank">Download</a>
       </div>
+      <div class="ex-contain" id="e_2d_11">
+        <h3>2D 熱點圖</h3>
+        <img class="ex-image" src="./assets/e_2d_11_01.png"><br/>
+        <p>
+          設定熱點半徑、值調整熱點大小
+        </p>
+        <a href="./example/e_2d_11.zip" target="_blank">Download</a>
+      </div>
       <div class="ex-contain" id="e_2d_s_01">
         <h3>整合Echart第三方擴充套件</h3>
         <img class="ex-image" src="./assets/f_2d_03_02.png"><br/>
         <p>說明請參考FAQ.</p>
         <a href="./example/e_2d_s_01.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_2d_s_02">
+        <h3>2D 圖標中使用 ht.ui</h3>
+        <p>
+          主要是在 `renderHTML` 中進行添加  
+        </p>
+        <pre>
+          <code>
+            if (!cache.splitLayout) {
+              var splitLayout = cache.splitLayout = new ht.ui.SplitLayout();
+              splitLayout.setPositionType('absoluteFirst');
+              splitLayout.setOrientation('v');
+              splitLayout.setPosition(30);
+              splitLayout.setSplitterVisible(false);
+              splitLayout.setBorder(new ht.ui.border.CSSBorder(1, ht.ui.uiTheme.borderColor));
+  
+              var table = cache.table = new ht.ui.TableView();
+              var tableHeader = new ht.ui.TableHeader(table);
+  
+              splitLayout.addView(tableHeader, {
+                  region: 'first'
+              });
+              splitLayout.addView(table, {
+                  region: 'second'
+              });
+              table.setScrollBarMode('auto');
+  
+              var column = new ht.ui.Column();
+              column.setName('name');
+              column.setDisplayName('Name');
+              column.setEditable(true);
+              column.setEditorClass('ht.ui.editor.StringEditor');
+              table.getColumnModel().add(column);
+  
+              column = new ht.ui.Column();
+              column.setWidth(300);
+              column.setDisplayName('Content');
+              column.setName('content');
+              column.setAccessType('attr');
+              table.getColumnModel().add(column);
+  
+  
+              cache.splitLayout.layoutHTML = function () {
+                  gv.layoutHTML(data, cache.splitLayout, true);
+              };
+              splitLayout.getView().addEventListener('mousedown', function (e) {
+                  e.stopPropagation();
+              })
+              splitLayout.beforeCanvas = true;
+            }
+            if (cache.splitLayout) {
+                cache.table.dm().clear()
+                // data.a('onload') && data.a('onload')(cache.table)
+                if (data.a('tableData') && Array.isArray(data.a('tableData'))) {  // 透過傳入 data 讀取傳入資料將資料填入 table  
+                    const sentences = data.a('tableData')
+                    for (var i = 0; i < sentences.length; i++) {
+                        const sentence = sentences[i];
+                        var datacol = new ht.Data();
+                        for (let key in sentence){
+                            if(key === 'name') {
+                                datacol.setName(sentence.name);
+                            } else {
+                                datacol.a(key, sentence[key]);   
+                            }
+                        }
+                        console.log(datacol)
+                        cache.table.dm().add(datacol);
+                    }
+                }
+            }
+            return cache.splitLayout; // 將最外層 splitLayout 回傳添加到圖標
+          </code>
+        </pre>
+        <p>如同一般圖標可以進行數據綁定設定</p>
+        <img class="ex-image" src="./assets/e_2d_s_02_01.png"><br/>
+        <a href="./example/e_2d_s_02.zip" target="_blank">Download</a>
       </div>
       <div class="ex-contain" id="e_3d_01">
         <h3>3D 水管流動</h3>
@@ -1080,6 +1170,34 @@
           </code>
         </pre>
         <a href="./example/e_3d_06.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_3d_07">
+        <h3>3D 熱點圖</h3>
+        <img class="ex-image" src="./assets/e_3d_07_01.png"><br/>
+        <p>
+          在熱點物件做數據綁定 heatmap 屬性<br>
+        </p>
+        <img class="ex-image" src="./assets/e_3d_07_02.png"><br/>
+        <p>
+          熱點共同屬性會依照第一組設定生效<br>
+        </p>
+        <a href="./example/e_3d_07.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_3d_08">
+        <h3>3D 導航巡視</h3>
+        <img class="ex-image" src="./assets/e_3d_08_01.png"><br/>
+        <p>
+          使用可參考手冊相關章節<br>
+        </p>
+        <a href="./example/e_3d_08.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_3d_09">
+        <h3>3D 燈光控制</h3>
+        <img class="ex-image" src="./assets/e_3d_09_01.png"><br/>
+        <p>
+          使用可參考手冊相關章節<br>
+        </p>
+        <a href="./example/e_3d_09.zip" target="_blank">Download</a>
       </div>
       <div class="ex-contain" id="e_overlay_01">
         <h3>疊加層遙控面板</h3>

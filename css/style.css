@@ -220,6 +220,16 @@ pre{
   overflow: auto;
 }
 
+.content-title{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.content-subtitle{
+  font-weight: 600;
+  font-size: 17px;
+}
+
 @media screen and (max-width: 1200px) {
   .container {
     box-sizing: border-box;

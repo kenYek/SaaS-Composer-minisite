@@ -41,14 +41,12 @@
   <div class="page-break"></div>
   <nav class="menu no-print">
     <div class="container">
-      <a href="#about">About</a> |
-      <a href="#FAQ">Frequently Asked Question</a> |
-      <a href="#Example">Examples</a>
-      <a href="#reference">Reference</a>
+      <a href="#menulist">Menu</a> |
+      <a href="index.html">FAQ</a> |
       <button id="switchButton" class="isMainColor"></button>
     </div>
   </nav>
-  <section>
+  <section id="menulist">
     <div class="container">
       <ol>
         <li>
@@ -168,6 +166,13 @@
             <li><a href="#section13_2">3D數據綁定</a></li>
             <li><a href="#section13_3">3D模塊化組件</a></li>
             <li><a href="#section13_4">3D額外屬性</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#section14">Dashboard Panel</a>
+          <ul>
+            <li><a href="#section14_1">SaaS-Composer Viewer Panel</a></li>
+            <li><a href="#section14_2">與 Dashboard 連動</a></li>
           </ul>
         </li>
       </ol>
@@ -2677,6 +2682,186 @@ startValue = animate3D.setCirculation = function (startValue,cycleLength,initVal
  
           </p>
         </pre>
+      </div>
+    </div>
+  </section>
+  <section id="section14">
+    <div class="container">
+      <h2>Dashboard Panel</h2>
+      <div class="ex-contain" id="section14_1">
+        <h3>SaaS-Composer Viewer Panel</h3>
+        <p>
+          SaaS-Composer Viewer Panel Plugin 可將您事先在 SaaS-Composer 中設計好的圖紙
+          藉由 Panel 呈現於 Dashboard 上。
+          數據來源具有相當的自由度，您可選擇在 SaaS-Composer 中完成數據綁定，亦可選擇在此 
+          Dashboard 中重新綁定來自其他數據來源之數據。
+        </p>
+        <div class="content-title">起始設定</div>
+        <div class="content-subtitle">在 Dashboard 新增一個 SaaS-Composer Viewer 的 Panel</div>
+        <img class="ex-image" src="./manualImg/panelReadme/panel_1.png"><br/>
+        <div class="content-subtitle">點擊 "Edit" 進入 Panel 的編輯介面 </div>
+        <img class="ex-image" src="./manualImg/panelReadme/panel_2.png"><br/>
+        <div class="content-subtitle">至 General 分頁設定 Panel 標題</div>
+        <img class="ex-image" src="./manualImg/panelReadme/general.png"><br/>
+        <div class="content-subtitle">至 Options 分頁設定連線資訊</div>
+        <img class="ex-image" src="./manualImg/panelReadme/panel_3.png"><br/>
+        <div class="content-subtitle">於 Domain URL 欄位填入 SaaS-Composer 網址  </div>
+        <img class="ex-image" src="./manualImg/panelReadme/panel_4.png"><br/>
+        <p>
+          範例：<br/>
+          若網址為：https://saas-composer-2-0-2-adviiot-webacces-composer.wise-paas.com/#/zh/main/orglist<br/>
+          只需填入「 https://saas-composer-2-0-2-adviiot-webacces-composer.wise-paas.com 」這一段即可。<br/>
+        </p>
+        <div class="content-subtitle">點擊 "Connect" 按鈕進行連線 </div>
+        <p>
+          "Connect Status" 欄位將顯示是否連線成功。若連線成功，"Current Domain" 欄位將會持續連線至此網址，
+          直到被下一個成功連線的網址替換。
+           ( 文章稍後將對替換網址有更詳細之說明，請見 "Domain 替換" 區塊)
+        </p>
+        <img class="ex-image" src="./manualImg/panelReadme/panel_4.png"><br/>
+        <div class="content-subtitle">於 "Org. Name" 欄位輸入組織名稱</div>
+        <img class="ex-image" src="./manualImg/panelReadme/panel_4.png"><br/>
+        <div class="content-subtitle">設定 SaaS Composer frame 內容  </div>
+        <img class="ex-image" src="./manualImg/panelReadme/frame_1.png"><br/>
+        <div class="content-subtitle">至 "Displays" 分頁並點擊 "Add" 按鈕，加入圖紙</div>
+        <img class="ex-image" src="./manualImg/panelReadme/panel_5.png"><br/>
+        <div class="content-subtitle">於 "SaaS Composer File" 下拉選單中選擇圖紙檔案</div>
+        <img class="ex-image" src="./manualImg/panelReadme/panel_6.png"><br/>
+        <p>
+          在有多個圖紙檔案的狀況下，勾選 "Default" 框可預設優先顯示此圖紙。
+          (另一個切換顯示圖紙的方法是使用 "[File Indicator](#File-Indicator)", 文章後段將詳細說明此一功能) 
+        </p>
+        <div class="content-subtitle">於 "Data Source" 下拉選單中選擇數據來源 </div>
+        <p>
+          預設數據來源選項為 "Dashboard"，需先至 "Metric" 分頁設定數據綁定相關資訊，
+          詳細請見下方 "[數據綁定](#數據綁定)" 段落。 
+        </p>
+        <p>
+          另一數據來源選項為 "SaaS Composer"，亦即可先在 SaaS Composer 頁面將綁定資訊設定好，
+          在 Dashboard 處便不需要再額外進行設定，而是直接導入 SaaS Composer 的原先設定。
+        </p>
+        <div class="content-title">數據綁定</div>
+        <div class="content-subtitle"></div>
+        <div class="content-subtitle"></div>
+        <img class="ex-image" src="./manualImg/panelReadme/panel_12.png"><br/>
+        <div class="content-title">File Indicator 檔案標籤</div>
+        <div class="content-subtitle">Dashboard 的 "Variables"(變數) 功能可為檔案標記上標籤</div>
+        <img class="ex-image" src="./manualImg/panelReadme/panel_7.png"><br/>
+        <div class="content-subtitle">新增變數</div>
+        <p>
+          於 "Name" 欄位填入變數組名稱，於 "Type" 下拉選單選擇 "Custom"，於 "Custom Options" 填入自訂的變數組。
+          勾選 "Multi-value" 框，最後點選下方的 "Add" 按鈕來完成變數組的新增。
+        </p>
+        <img class="ex-image" src="./manualImg/panelReadme/panel_8.png"><br/>
+        <div class="content-subtitle">儲存變數</div>
+        <p>點選 "New" 按鈕來儲存更動。 </p>
+        <img class="ex-image" src="./manualImg/panelReadme/panel_9.png"><br/>
+        <div class="content-subtitle">更新變數</div>
+        <p>於 "Displays" 分頁，點選 "Update Variables" 更新變數按鈕。 </p>
+        <img class="ex-image" src="./manualImg/panelReadme/panel_10.png"><br/>
+        <div class="content-subtitle">指派變數</div>
+        <img class="ex-image" src="./manualImg/panelReadme/panel_11.png"><br/>
+        <div class="content-subtitle">切換變數</div>
+        <img class="ex-image" src="./manualImg/panelReadme/panel_13.png"><br/>
+      </div>
+      <div class="ex-contain" id="section14_2">
+        <h3>與 Dashboard 連動</h3>
+        <p>
+          與 Dashboard 互動 (change URl, change dashboard, open window)
+        </p>
+        <p>分步指南</p>
+        <ol>
+          <li>在圖紙中添加按紐.</li>
+          <li>勾選"事件".</li>
+          <li>開啟事件對話框.</li>
+          <li>在點擊事件中加入下列語法.</li>
+        </ol>
+        <div class="content-title">Change Url</div>
+        <pre>
+          <code>
+            window.parent.postMessage({
+              "createUid":commonUtil.msgUid(),
+              "method":'changeUrl',
+              "params":['http://172.16.13.21:5000/display.html?tag=displays/3.json&org_id=2&fullscreen=1']
+            }, "*");
+          </code>
+        </pre>
+        <ul>
+          <li>commonUtil.msgUid() 取得當前 panel 的 Id 作為 Dashboard 接收端的識別使用.</li>
+          <li>method 填入 changeUrl</li>
+          <li>params 在陣列填入希望轉跳的 url.</li>
+        </ul>
+        <div class="content-title">Change Dashboard</div>
+        <p>Change the url in params.</p>
+        <pre>
+          <code>
+            window.parent.postMessage({
+              "createUid":commonUtil.msgUid(),
+              "method":'changeDashboard',
+              "params":['/d/J-pFSo5Wz/chagnedashboard?orgId=1']
+            }, "*");
+          </code>
+        </pre>
+        <div class="content-title">Open Window</div>
+        <p>Change the url in params.</p>
+        <pre>
+          <code>
+            window.parent.postMessage({
+              "createUid":commonUtil.msgUid(),
+              "method":'openWindowUrl',
+              "params":['http://172.16.13.21:5000/display.html?tag=displays/3.json&org_id=2&fullscreen=1']
+            }, "*");
+          </code>
+        </pre>
+        <img class="ex-image" src="./manualImg/changeUrl_01.png"><br/>
+        <img class="ex-image" src="./manualImg/changeUrl_02.png"><br/>
+        <div class="content-subtitle">postMessage from SaaS Composer </div>
+        <pre>
+          <code>
+            window.parent.postMessage({  
+              "createUid":commonUtil.msgUid(),  
+              "method":'setVariable',  
+              "params":['var1',['1']]  
+            }, "*");  
+          </code>
+        </pre>
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>params</th>
+              <th>example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>setVariable</td>
+              <td>['variable name',['value']] </td>
+              <td>['var1',['1']]</td>
+            </tr>
+            <tr>
+              <td>setValue</td>
+              <td>[Defined object by data source] </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>changeURl</td>
+              <td>['url']</td>
+              <td>['']</td>
+            </tr>
+            <tr>
+              <td>changeDashboard</td>
+              <td>['dashboard path'] </td>
+              <td>['/d/J-pFSo5Wz/chagnedashboard?orgId=1']</td>
+            </tr>
+            <tr>
+              <td>openWindowUrl</td>
+              <td>['url']  </td>
+              <td>['']</td>
+            </tr>
+          </tbody>
+          
+        </table>
       </div>
     </div>
   </section>
