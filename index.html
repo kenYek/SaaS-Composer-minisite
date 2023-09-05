@@ -23,9 +23,10 @@
   <meta name="twitter:creator" content="作者"> -->
   <!-- <meta name="twitter:url" content="https://XXXX.com/XXXX.html"> -->
   <meta name="twitter:image" content="./assets/banner01.png">
+  <script src="./js/mddiv.js"></script>
 </head>
 
-<body>
+<body id="exportContent">
   <div class="gradient-div no-print"></div>
   <section id="bannerSection">
     <div class="container" id="bannerArea">
@@ -47,6 +48,7 @@
       <a href="#reference">Reference</a>
       <a href="manual.html">Manual</a>
       <button id="switchButton" class="isMainColor"></button>
+      <!-- <button id="exportDoc">Export as .docx</button> -->
     </div>
   </nav>
   <section id="about">
@@ -163,7 +165,8 @@
             <li><a href="#e_3d_06">3D 動態載入 models</a></li>
             <li><a href="#e_3d_07">3D 熱點圖</a></li>
             <li><a href="#e_3d_08">3D 導航巡視</a></li>
-            <li><a href="#e_3d_08">3D 燈光控制</a></li>
+            <li><a href="#e_3d_09">3D 燈光控制</a></li>
+            <li><a href="#e_3d_10">3D 點雲</a></li>
           </ul>
         </li>
         <li>
@@ -1198,6 +1201,37 @@
           使用可參考手冊相關章節<br>
         </p>
         <a href="./example/e_3d_09.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_3d_10">
+        <h3>3D 點雲</h3>
+        <img class="ex-image" src="./assets/e_3d_10_01.png"><br/>
+        <p>
+          本範例在開啟場景添加代碼<br>
+        </p>
+        <pre>
+          <code>
+            const points = new ht.Points();
+            dm.add(points);
+            pointArray = [];
+            for (var i = 0; i < 1660; i++) {
+                pointArray.push({
+                    x: Math.random() * 3000,
+                    y: Math.random() * 3000,
+                    e: Math.random() * 3000
+                })
+            }
+
+            points.s({
+                'points.color':"#ff0000",
+                'points.image':"circle",
+                'points.size':50,
+                'shape3d.transmission':false
+            })
+            points.setPoints(pointArray)
+          </code>
+        </pre>
+        
+        <a href="./example/e_3d_10.zip" target="_blank">Download</a>
       </div>
       <div class="ex-contain" id="e_overlay_01">
         <h3>疊加層遙控面板</h3>

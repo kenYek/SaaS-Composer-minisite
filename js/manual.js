@@ -14,5 +14,3 @@ function mdToHTML () {
     // 將轉換後的 HTML 放入 <div> 中
     markdownArea.innerHTML = htmlContent;
 }
-
-        

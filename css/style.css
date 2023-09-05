@@ -42,6 +42,11 @@ nav a:hover {
   color: var(--banner01);
 }
 
+markdown-div {
+  margin-bottom: 50px;
+  display: block;
+}
+
 mark {
   background-color: var(--gray4);
   color: var(--white);

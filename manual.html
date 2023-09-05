@@ -23,6 +23,8 @@
   <meta name="twitter:creator" content="作者"> -->
   <!-- <meta name="twitter:url" content="https://XXXX.com/XXXX.html"> -->
   <meta name="twitter:image" content="./assets/banner01.png">
+  <script src="./js/marked.min.js"></script>
+  <script src="./js/mddiv.js"></script>
 </head>
 
 <body>
@@ -50,14 +52,10 @@
     <div class="container">
       <ol>
         <li>
-          <a href="#section1">SAAS COMPOSER簡介</a>
-          <ul>
-            <li><a href="#section1_1">使用者權限管理</a></li>
-            <li><a href="#section1_2">2D EDITOR</a></li>
-            <li><a href="#section1_3">3D EDITOR</a></li>
-            <li><a href="#section1_4">2D VIEWER</a></li>
-            <li><a href="#section1_5">3D VIEWER</a></li>
-          </ul>
+          <a href="#section0">SAAS COMPOSER簡介</a>
+        </li>
+        <li>
+          <a href="#section1">使用者指南</a>
         </li>
         <li>
           <a href="#section2">2D文件創建</a>
@@ -66,33 +64,35 @@
             <li><a href="#section2_2">創建圖紙共有3種方式</a></li>
             <li><a href="#section2_3">創建圖標共有3種方式</a></li>
             <li><a href="#section2_4">創建組件</a></li>
+            <li><a href="#section2_5">URL 屬性</a></li>
           </ul>
         </li>
         <li>
           <a href="#section3">2D基礎元素與屬性</a>
           <ul>
             <li><a href="#section3_1">元素屬性</a></li>
-            <li><a href="#section3_2">匿名登入</a></li>
-            <li><a href="#section3_3">數據綁定</a></li>
+            <li><a href="#section3_2">數據綁定</a></li>
+            <li><a href="#section3_3">匿名登入</a></li>
           </ul>
         </li>
         <li>
           <a href="#section4">2D圖紙主要屬性</a>
           <ul>
-            <li><a href="#section4_1">時間選擇</a></li>
-            <li><a href="#section4_2">基本屬性介紹</a></li>
+            <li><a href="#section4_1">基本屬性介紹</a></li>
+            <li><a href="#section4_2">時間選擇</a></li>
             <li><a href="#section4_3">變數設定</a></li>
             <li><a href="#section4_4">用戶自定義資料綁定</a></li>
+            <li><a href="#section4_5">排版</a></li>
           </ul>
         </li>
         <li>
           <a href="#section5">2D圖標屬性</a>
           <ul>
-            <li><a href="#section5_1">CUSTOM TABLE數據綁定(格式類型 TABLE)</a></li>
-            <li><a href="#section5_2">E-CHART數據綁定(格式類型 ARRAY)</a></li>
-            <li><a href="#section5_3">TABLE數據綁定(格式類型 TABLE)</a></li>
-            <li><a href="#section5_4">圖標基本屬性</a></li>
-            <li><a href="#section5_5">圖標數據綁定</a></li>
+            <li><a href="#section5_1">圖標基本屬性</a></li>
+            <li><a href="#section5_2">圖標數據綁定</a></li>
+            <li><a href="#section5_3">CUSTOM TABLE數據綁定(格式類型 TABLE)</a></li>
+            <li><a href="#section5_4">TABLE數據綁定(格式類型 TABLE)</a></li>
+            <li><a href="#section5_5">E-CHART數據綁定(格式類型 ARRAY)</a></li>
           </ul>
         </li>
         <li>
@@ -104,17 +104,22 @@
             <li><a href="#section6_4">綁定 POSTGRESQL 數據源</a></li>
             <li><a href="#section6_5">綁定 SCADA 數據源</a></li>
             <li><a href="#section6_6">綁定 RMM 數據源</a></li>
+            <li><a href="#section6_7">綁定 DataHub 數據源</a></li>
+            <li><a href="#section6_8">綁定 Influx 數據源</a></li>
+            <li><a href="#section6_9">綁定 MySQL 數據源</a></li>
+            <li><a href="#section6_10">綁定 MongoDB 數據源</a></li>
           </ul>
         </li>
         <li>
           <a href="#section7">2D特殊動作</a>
           <ul>
             <li><a href="#section7_1">事件處理</a></li>
-            <li><a href="#section7_2">動畫路徑</a></li>
-            <li><a href="#section7_3">圖紙事件處理</a></li>
-            <li><a href="#section7_4">圖標事件處理</a></li>
+            <li><a href="#section7_2">圖紙事件處理</a></li>
+            <li><a href="#section7_3">圖標事件處理</a></li>
+            <li><a href="#section7_4">動畫路徑</a></li>
             <li><a href="#section7_5">管道繪製</a></li>
             <li><a href="#section7_6">彈跳視窗</a></li>
+            <li><a href="#section7_7">流動線</a></li>
           </ul>
         </li>
         <li>
@@ -124,33 +129,39 @@
             <li><a href="#section8_2">反向控制</a></li>
             <li><a href="#section8_3">地圖使用</a></li>
             <li><a href="#section8_4">熱點圖圖標</a></li>
+            <li><a href="#section8_5">樹狀選單</a></li>
+            <li><a href="#section8_6">圖表</a></li>
+            <li><a href="#section8_7">下拉選單</a></li>
+            <li><a href="#section8_8">表格</a></li>
           </ul>
         </li>
         <li>
           <a href="#section9">2D & 3D導入導出</a>
           <ul>
-            <li><a href="#section9_1">2D導入檔案格式</a></li>
-            <li><a href="#section9_2">3D導入檔案格式</a></li>
-            <li><a href="#section9_3">導入功能</a></li>
-            <li><a href="#section9_4">導出功能</a></li>
+            <li><a href="#section9_1">2D 導入檔案格式</a></li>
+            <li><a href="#section9_2">3D 導入檔案格式</a></li>
+            <li><a href="#section9_3">導出功能</a></li>
+            <li><a href="#section9_4">導入功能</a></li>
           </ul>
         </li>
         <li>
           <a href="#section10">3D文件創建</a>
           <ul>
-            <li><a href="#section10_1">3D場景創建</a></li>
-            <li><a href="#section10_2">3D模型創建</a></li>
-            <li><a href="#section10_3">3D鍵盤操作</a></li>
+            <li><a href="#section10_1">3D 場景創建</a></li>
+            <li><a href="#section10_2">3D 模型創建</a></li>
+            <li><a href="#section10_3">3D 鍵盤操作</a></li>
+            <li><a href="#section10_4">3D 事件處理</a></li>
+            <li><a href="#section10_5">2D & 3D 疊加層</a></li>
           </ul>
         </li>
         <li>
           <a href="#section11">3D場景屬性</a>
           <ul>
-            <li><a href="#section11_1">3D場景屬性介紹</a></li>
-            <li><a href="#section11_2">3D熱點圖</a></li>
-            <li><a href="#section11_3">3D導航路徑</a></li>
-            <li><a href="#section11_4">3D燈光控制</a></li>
-            <li><a href="#section11_5">3D總覽指標</a></li>
+            <li><a href="#section11_1">3D 場景屬性介紹</a></li>
+            <li><a href="#section11_2">3D 熱點圖</a></li>
+            <li><a href="#section11_3">3D 導航路徑</a></li>
+            <li><a href="#section11_4">3D 燈光控制</a></li>
+            <li><a href="#section11_5">3D 總覽指標</a></li>
           </ul>
         </li>
         <li>
@@ -164,12 +175,21 @@
           <ul>
             <li><a href="#section13_1">3D動畫路徑</a></li>
             <li><a href="#section13_2">3D數據綁定</a></li>
-            <li><a href="#section13_3">3D模塊化組件</a></li>
-            <li><a href="#section13_4">3D額外屬性</a></li>
+            <li><a href="#section13_3">3D額外屬性</a></li>
+            <li><a href="#section13_4">3D模塊化組件</a></li>
+            <li><a href="#section13_5">3D鏡面反射</a></li>
+            <li><a href="#section13_6">3D光線物件</a></li>
+            <li><a href="#section13_7">3D裁切</a></li>
           </ul>
         </li>
         <li>
-          <a href="#section14">Dashboard Panel</a>
+          <a href="#section14">3D BIM</a>
+          <ul>
+            <li><a href="#section14_1">BIM server</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#section15">Dashboard Panel</a>
           <ul>
             <li><a href="#section14_1">SaaS-Composer Viewer Panel</a></li>
             <li><a href="#section14_2">與 Dashboard 連動</a></li>
@@ -179,2699 +199,173 @@
     </div>
   </section>
   <div class="page-break"></div>
-  <section id="section1">
+  <section></section>
+  <section id="section0">
     <div class="container">
       <h2>SaaS Composer簡介</h2>
-      <div class="ex-contain" id="section1_1">
-        <img class="ex-image" src="./manualImg/image001.png">
-        <article>
-          以目前的應用市場上，數據採集已經不再是像過去遙不可及的門檻，物連網的快速提升讓所有資訊收集升級到一鍵完成，
-          大數據分析，資料預測等等都成為雲上客戶所必備的資訊。
-          目前應用市場中客戶遇到的問題不外乎都跟龐大的資料分析結果和數據採集後的處理煩惱相關。
-          SaaS Composer 強項就是專門幫客戶解決資料呈現的問題。簡而易懂的視覺化呈現，
-          繪製出每個客戶不同的實際場景和搭配即時/歷史等重要資訊，場域，數據，警報，特徵值… 完整的一次呈現在畫面上。
-        </article>
-        <h3>使用者權限管理</h3>
-        <img class="ex-image" src="./manualImg/image002.jpg">
-      </div>
-      <div class="ex-contain" id="section1_2">
-        <h3>2D Editor</h3>
-        <img class="ex-image" src="./manualImg/image003.jpg">
-      </div>
-      <div class="ex-contain" id="section1_3">
-        <h3>3D Editor</h3>
-        <img class="ex-image" src="./manualImg/image004.jpg">
-      </div>
-      <div class="ex-contain" id="section1_4">
-        <h3>2D Viewer</h3>
-        <img class="ex-image" src="./manualImg/image005.png">
-      </div>
-      <div class="ex-contain" id="section1_5">
-        <h3>3D Viewer</h3>
-        <img class="ex-image" src="./manualImg/image006.jpg"> 
-      </div>
+      <markdown-div data-markdown="./md/Introduction/tw.md" data-color="dark"  data-en="./md/Introduction/en.md"></markdown-div>
+    </div>
+  </section>
+  <section id="section1">
+    <div class="container">
+      <h2>使用者指南</h2>
+      <markdown-div data-markdown="./md/UserGuide/tw.md" data-color="dark"  data-en="./md/UserGuide/en.md"></markdown-div>
     </div>
   </section>
   <section id="section2">
     <div class="container">
       <h2>2D文件創建</h2>
-      <div class="ex-contain" id="section2_1">
-        <h3>EDITOR繪圖頁面介紹</h3>
-        <img class="ex-image" src="./manualImg/image007.png"> 
-        <ol>
-          <li>簡單的繪圖工具單元物件</li>
-          <li>主要的四種檔分類：圖紙、圖示、元件、資源</li>
-          <li>與選取的檔種類相對的目錄結構</li>
-          <li>所選擇檔的相對路徑</li>
-          <li>介面相關功能操作</li>
-          <li>繪圖物件快速排班快速鍵</li>
-          <li>物件屬性搜索功能</li>
-          <li>物件屬性欄</li>
-          <li>檔案內容清單及其他屬性</li>
-          <li>開啟、修改的檔列表</li>
-          <li>檔的編輯、修改頁面</li>
-        </ol>
-      </div>
-      <div class="ex-contain" id="section2_2">
-        <h3>創建圖紙共有3種方式</h3>
-        <img class="ex-image" src="./manualImg/image008.png"> 
-        <p>1. 左上角有一個顯示為 “三條橫杠” 的按鈕，點擊    此按鈕，滑鼠移動到“檔”，接著將滑鼠移動到    “新建圖紙” 上，點擊即可創建一張空白的圖紙。</p>
-        <img class="ex-image" src="./manualImg/image009.png"> 
-        <p>2. 選擇目的檔案夾，點擊右鍵，將滑鼠移動到     “新建圖紙”上，點擊即可創建一張空白的圖紙。</p>
-        <img class="ex-image" src="./manualImg/image010.png"> 
-        <p>3. 在目的檔案夾下，任意空白處，點擊右鍵    接著講滑鼠移動到 “新建圖紙” 上，點擊即    可創建一張空白圖紙。</p>
-      </div>
-      <div class="ex-contain" id="section2_3">
-        <h3>創建圖標共有3種方式</h3>
-        <img class="ex-image" src="./manualImg/image011.png"> 
-        <p>1. 左上角有一個顯示為 “三條橫杠” 的按鈕，點擊    此按鈕，滑鼠移動到“檔”，接著將滑鼠移動到    “新建圖圖示” 上，點擊即可創建一張空白的圖示。</p>
-        <img class="ex-image" src="./manualImg/image012.png"> 
-        <p>2. 選擇目的檔案夾，點擊右鍵，將滑鼠移動到     “新建圖示”上，點擊即可創建一張空白的圖示。</p>
-        <img class="ex-image" src="./manualImg/image013.png"> 
-        <p>3. 在目的檔案夾下，任意空白處，點擊右鍵    接著講滑鼠移動到 “新建圖示” 上，點擊即    可創建一張空白圖示。</p>
-      </div>
-      <div class="ex-contain" id="section2_4">
-        <h3>創建組件</h3>
-        <img class="ex-image" src="./manualImg/image014.png"> 
-        <p>1. 左上角有一個顯示為 “三條橫杠” 的按鈕，點擊    此按鈕，滑鼠移動到“檔”，接著將滑鼠移動到    “新建元件” 上，點擊即可打開元件創建視窗。</p>
-        <img class="ex-image" src="./manualImg/image015.png"> 
-        <p>2. 在右側空白欄填寫函數來繪製元件，右側名稱    處填寫元件名稱，點擊確定按鈕完成元件創建。</p>
-        <img class="ex-image" src="./manualImg/image016.png"> 
-        <pre>
-          繪製元件的相關屬性以及參數:
-          1. g 為畫筆
-          2. rect 為組件繪製在想兩種的矩形邊界
-          3. comp 為向量圖形的元件模型
-          4. 當前關聯的 Data 物件
-          5. 視圖
-          6. 具體繪製代碼
-          7. 按兩下這欄下的任意值，可以更改這個預設值
-          8. 註冊名，向量 type 值設置為相應的註冊名
-          9. 相對路徑
-          10. 屬性值，可以添加刪除屬性，在繪製函數中可通過 comp.getValue(屬性名)來獲取這個屬性的值
-          11. 函數繪製結束後點擊刷新，這裡會顯示函數繪製出的圖形
-        </pre>
-      </div>
+      <markdown-div id="section2_1" data-markdown="./md/2DFileCreation/Editor_Screen_Introduction_tw.md" data-color="dark"  data-en="./md/2DFileCreation/Editor_Screen_Introduction_en.md"></markdown-div>
+      <markdown-div id="section2_2" data-markdown="./md/2DFileCreation/Create_Displays_tw.md" data-color="dark"  data-en="./md/2DFileCreation/Create_Displays_en.md"></markdown-div>
+      <markdown-div id="section2_3" data-markdown="./md/2DFileCreation/Create_Icons_tw.md" data-color="dark"  data-en="./md/2DFileCreation/Create_Icons_en.md"></markdown-div>
+      <markdown-div id="section2_4" data-markdown="./md/2DFileCreation/Create_Components_tw.md" data-color="dark"  data-en="./md/2DFileCreation/Create_Components_en.md"></markdown-div>
+      <markdown-div id="section2_5" data-markdown="./md/2DFileCreation/URL_Properties_tw.md" data-color="dark"  data-en="./md/2DFileCreation/URL_Properties_en.md"></markdown-div>
     </div>
   </section>
   <section id="section3">
     <div class="container">
       <h2>2D基礎元素與屬性</h2>
-      <div class="ex-contain" id="section3_1">
-        <h3>元素屬性</h3>
-        <img class="ex-image" src="./manualImg/image017.png"> 
-        <pre>
-          <p>
-            # 1-元素繪製
-            1. 新增按鈕，用來新建圖紙、圖示、元件
-            2. 編輯
-            3. 基本元素繪製        分別是：不規則圖形、圓形、圓角矩形、矩形、正多邊形、三角形、星形、圓弧形
-            4. 文本繪製
-          </p>
-        </pre>
-        <img class="ex-image" src="./manualImg/image018.png"> 
-        <pre>
-          <p>
-            # 2-圖層屬性
-            1. 圖紙的樹狀關係圖
-            2. 增加、刪除圖層, 選則圖形, 將圖形的圖層屬性修改成    新建的圖層, 可用做分類管理
-            3. 過濾屬性
-            4. 可綁定函數
-            5. 圖紙的JSON格式敘述
-            6. 俯視圖
-          </p>
-        </pre>
-        <img class="ex-image" src="./manualImg/image019.png"> 
-        <pre>
-          <p>
-            # 3-基礎屬性
-            1. 事件處理       
-            處理元素的滑鼠點擊、進入、移出等事件
-            2. 標籤       
-            元素標籤，可以通過dataModels.getDataByTag(標籤值)獲取該元素資料
-            3. 不規則圖形       
-            可通過下拉清單修改圖形
-            4. 圖示集
-          </p>
-        </pre>
-        <img class="ex-image" src="./manualImg/image020.png"> 
-        <pre>
-          <p>
-            節點屬性用來調整元素的大小、位置
-            1. 橫、縱坐標、寬度、高度       
-            調整元素的位置和大小
-            2. 角度、錨點       
-            調整元素的旋轉，錨點為旋轉的中心點。橫、縱錨點為錨點的橫、縱坐標
-            3. 縮放        
-            調整元素橫縱縮放
-          </p>
-        </pre>
-        <img class="ex-image" src="./manualImg/image021.png"> 
-        <pre>
-          <p>
-            4. 裁切        
-            選擇裁切方向和裁切比例來顯示部分圖形5. 吸附節點        如有吸附會顯示所吸附的目標
-            一個元素上添加兩種顏色/漸進色功能
-            首先設置“裁切比例”和“裁切方向”兩個屬性，預設“裁切比例”為1，為不裁切；然後設置屬性欄中的“背景”和“前景”則可以看到該節點具有兩種顏色
-          </p>
-        </pre>
-        <img class="ex-image" src="./manualImg/image022.png"> 
-        <pre>
-          <p>
-            邊框和虛線樣式設置
-            1. 虛線樣式        
-            一個陣列來設置，第一個值為實線長度，第二個值為虛線長度。
-            2. 虛線偏移值        
-            虛線的動態效果就是需要偏移值的改變
-            3. 虛線寬度        
-            值為0，則和邊框寬度一致，不為0，則按照寬度自行設置
-          </p>
-        </pre>
-        <img class="ex-image" src="./manualImg/image023.png"> 
-        <pre>
-          <p>
-            文本內容設置：
-            1. 文本        
-            內容屬性設置顯示的文字內容，字體、顏色屬性來修改文字樣式
-            2.  位置       
-            預設處於元素正下方，可通過位置、偏移屬性來修改
-            3. 最大長度       
-            0代表不限制，非0代表限制，（此處為圖元大小）
-            4. 角度、縮放        
-            調整文本顯示的形態和大小
-            # 4-元素特殊屬性
-          </p>
-        </pre>
-        <img class="ex-image" src="./manualImg/image024.png"><br/> 
-        <img class="ex-image" src="./manualImg/image025.png"><br/> 
-        <img class="ex-image" src="./manualImg/image026.png"><br/> 
-        <pre>
-          <p>
-            特殊屬性都屬於圖片邊框內
-            1. 圓角矩行特殊屬性        
-            半徑：矩形四個出圓弧的半徑值
-            2. 圓弧：        
-            起始、結束角度：控制圓弧形狀        
-            是否閉合：邊框是否頭尾相連
-            3. 正多邊形        
-            邊數：多邊形的邊數，默認為6，若小於3則顯示6邊形
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section3_2">
-        <h3>匿名登入</h3>
-        <img class="ex-image" src="./manualImg/image027.png"><br/>
-        <pre>
-          <p>
-            SaaS Composer 的資料來源支援匿名登入功能，即不需要登入WISE-PaaS 也可以預覽圖紙。
-
-            使用方式：
-            1.  在資料來源綁定時選擇 Anonymous 並取消 With Credentials
-            2.  分別在 User、Password 中填入正確的帳號以及密碼
-            3.  其餘配置方式不變，點擊保存按鈕即可
-
-            示例：
-            1、匿名登入綁定介面 
-            <img class="ex-image" src="./manualImg/image028.png"><br/>
-            2、正常模式綁定介面
-            <img class="ex-image" src="./manualImg/image029.png"><br/>
-            3、數據綁定
-            需要先在Management裡面綁定好資料來源，綁定方式見資料來源綁定章節
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section3_3">
-        <h3>數據綁定</h3>
-        <pre>
-          <p>
-          # 1-資料來源
-          1. 在management 頁面綁定好資料來源
-          2. 選中元素，點擊想要綁定的屬性右側的小連結按鈕打開資料綁定動作頁面         按鈕為鎖定並且橘色則表示以綁定資料，若為打開並且灰色則表示為綁定數
-          3. 資料來源頁面進行綁定資料    
-          動畫頁面對資料進行一定的邏輯處理    
-          資訊頁面顯示此元素的基本資訊
-          4. 點擊資料來源，在來源處選擇資料來源，並選擇所要綁定的具體資料
-          5. 資料格式有兩種          
-          -Time Serises          
-          -Table
-          6. 選擇好資料之後，目標欄會自動生成
-          </p>
-        </pre>
-        <pre>
-          <p>
-          # 2-動畫 -- Basic
-          動畫Basic有兩種方式：
-          -set match          
-          -set interval
-          </p>
-        </pre>
-        <img class="ex-image" src="./manualImg/image030.png"><br/>
-        <pre>
-          <p>
-          Set Match:     
-          
-          可以讓綁定的資料返回值做一次資料配對的邏輯處理，或者可以勾選”Direct Feed”讓資料直接寫入屬性內。
-          以下範例:
-          返回值如果等於1，則會寫入True到屬性內, 如果等於0，則會寫入False到屬性內
-          </p>
-        </pre>
-        <img class="ex-image" src="./manualImg/image031.png"><br/>
-        <pre>
-          <p>
-          Set Interval:     
-          可以讓綁定好的資料返回值做一次資料邏輯處理。
-          </p>
-        </pre>
-          <img class="ex-image" src="./manualImg/image032.png"><br/>
-        <pre>
-          <p>
-          以下範例:
-          返回值值如果 X <= 50，則會寫入Low到屬性內，
-          如果50 < X <=100，則會寫入High到屬性內。
-
-          Basic會依照綁定屬性的格式來做相對應的Set match/interval左邊範例是當選取顏色屬性時的格式。
-          </p>
-        </pre>
-        <img class="ex-image" src="./manualImg/image033.png"><br/>
-        <img class="ex-image" src="./manualImg/image034.png"><br/>
-        <pre>
-          <p>
-          # 3-動畫 -- Advanced
-
-          Advanced 的Function是提供給使用者使用標準的Javascript來對返回的資料進行邏輯分析的功能。
-
-          以下範例:
-          input -> 綁定好的資料返回值     
-          output -> 寫入到屬性的值     
-
-          邏輯：
-          每次返回值會加1，再寫入到屬性裡
-          </p>
-        </pre>
-      </div>
+      <markdown-div id="section3_1" data-markdown="./md/2DElementsAttributes/Elements_Attributes_tw.md" data-color="dark"  data-en="./md/2DElementsAttributes/Elements_Attributes_en.md"></markdown-div>
+      <markdown-div id="section3_2" data-markdown="./md/2DElementsAttributes/DataBinding_tw.md" data-color="dark"  data-en="./md/2DElementsAttributes/DataBinding_en.md"></markdown-div>
+      <markdown-div id="section3_3" data-markdown="./md/2DElementsAttributes/AnonymousLog-in_tw.md" data-color="dark"  data-en="./md/2DElementsAttributes/AnonymousLog-in_en.md"></markdown-div>
     </div>
   </section>
   <section id="section4">
     <div class="container">
       <h2>2D圖紙主要屬性</h2>
-      <div class="ex-contain" id="">
-        <h3>時間選擇</h3>
-        <pre>
-          <p>
-            # Time Range Select  
-            從圖紙屬性中開啟時間選擇.  
-            <img class="ex-image" src="./manualImg/image035.png"><br/>
-            設定預設開啟圖紙時顯示時間.  
-            <img class="ex-image" src="./manualImg/image036.png"><br/>
-            可使用日期對話框選擇特定時間區間. 
-            <img class="ex-image" src="./manualImg/image037.png"><br/>
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="">
-        <h3>基本屬性介紹</h3>
-        <pre>
-          <p>
-            # 介面相關操作
-            <img class="ex-image" src="./manualImg/image038.png"><br/>
-            1. 撤銷、重做                  
-            2. 提示刻度、網路，橘色開啟，灰色關閉
-            3. 保存                             
-            4. 預覽
-            5. 重新載入 
-            6. 縮放比例
-            7. 縮放到全屏
-            8. 顯示、隱藏 左右側邊欄
-            9. 全屏
-            10. 切換到3D製作頁面
-            11. 導入檔按鈕
-            
-            # 屬性欄
-            1.擴展部分
-            <img class="ex-image" src="./manualImg/image039.png"><br/>
-              常用屬性：
-              1. X軸範圍，Y軸範圍
-                  調整 Sketchboard Viewer 初始顯示內容範圍
-              2. 更新頻率
-                  在Viewer 頁面中，圖紙以及其中綁定資料的變化頻率
-              3. 開啟場景
-                  此處函數會在 Viewer 頁面打開時運行一遍
-              4. 執行期間
-                  此處函數會在 Viewer 頁面每次刷新時執行一遍
-              5. 流覽器關閉
-                  此處函數會在 Viewer 頁面關閉時執行
-              6. 資料綁定
-                  使用者自訂綁定資料，綁定成功後，      在別處做資料綁定時可使用此處設定名稱來直接綁定資料
-              7. 取消縮放、取消移動
-                  設置在 Viewer 頁面中，圖紙是否可以拖動和縮放*. 簡化屬性按鈕      橘色隱藏部分屬性、灰色顯示全部屬性
-            2.基礎部分
-            <img class="ex-image" src="./manualImg/image040.png"><br/>
-              常用屬性：
-              1. 快照地址
-                  表示圖紙的縮略圖，若不填會自動生成一個縮略圖
-              2. 背景
-                  圖紙背景顏色
-              3. 圖元總數 
-                  本張圖紙上所有的元素總數
-              4. 連接動作      
-                  拷貝風格、吸附、父子、吸附父子、創建連線、拷貝大小、動畫路徑
-              5. 時鐘式旋轉
-                    若開啟在旋轉元素是會顯示一個時鐘的邊框  
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="">
-        <h3>變數設定</h3>
-        <pre>
-          <p>
-            # 變量  
-            從圖紙屬性開啟變量視窗
-            <img class="ex-image" src="./manualImg/image041.png"><br/>
-            輸入變量名稱及變量值列表並以 (,) 分隔變量值
-                ex.  
-                Name var1  
-                Value A,B,C,D  
-            <img class="ex-image" src="./manualImg/image042.png"><br/>
-
-            ## 在屬性中使用變量
-            使用 `[[var1]]` 或 `$var1` 代表要取代為變量的字串
-            <img class="ex-image" src="./manualImg/image043.png"><br/>
-            在預覽頁面時，變量將會依照設定被取代為對應的字串  
-            <img class="ex-image" src="./manualImg/image044.png"><br/>
-
-            ## 添加變量選擇圖標 
-            選擇圖標  
-            Symbols > builtIn > sc_control > variableChange  
-            在"屬性名"的位置填入變量名稱
-            <img class="ex-image" src="./manualImg/image045.png"><br/>
-            預覽運行
-            <img class="ex-image" src="./manualImg/image046.png"><br/>
-            <img class="ex-image" src="./manualImg/image047.png"><br/>
-            # 在數據源使用變量功能 (Grafna simple json)
-            在資料綁定視窗中的"目標"(target)裡填入 `[[var name]]`   
-            
-            預覽運行  
-            <img class="ex-image" src="./manualImg/image048.gif"><br/>
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="">
-        <h3>用戶自定義資料綁定</h3>
-        <pre>
-          <p>
-            使用方式：     
-            用戶可以在本張圖紙上一次性綁定好將要用到的資料，並自訂名稱。
-            在繪製圖紙時，若需要綁定資料可以選擇 userDefined 類型，然後選擇自訂的名稱來進行資料綁定。
-            作用：     
-            可避免在需要多次綁定資料時，進行頻繁選擇所帶來的繁瑣操作以及減少頻繁選擇中出現失誤的可能性。
-            <img class="ex-image" src="./manualImg/image049.gif"><br/>
-            1. 打開圖紙，點擊右側 資料綁定 按鈕，打開資料綁定視窗
-            2. 點擊左上角 ADD 按鈕，增加一個新的資料繫結欄位表
-            3. 點擊新增的列表，打開具體綁定的動作頁面
-            4. 屬性欄中設置自訂名稱，然後進行正常的資料綁定，最後點擊保存按鈕
-            5. 在具體綁定的元素上選擇 userDefined，然後點擊 name 調出下拉清單，    選擇想要的自訂資料綁定名稱，點擊確定即可
-          </p>
-        </pre>
-      </div>
+      <markdown-div id="section4_1" data-markdown="./md/2DAttributesOfDisplay/SimpleAttributeIntroduction_tw.md" data-color="dark"  data-en="./md/2DAttributesOfDisplay/SimpleAttributeIntroduction_en.md"></markdown-div>
+      <markdown-div id="section4_2" data-markdown="./md/2DAttributesOfDisplay/TimeSelection_tw.md" data-color="dark"  data-en="./md/2DAttributesOfDisplay/TimeSelection_en.md"></markdown-div>
+      <markdown-div id="section4_3" data-markdown="./md/2DAttributesOfDisplay/Variable_tw.md" data-color="dark"  data-en="./md/2DAttributesOfDisplay/Variable_en.md"></markdown-div>
+      <markdown-div id="section4_4" data-markdown="./md/2DAttributesOfDisplay/User-Defined_tw.md" data-color="dark"  data-en="./md/2DAttributesOfDisplay/User-Defined_en.md"></markdown-div>
+      <markdown-div id="section4_5" data-markdown="./md/2DAttributesOfDisplay/Layout_tw.md" data-color="dark"  data-en="./md/2DAttributesOfDisplay/Layout_tw.md"></markdown-div>
     </div>
   </section>
   <section id="section5">
     <div class="container">
       <h2>2D圖標屬性</h2>
-      <div class="ex-contain" id="section5_1">
-        <h3>CUSTOM TABLE數據綁定(格式類型 TABLE)</h3>
-        <pre>
-          <p>
-            # Data Binding (custom table)
-
-1.  表格圖示位置 symbols/builtIn/ui/custom table.json
-<img class="ex-image" src="./manualImg/image050.png"><br/>
-
-2.  使用方法
-
-    1.  將圖示拖到圖紙當中，填寫標籤欄（必須填寫），然後點擊表格繪製按鈕
-    <img class="ex-image" src="./manualImg/image051.png"><br/>
-
-3.  表格內容繪製
-    <img class="ex-image" src="./manualImg/image052.png"><br/>
-
-4.  表格樣式繪製
-    <img class="ex-image" src="./manualImg/image053.png"><br/>
-    <img class="ex-image" src="./manualImg/image054.png"><br/>
-
-
-
-5.  表格資料綁定
-    1.  在自訂資料綁定中綁定相關資料
-    <img class="ex-image" src="./manualImg/image055.png"><br/>
-
-
-6.  將綁定好的資料綁定到表格對應的儲存格當中
-    <img class="ex-image" src="./manualImg/image056.png"><br/>
-
-7.  格式微調
->   點擊保存之後可以在圖紙介面，拖拉表格改變大小，並可以對表頭以及行列格式作出調整
-    <img class="ex-image" src="./manualImg/image057.png"><br/>
-
-
-8.  修改表頭內容
->   點擊列定義一欄，修改對應的 displayName 這一屬性的值即可（切勿修改其他）
-    <img class="ex-image" src="./manualImg/image058.png"><br/>
-
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section5_2">
-        <h3>E-CHART數據綁定(格式類型 ARRAY)</h3>
-        <pre>
-          <p>
-Select Symbols > builtIn > html > echart  
-<img class="ex-image" src="./manualImg/image059.png"><br/>
-
-Bind data "line Data1" & "line Data2"  
-
-with format "timeseries" and data type "array".  
-
-Set x-axis can use series number.  
-
-    function(){
-        var ary = []
-        for(var i = 0 ; i < 120; i++){
-            ary.push(i)
-        }
-        return ary
-    }
-
-    <img class="ex-image" src="./manualImg/image060.png"><br/>
-Preview
-<img class="ex-image" src="./manualImg/image061.png"><br/>
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section5_3">
-        <h3>TABLE數據綁定(格式類型 TABLE)</h3>
-        <pre>
-          <p>
-            # Data Binding (table)
-Select Symbols > builtIn > ui > table  
-<img class="ex-image" src="./manualImg/image062.png"><br/>
-
-Bind data "Column Define" with format "table" and data type "column"   
-    [
-        {
-            "key": "username",
-            "displayName": "User name"
-        },
-        {
-            "key": "address"
-        },
-        {
-            "key": "sex"
-        }
-    ]
-
-`key` need to map raw data column name, you can use `displayName` to change table header text.
-<img class="ex-image" src="./manualImg/image063.png"><br/>
-
-Bind data "Data Source" with format "table" and data type "table"   
-    [
-          {
-            "username": "張三",
-            "sex": "男",
-            "address": "深圳寶安區"
-          },
-          {
-            "username": "David",
-            "sex": "男",
-            "address": "廈門思明區"
-          }
-    ]
-    <img class="ex-image" src="./manualImg/image064.png"><br/>
-
-
-Preview  
-<img class="ex-image" src="./manualImg/image065.png"><br/>
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section5_4">
-        <h3>圖標基本屬性</h3>
-        <pre>
-          <p>
-            # 1-基本屬性
-            <img class="ex-image" src="./manualImg/image066.png"><br/>
-            1. 事件
-                可在圖示中定義滑鼠事件處理邏輯函數
-            2. 元素
-                編寫函數對圖示元素進行渲染操作
-            3. 快照地址
-                圖示縮略圖，若不填自動生成一個縮略圖
-            4. 寬度高度
-                圖示的大小
-
-            # 2-圖示資料綁定屬性
-            <img class="ex-image" src="./manualImg/image067.png"><br/>
-            1. Attr
-                綁定的屬性的名稱：可以通過 data.a(此名稱）獲取該屬性的值
-            2. 數值型別
-                綁定的屬性的值得類型，字串、多行文本、數位等
-            3. 預設值
-                綁定屬性的預設值
-            4. 名稱
-                綁定的屬性在圖紙中顯示的名稱，若不寫則顯示Attr的值左下方按鈕依次為：
-            新建、刪除、導入右下方按鈕用來調整屬性的順序
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section5_5">
-        <h3>圖標數據綁定</h3>
-        <pre>
-          <p>
-            圖示資料綁定分兩種形式：
-            <img class="ex-image" src="./manualImg/image068.png"><br/>
-
---attr：
-直接綁定對應的屬性值
---func：
-對綁定的資料值進行一定的邏輯處理圖紙中選中圖示元素時會在基礎屬性中顯示圖示綁定的資料
-# 1-attr形式綁定
-<img class="ex-image" src="./manualImg/image069.gif"><br/>
-圖示資料綁定步驟：
-1. 新建圖示，並在圖示中創建一個元素
-2. 點擊圖示空白處，右側屬性欄會出現“資料綁定”，點擊左下角“添加”’按鈕新建一個屬性，
-3. 完成屬性Attr、數值型別以及預設值的設置
-4. 點擊元素，點擊將要綁定屬性右側的小連結，打開資料綁定視窗5. 類型中選擇 attr ，在屬性中輸入剛才創建的屬性得 Attr 值
-
-# 2-func形式綁定
-<img class="ex-image" src="./manualImg/image070.gif"><br/>
-圖示func資料綁定步驟：
-1. 新建圖示，並在圖示中創建一個元素
-2. 點擊圖示空白處，右側屬性欄會出現“資料綁定”，點擊左下角“添加”’按鈕新建一個屬性，
-3. 完成屬性Attr、數值型別以及預設值的設置
-4. 點擊元素，點擊將要綁定屬性右側的小連結，打開資料綁定視窗
-5. 類型中選擇 func ，
-在function中輸入標誌JavaScript代碼完成邏輯業務    
-使用 data.a('創建屬性的 Attr 值') 
-這一方法來獲取圖示綁定屬性值
-          </p>
-        </pre>
-      </div>
+      <markdown-div id="section5_1" data-markdown="./md/2DSymbolAttributes/Basic_tw.md" data-color="dark"  data-en="./md/2DSymbolAttributes/Basic_en.md"></markdown-div>
+      <markdown-div id="section5_2" data-markdown="./md/2DSymbolAttributes/DataBinding_tw.md" data-color="dark"  data-en="./md/2DSymbolAttributes/DataBinding_en.md"></markdown-div>
+      <markdown-div id="section5_3" data-markdown="./md/2DSymbolAttributes/Table_tw.md" data-color="dark"  data-en="./md/2DSymbolAttributes/Table_en.md"></markdown-div>
+      <markdown-div id="section5_4" data-markdown="./md/2DSymbolAttributes/CustomTableTabletype_tw.md" data-color="dark"  data-en="./md/2DSymbolAttributes/CustomTableTabletype_en.md"></markdown-div>
+      <markdown-div id="section5_5" data-markdown="./md/2DSymbolAttributes/EChartArraytype_tw.md" data-color="dark"  data-en="./md/2DSymbolAttributes/EChartArraytype_en.md"></markdown-div>
     </div>
   </section>
   <section id="section6">
     <div class="container">
       <h2>2D數據源綁定</h2>
-      <div class="ex-contain" id="">
-        <h3>綁定 APM 數據源</h3>
-        <pre>
-          <p>
-            **WISE-PaaS/SaaS Composer 要連接WISE-PaaS/APM的資料需要先在SaaS Composer Management裡面設定好URL的配對**
-
-連接portal-APM APP:
-<img class="ex-image" src="./manualImg/image071.gif"><br/>
-
-1. 點擊 "資料來源" 進入配置選項, 按一下 添加資料來源 按鈕打開添加資料來源的配置視窗
-2. 在資料來源的設置中, 右側資料來源名稱選項為資料來源命名
-3. 中間資料來源類型選項選擇添加資料來源的類型,這裡選擇  "InsightAPM datasource"
-4. HTTP項中的URL選項處填寫要連接的 APM 資料來源的"apm-portal-apm"的 URL，複製External Domain的URL
-<img class="ex-image" src="./manualImg/image072.jpg"><br/>
-5. 並在前端加上“https://”
-6. 尾端加上"/api-apm"
- example: "https://" **+** "portal-apm-twcc-aiot.tmptwcc.wise-paas.com" **+** "/api-apm"
-7. Access選項設置通過代理或者直接訪問, APM SimpleJson這裡選擇direct
-8. Auth項中將"With Credentials"選項勾選
-9. 點擊保存 
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="">
-        <h3>綁定 DASHVIDEO 數據源</h3>
-        <pre>
-          <p>
-            **WISE-PaaS/SaaS Composer 要連接dashVideo的資料需要先部署dashvideo伺服器**
-**連接dashVideo APP:**
-<img class="ex-image" src="./manualImg/image073.png"><br/>
-1. 點擊 資料來源 進入配置選項
-2. 按一下 添加資料來源 按鈕打開添加資料來源的配置視窗
-3. 自訂資料來源名稱，並選擇添加資料來源的類型,這裡選擇  dashVideo
-4. 填寫dashvideo伺服器的相關配置資訊
-5. 點擊保存即可
-
-
-dashvideo資料來源的使用：
-dashvideo 資料來源的使用需要結合圖示 builtIn 中 html 資料夾內的 dashavideo 圖示來使用
-<img class="ex-image" src="./manualImg/image074.png"><br/>
-   使用 dashvideo圖示來內嵌入一個dashvideo視頻使用方法說明：
-   1. 在management配置頁面配置dashvideo的資料來源，方式如下圖
-   2. 將 builtIn 中 html 資料夾下的 dashvideo 圖示拖入圖紙
-   3. 點擊 dashinfo 屬性右側的資料綁定連結打開綁定介面
-   4. 選擇配置好的 dashvideo 資料來源
-   5. 填寫 channel 號，點擊保存即可
-   6. URL、USER、PASSWORD、IVSID資訊將自動填好且不可改變
-   <img class="ex-image" src="./manualImg/image075.png"><br/>
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="">
-        <h3>綁定 GRAFANA SIMPLEJSON 數據源</h3>
-        <pre>
-          <p>
-            **WISE-PaaS/SaaS Composer 要連接SimpleJson APP的資料需要先在SaaS Composer Management裡面設定好URL的配對**
-
-**連接SimpleJson APP :**
-<img class="ex-image" src="./manualImg/image076.gif"><br/>
-
-1. SaaS Composer Management進入需要設定的Org後選擇資料來源Tab頁
-    點擊 添加資料來源 按鈕打開添加資料來源的配置視窗
-2. 設置自訂資料來源名稱，並選擇添加資料來源的類型,這裡選擇 grafana-simple-json-datasource
-3. HTTP項中的URL選項處填寫要連接的SImpleJson資料來源的 portal 的 URL，並在前端加上“https://”
-4. Access選項設置通過代理或者直接訪問, 這裡選擇direct    Auth項中將With Credentialsx選項勾選
-5. 使用這種方式連接，API項無需填寫
-6. 點擊保存
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="">
-        <h3>綁定 POSTGRESQL 數據源</h3>
-        <pre>
-          <p>
-            **到某組織的資料來源清單頁面**
-# 1.1.    新增資料來源
-<img class="ex-image" src="./manualImg/image077.png"><br/>
-依序步驟：
-1. 添加一個新的資料來源。
-2. 給定資料來源名稱。
-3. 資料來源類型選擇「postgres」。
-4. 設定連線資訊。
-5. 點擊「保存」，儲存該資料來源。
-
-# 1.2.    測試連接
-<img class="ex-image" src="./manualImg/image078.png"><br/>
-
-依序步驟：
-1. 點擊箭頭所指示的按鈕。
-2. 若連接成功，頁面上方會跳出「資料來源連接成功」。
-
-**至同一組織下繪圖板的頁面**
-# 2.1    新增文字訊息
-<img class="ex-image" src="./manualImg/image079.png"><br/>
-依序步驟：
-1. 點擊箭頭所指示之圖案，新增文字訊息，文字顯示的字可以隨意更改。
-
-# 2.2.    測試連線
-<img class="ex-image" src="./manualImg/image080.png"><br/>
-1. 點擊新增之文字訊息。
-2. 于頁面右方，文本 → 內容 → 點擊回紋針圖案，跳出資料綁定的視窗。
-<img class="ex-image" src="./manualImg/image081.png"><br/>
-3. 綁定資料來源的基本設定
-- 來源選擇，資料來源列表新增之資料來源名稱，類型必須是「postgres」。
-- 格式分為「timeseries」及，「table」。
-- 格式為「timeseries」時，目標必須是資料表有的value。若為「table」則目標可以任意輸入。
-4. 輸入SQL指令。(此處輸入的sql指令僅供查詢使用，任何對資料庫做新增、刪除、修改等指令皆會被禁止)。
-- 格式為「timeseries」時，必須包含的欄位名稱有「value、time_sec、metric」。若本身資料表沒有這三個欄位，則可使用別名的方式。
-ex: SELECT a AS value, b AS time_sec, c AS metric FROM sccomposer.test;
-- 格式為「table」時則沒有必要欄位的限制。
-5. 點擊「確認」，儲存該筆資料綁定之設定。
-<img class="ex-image" src="./manualImg/image082.png"><br/>
-
-**預覽綁定資料來源的文字訊息**
-<img class="ex-image" src="./manualImg/image083.png"><br/>
-依序步驟：
-1. 點擊右上方儲存按鈕之圖案，儲存該筆文字訊息設定。
-2. 點擊右上方三角形圖案做預覽。(預覽頁面如下所示)
-<img class="ex-image" src="./manualImg/image084.png"><br/>
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="">
-        <h3>綁定 SCADA 數據源</h3>
-        <pre>
-          <p>
-            **WISE-PaaS/SaaS Composer 要連接WISE-PaaS/SCADA的資料需要先在Management裡面設定好URL的配對**
-
-**連接portal-scada APP:**
-<img class="ex-image" src="./manualImg/image085.gif"><br/>
-
-1. SaaS Composer Management進入需要設定的Org後選擇資料來源Tab頁
-    點擊 添加資料來源 按鈕打開添加資料來源的配置視窗
-2. 設置自訂資料來源名稱，並選擇添加資料來源的類型,這裡選擇  scada-simple-json-datasource-sso
-3. HTTP項中的URL選項處填寫要連接的SCADA資料來源 portal 的URL，並在前端加上“https://”，尾端加上“/api/simplejsons”
-4. Access選項設置通過代理或者直接訪問, SCADA SimpleJson這裡選擇direct
-    Auth項中將With Credentialsx選項勾選
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="">
-        <h3>綁定 RMM 數據源</h3>
-        <pre>
-          <p>
-            **WISE-PaaS/SaaS Composer 要連接WISE-PaaS/RMM的資料需要先在SaaS Composer Management裡面設定好URL的配對**
-
-連接portal-RMM APP:
-<img class="ex-image" src="./manualImg/image086.gif"><br/>
-
-1. SaaS Composer Management進入需要設定的Org後選擇資料來源Tab頁
-    點擊 添加資料來源 按鈕打開添加資料來源的配置視窗
-2. 設置自訂資料來源名稱，並選擇添加資料來源的類型,這裡選擇 rmm-simple-json-datasource-sso
-3. HTTP項中的URL選項處填寫要連接的 RMM 資料來源的 portal 的 URL，並在前端加上“https://”，尾端加上“/rmm/v1/grafana/simplejson”
-4. Access選項設置通過代理或者直接訪問, RMM SimpleJson這裡選擇direct
-    Auth項中將With Credentialsx選項勾選
-5. 點擊保存即可
-          </p>
-        </pre>
-      </div>
+      <markdown-div id="section6_1" data-markdown="./md/2DDataSourceBinding/apm_tw.md" data-color="dark"  data-en="./md/2DDataSourceBinding/apm_en.md"></markdown-div>
+      <markdown-div id="section6_2" data-markdown="./md/2DDataSourceBinding/dashvideo_tw.md" data-color="dark"  data-en="./md/2DDataSourceBinding/dashvideo_en.md"></markdown-div>
+      <markdown-div id="section6_3" data-markdown="./md/2DDataSourceBinding/simplejson_tw.md" data-color="dark"  data-en="./md/2DDataSourceBinding/simplejson_en.md"></markdown-div>
+      <markdown-div id="section6_4" data-markdown="./md/2DDataSourceBinding/postgresql_tw.md" data-color="dark"  data-en="./md/2DDataSourceBinding/postgresql_en.md"></markdown-div>
+      <markdown-div id="section6_5" data-markdown="./md/2DDataSourceBinding/scada_tw.md" data-color="dark"  data-en="./md/2DDataSourceBinding/scada_en.md"></markdown-div>
+      <markdown-div id="section6_6" data-markdown="./md/2DDataSourceBinding/rmm_tw.md" data-color="dark"  data-en="./md/2DDataSourceBinding/rmm_en.md"></markdown-div>
+      <markdown-div id="section6_7" data-markdown="./md/2DDataSourceBinding/datahub_tw.md" data-color="dark"  data-en="./md/2DDataSourceBinding/datahub_en.md"></markdown-div>
+      <markdown-div id="section6_8" data-markdown="./md/2DDataSourceBinding/influx_tw.md" data-color="dark"  data-en="./md/2DDataSourceBinding/influx_en.md"></markdown-div>
+      <markdown-div id="section6_9" data-markdown="./md/2DDataSourceBinding/mysql_tw.md" data-color="dark"  data-en="./md/2DDataSourceBinding/mysql_en.md"></markdown-div>
+      <markdown-div id="section6_10" data-markdown="./md/2DDataSourceBinding/mongodb_tw.md" data-color="dark"  data-en="./md/2DDataSourceBinding/mongodb_en.md"></markdown-div>
     </div>
   </section>
   <section id="section7">
     <div class="container">
       <h2>2D特殊動作</h2>
-      <div class="ex-contain" id="section7_1">
-        <h3>事件處理</h3>
-        <pre>
-          <p>
-            事件處理可在圖紙元素、圖示以及圖示元素中定義
-
-# 1-圖紙元素中定義
-<img class="ex-image" src="./manualImg/image087.gif"><br/>
-
-圖紙元素中定義方法：
-1. 選擇圖紙中將要定義的元素，點擊事件處理按鈕打開事件處理定義視窗
-2. 選擇想要的=事件，在其中寫標準的JavaScript函數
-3. 點擊確定關閉視窗，並勾選事件處理按鈕右側的選框
-
-
-# 2-圖示中定義
-<img class="ex-image" src="./manualImg/image088.gif"><br/>
-
-圖中中定義方法：
-1. 新建圖示，點擊圖示右側的事件處理按鈕，打開定義視窗
-2. 選擇想要的事件，在其中寫標準的JavaScript函數
-3. 點擊確定關閉視窗，並將圖示繪製在圖紙上
-4. 勾選圖示事件處理右側的選框
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section7_2">
-        <h3>動畫路徑</h3>
-        <pre>
-          <p>
-            動畫路徑實現一個元素沿著另一個元素的軌跡運動
-
-            # 1-動畫路徑演示
-            <img class="ex-image" src="./manualImg/image089.gif"><br/>
-
-            # 2-動畫路徑設置方式
-            <img class="ex-image" src="./manualImg/image090.gif"><br/>
-            動畫路徑設置方式：
-            1. 在圖紙中繪製兩元素，一個元素（物體）沿著另一個元素（路徑）的軌跡運動
-            2. 在圖紙的連接方式出選擇動畫路徑
-            3. 選中物體，點擊出現的藍色小凸起，滑鼠左鍵點擊拖懂到路徑上完成連接動作
-            4. 點擊物體，在動畫路徑的資料綁定中完成對動畫路徑的邏輯處理本例中物體沿著軌跡運動然後返回function 
-            如下：  
-          </p>
-        </pre>
-        <pre>
-          <code>
-            function(input,output){
-              if (i>=1){
-                  p = -0.1;
-              } else if (i<=0) {
-                  p = +0.1;
-              }
-              i=i+p;
-              return i;
-            }
-          </code>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section7_3">
-        <h3>圖紙事件處理</h3>
-        <pre>
-          <p>
-            ### *注意！ 下列Tag屬性名稱會使用在接下來的範例之中，範例標籤(Tag)內容：
-> -Circle --> circle
--Square --> square
--Triangle --> triangle
--TextScroll(滑鼠在此滾動時，文字放大) --> textscroll
--Star --> star
--燈泡--> lightb
--Light Status--> LS
--ON按鈕--> onon
--OFF按鈕--> offoff
--Close按鈕--> Close
-
-- ! 以物件Tag控制該物件屬性語法：dataModel.getDataByTag('該物件標籤(Tag)名稱').屬性類別('屬性名稱', 屬性值);
-- ! ex: dataModel.getDataByTag('offoff').s('2d.visible', true)
-- ! 使用事件處理(Event Handler)時，請務必將旁邊的可交互(Interactive)打勾，才可作用事件處理內的程式指令
-
-# 1. Click Enevt(點擊事件) :
-
-觸發點：當滑鼠遊標點擊(單擊)該物件時觸發
-作用點：滑鼠點擊物件並放開點擊時作用
-
-範例：點擊燈泡時，將Light Status Box(包含按鈕)打開
-
-1. 點選燈泡，並開啟事件處理(Event Handler)
-<img class="ex-image" src="./manualImg/image091.jpg"><br/>
-
-2. 點選Click(點擊)頁籤，進行Coding(編寫程式碼)
-<img class="ex-image" src="./manualImg/image092.jpg"><br/>
-
-程式碼:
-
-dataModel.getDataByTag('offoff').s('2d.visible',true);
-dataModel.getDataByTag('onon').s('2d.visible',true);
-dataModel.getDataByTag('LS').s('2d.visible',true);
-dataModel.getDataByTag('Close').s('2d.visible',true);
-
-圖中程式碼意思為，當滑鼠點擊燈泡時，會將ON按鈕、OFF按鈕、Light Status Box、Close按鈕四個物件顯示
-
-3. 結果呈現
-<img class="ex-image" src="./manualImg/image093.gif"><br/>
-
-# 2. DouClick Enevt(雙擊事件) :
-
-觸發點：當滑鼠遊標快速點擊該物件兩下(雙擊)時觸發
-作用點：滑鼠快速雙擊物件並放開雙擊時作用
-
-範例：雙擊燈泡後，將Light Status Box(包含按鈕)隱藏
-
-1. 點選燈泡，並開啟事件處理(Event Handler)
-<img class="ex-image" src="./manualImg/image091.jpg"><br/>
-
-2. 點選Double Click(雙擊)頁籤，進行Coding(編寫程式碼)
-<img class="ex-image" src="./manualImg/image094.jpg"><br/>
-
-程式碼：
-
-dataModel.getDataByTag('offoff').s('2d.visible',false);
-dataModel.getDataByTag('onon').s('2d.visible',false);
-dataModel.getDataByTag('LS').s('2d.visible',false);
-dataModel.getDataByTag('Close').s('2d.visible',false);
-
-圖中程式碼意思為，當滑鼠雙擊燈泡時，會將ON按鈕、OFF按鈕、Light Status Box、Close按鈕四個物件隱藏
-
-3. 結果呈現
-<img class="ex-image" src="./manualImg/image095.gif"><br/>
-
-# 3. Context Menu Event(上下文選單事件) : 
-
-觸發點：當滑鼠遊標在該物件上時，使用滑鼠右鍵點擊時觸發
-作用點：滑鼠右鍵點擊時作用
-
-範例：在燈泡上按滑鼠右鍵，將Light Status Box(包含按鈕)顯示
-
-1. 點選燈泡，並開啟事件處理(Event Handler)
-<img class="ex-image" src="./manualImg/image091.jpg"><br/>
-
-2. 點選Context Menu(上下文選單)頁籤，進行Coding(編寫程式碼)
-<img class="ex-image" src="./manualImg/image096.jpg"><br/>
-
-程式碼：
-
-dataModel.getDataByTag('offoff').s('2d.visible',true);
-dataModel.getDataByTag('onon').s('2d.visible',true);
-dataModel.getDataByTag('LS').s('2d.visible',true);
-dataModel.getDataByTag('Close').s('2d.visible',true);
-
-圖片程式碼意思為，當滑鼠在燈泡上使用滑鼠右鍵做點擊時，會將ON按鈕、OFF按鈕、Light Status Box、Close按鈕四個物件顯示
-
-3. 結果呈現
-<img class="ex-image" src="./manualImg/image097.gif"><br/>
-
-# 4. Down Event (按下事件) :
-
-觸發點：當滑鼠按下該物件時觸發
-作用點：滑鼠按下該物件且不放開時作用
-
-範例：滑鼠按下圓圈，圓圈變為黃色
-
-1. 點選圓圈，並開啟事件處理(Event Handler)
-<img class="ex-image" src="./manualImg/image098.jpg"><br/>
-
-2. 點選Down(按下)頁籤，進行Coding(編寫程式)
-<img class="ex-image" src="./manualImg/image099.jpg"><br/>
-
-程式碼：
-
-dataModel.getDataByTag('circle').s('shape.background', 'rgb(240,225,19)');
-
-圖中程式碼意思為，當滑鼠在圓圈上，按下滑鼠且不放開時，圓圈變為黃色
-
-3. 結果呈現
-<img class="ex-image" src="./manualImg/image100.gif"><br/>
-
-# 5. Up Event (抬起事件) :
-
-觸發點：當滑鼠放開該物件按下動作時觸發
-作用點：滑鼠放開該物件時作用
-
-範例：滑鼠放開圓圈，圓圈變為藍色
-
-1. 點選圓圈，並開啟事件處理(Event Handler)
-<img class="ex-image" src="./manualImg/image098.jpg"><br/>
-
-
-2. 點選Up(抬起)頁籤，進行Coding(編寫程式)
-<img class="ex-image" src="./manualImg/image101.jpg"><br/>
-
-程式碼：
-
-dataModel.getDataByTag('circle').s('shape.background', 'rgb(51,153,255)');
-
-圖中程式碼意思為，當滑鼠在圓圈上，放開滑鼠按下時，圓圈變為藍色
-
-3. 結果呈現
-<img class="ex-image" src="./manualImg/image102.gif"><br/>
-
-
-# 6. Move Event (移動事件) :
-
-觸發點：當滑鼠在該物件上移動時觸發
-作用點：滑鼠在該物件上移動時作用
-
-範例：滑鼠在方框內進行移動時，圓圈位置進行改變
-
-1. 點選方框，並開啟事件處理(Event Handler)
-<img class="ex-image" src="./manualImg/image103.jpg"><br/>
-
-2. 點選Move(移動)頁籤，進行Coding(編寫程式)
-<img class="ex-image" src="./manualImg/image104.jpg"><br/>
-
-程式碼：
-
-var circlexval = dataModel.getDataByTag('circle').getPosition().x;
-var circleyval = dataModel.getDataByTag('circle').getPosition().y;
-dataModel.getDataByTag('circle').setPosition(circlexval+1, circleyval);
-
-圖中程式碼意思為，各別取得圓圈X與Y軸位置，當滑鼠在方框內移動時，圓圈的位置會進行改變
-
-3. 結果呈現
-<img class="ex-image" src="./manualImg/image105.gif"><br/>
-
-# 7. Enter Event (進入事件) :
-
-觸發點：當滑鼠移(進)入該物件時觸發
-作用點：滑鼠並在該物件內時作用
-
-範例：滑鼠移(進)入三角形時，三角形變為紅色
-
-1. 點選三角形，並開啟事件處理(Event Handler)
-<img class="ex-image" src="./manualImg/image106.jpg"><br/>
-
-2. 點選Enter(進入)頁籤，進行Coding(編寫程式)
-<img class="ex-image" src="./manualImg/image107.jpg"><br/>
-
-程式碼：
-
-dataModel.getDataByTag('triangle').s('shape.background', 'rgb(212,0,0)');
-
-圖中程式碼意思為，當滑鼠移(進)入至三角形時，三角形變為紅色
-
-3. 結果呈現
-<img class="ex-image" src="./manualImg/image108.gif"><br/>
-
-# 8. Hover Event (懸停事件) :
-
-觸發點：當滑鼠移入並且停留在該物件時觸發
-作用點：滑鼠停留該物件時作用
-
-範例：滑鼠移(進)入三角形，並且滑鼠停留在三角形上時，三角形變為白色
-
-1. 點選三角形，並開啟事件處理(Event Handler)
-<img class="ex-image" src="./manualImg/image106.jpg"><br/>
-2. 點選Hover(懸停)頁籤，進行Coding(編寫程式)
-<img class="ex-image" src="./manualImg/image109.jpg"><br/>
-
-程式碼：
-
-dataModel.getDataByTag('triangle').s('shape.background', 'rgb(247,247,247)');
-
-圖中程式碼意思為，當滑鼠移(進)入至三角形且停留在三角形上時，三角形變為白色
-
-3. 結果呈現
-
-<img class="ex-image" src="./manualImg/image110.gif"><br/>
-# 9. Leave Event (離開事件) :
-
-觸發點：當滑鼠移出該物件時觸發
-作用點：滑鼠離開該物件時作用
-
-範例：滑鼠離開(移出)三角形時，三角形變為粉紅色
-
-1. 點選三角形，並開啟事件處理(Event Handler)
-<img class="ex-image" src="./manualImg/image106.jpg"><br/>
-
-2. 點選Leave(離開)頁籤，進行Coding(編寫程式)
-<img class="ex-image" src="./manualImg/image109.jpg"><br/>
-
-程式碼：
-
-dataModel.getDataByTag('triangle').s('shape.background', 'rgb(241,125,164)');
-
-圖中程式碼意思為，當滑鼠離開(移出)三角形時，三角形的背景顏色變為粉紅色
-
-3. 結果呈現
-<img class="ex-image" src="./manualImg/image112.gif"><br/>
-
-
-# 10. BeginDrag Event (開始拖曳) :
-
-觸發點：當滑鼠按住該物件時進行拖曳時觸發
-作用點：物件拖曳的第一時間作用
-
-範例：拖曳星星形狀，第一時間進行星星旋轉角度的改變
-
-1. 點選星星形狀，並開啟事件處理(Event Handler)
-<img class="ex-image" src="./manualImg/image113.jpg"><br/>
-
-
-2. 點選BeginDrag(開始拖曳)頁籤，進行Coding(編寫程式)
-<img class="ex-image" src="./manualImg/image114.jpg"><br/>
-
-
-程式碼：
-
-var starrotation = dataModel.getDataByTag('star').getRotation();
-dataModel.getDataByTag('star').setRotation(starrotation+5);
-
-圖中程式碼意思為，取得星星目前的選轉角度值，當滑鼠開始拖曳星星時，星星在拖曳的第一時間進行順時針加五度旋轉角度的改變
-
-3. 結果呈現
-
-
-<img class="ex-image" src="./manualImg/image115.gif"><br/>
-
-# 11. Drag Event (拖曳) :
-
-觸發點：當滑鼠按住該物件時進行拖曳時觸發
-作用點：物件拖曳期間作用
-
-範例：拖曳星星形狀，拖曳期間進行星星的大小變化，寬度加1，高度加1
-
-1. 點選星星形狀，並開啟事件處理(Event Handler)
-<img class="ex-image" src="./manualImg/image113.jpg"><br/>
-
-
-2. 點選Drag(拖曳)頁籤，進行Coding(編寫程式)
-<img class="ex-image" src="./manualImg/image116.jpg"><br/>
-
-
-程式碼：
-
-var starheightval = dataModel.getDataByTag('star').getHeight();
-var starwidthval = dataModel.getDataByTag('star').getWidth();
-dataModel.getDataByTag('star').setHeight(starheightval+1);
-dataModel.getDataByTag('star').setWidth(starwidthval+1);
-
-圖中程式碼意思為，取的星星的高度與寬度值，且在滑鼠拖曳星星期間，星星的寬度加1，高度加1進行變化
-
-3. 結果呈現
-
-<img class="ex-image" src="./manualImg/image117.gif"><br/>
-
-# 12. EndDrag Event (結束拖曳) :
-
-觸發點：當滑鼠拖曳該物件且放開滑鼠時觸發
-作用點：拖曳開物件後，放開滑鼠時作用
-
-範例：拖曳星星形狀，拖曳結束並且放開滑鼠時，進行星星旋轉角度的改變
-
-1. 點選星星形狀，並開啟事件處理(Event Handler)
-<img class="ex-image" src="./manualImg/image113.jpg"><br/>
-
-
-2. 點選EndDrag(結束拖曳)頁籤，進行Coding(編寫程式)
-<img class="ex-image" src="./manualImg/image118.jpg"><br/>
-
-
-程式碼：
-
-var starrotation = dataModel.getDataByTag('star').getRotation();
-dataModel.getDataByTag('star').setRotation(starrotation - 10);
-
-圖中程式碼意思為，取得星星目前的選轉角度值，並且滑鼠拖曳星星結束並且放開滑鼠時，進行逆時針加10度旋轉角度的改變
-
-3. 結果呈現
-<img class="ex-image" src="./manualImg/image119.gif"><br/>
-
-
-# 13. Scroll Event (滾動) :
-
-觸發點：當滑鼠在該物件上時，使用滑鼠滾輪時觸發
-作用點：滑鼠滾輪滾動時作用
-
-範例：滑鼠滾輪滾動時，文字大小變為30px
-
-1. 點選文字，並開啟事件處理(Event Handler)
-<img class="ex-image" src="./manualImg/image120.jpg"><br/>
-
-
-2. 點選Scroll(滾動)頁籤，進行Coding(編寫程式)
-<img class="ex-image" src="./manualImg/image121.jpg"><br/>
-
-
-程式碼：
-
-dataModel.getDataByTag('textscroll').s('text.font', '30px Arial');
-
-圖中程式碼意思為，滑鼠在文字上滾動時，文字大小變為30px，且為字體為Arial
-
-3. 結果呈現
-<img class="ex-image" src="./manualImg/image122.gif"><br/>
-
-
-<hr/>
-**屬性類別與屬性名稱查詢方式
-
-將滑鼠移至該屬性後方，停留在像是迴紋針按鈕上，即顯示該屬性類別與名稱
-<img class="ex-image" src="./manualImg/image123.jpg"><br/>
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section7_4">
-        <h3>圖標事件處理</h3>
-        <pre>
-          <p class="markd">
-            ## 事件處理(Event Handlers)：   
-
-在圖標事件處理內的每一觸發事件，都與圖紙(Display)的事件處理相同，
-相關操作內容，請參考圖紙(Display)的事件處理文件。
-
-製作一個圖標，以下使用按鈕圖標作為範例：
-
-# 1. 製作按鈕圖形
-按鈕的部分總共拉出4個圓矩形體(Round Rect)物件，1個文字(Text)物件構成，
-並將每一物件的名稱(Name)進行命名，以利辨識每一物件
-
-
-<img class="ex-image" src="./manualImg/image124.jpg"><br/>
-# 2. 給予每一物件的現有屬性進行Property命名
-
-如想使用程式碼指令控制物件現有的屬性，就必須將該物件的屬性給予Property名稱。
-以按鈕圖標文字為例：
-
-點選文字，在Text>Text屬性>迴紋針按鈕>Property給予名稱btnText，如下圖：
-<img class="ex-image" src="./manualImg/image125.jpg"><br/>
-
-
-依照以上的方式，將其他會使用到的現有屬性，也進行Property命名
-
-物件: "Button_Text"
-> - Text -> Text -> btnText
-> - Text -> Color -> btntxtColor
-> - Font -> Text -> btntxtFont
-
-物件: "上層"
-> - Layout -> Rect -> TopPostion
-> - Background -> Background -> topbgcolor
-> - Board -> Color -> topbordercolor
-
-物件: "中層"
-> - Layout -> Rect -> MiddlePosition
-> - Background -> Background -> middlebgcolor
-> - Board -> Color -> middlebordercolor
-
-物件: "下層"
-> - Layout -> Rect -> Under1Position
-> - Background -> Background -> underbgcolor
-             
-# 3. 自行建立屬性(Data Binding)
-
-在此自行建立的屬性，當使用者使用此圖標時，可在右側Menu下方看到這些屬性設定，
-意即使用者可以透過這些屬性，進而設定相關屬性值。
-
-圖標屬性建立設定，右側Menu
-<img class="ex-image" src="./manualImg/image126.jpg"><br/>
-
-
-實際在圖紙使用此圖標時，點選該圖標，相關屬性會顯示在右側Menu下方
-<img class="ex-image" src="./manualImg/image127.jpg"><br/>
-
-
-圖標屬性建立設定與實際使用該圖標屬性對應之關係說明
-<img class="ex-image" src="./manualImg/image128.jpg"><br/>
-
-
-1. Attr: 屬性名稱設定，當程式碼指令要控制此屬性時，就使用Attr名稱抓取此屬性進行控制。
-2. ValueType: 資料類型設定，可設定為字串、顏色、字型、布林、整數...等資料類型。
-3. Default Value: 預設值設定，可在此設定此圖標相關屬性預設的預設值。
-4. Name: 屬性顯示名稱，此處設定的名稱，是給予使用者在使用此圖標時所看見的名稱。
-5. Group: 屬性群組分類，可將自行設定的屬性進行群組分類。
-
-# 4. 撰寫程式碼
-
-可依情況自行決定程式碼指令需在全域事件處理或是每一物件事件處理進行程式碼指令撰寫，
-而此範例是要控制整體圖標，因此，事件處理的程式碼會寫在全域的事件處理內，並非每一物件的事件處理內。
-
-**Down事件**
-<img class="ex-image" src="./manualImg/image129.jpg"><br/>
-
-
-**Down事件程式碼**
-
-data.a('topbgcolor', data.a('Button_Top_bg_Color_Down'));
-data.a('btntxtColor', data.a('Button_Text_Color_Down'));
-data.a('Under1Position', [0.6855,1.55289,52.64067,22]);
-data.a('MiddlePosition', [0.6855,1.55289,52.64067,22])
-data.a('TopPostion',[0.6855,1.55289,52.64067,22])
-data.a('textPosition', [9.37162,6.18925,36.25676,12.72727])
-
-說明：當按鈕被按下時，上層按鈕背景顏色會變為Button_Top_bg_Color_Down屬性給予的顏色，
-      按鈕文字顏色會變為Button_Text_Color_Down屬性給予的顏色，
-      並且將上、中、下層按鈕以及按鈕文字的位置都會改變。
-
-**UP事件**
-<img class="ex-image" src="./manualImg/image130.jpg"><br/>
-
-
-**UP事件程式碼**
-
-data.a('topbgcolor', data.a('Button_Top_bg_Color'));
-data.a('btntxtColor',data.a('Button_Text_Color'))
-data.a('Under1Position', [2,0,52.97297,22])
-data.a('MiddlePosition',[2.06325,0.03931,52.97297,20.10811])
-data.a('TopPostion',[2.77329,0.55289,51.55288,18.72788])
-data.a('textPosition', [10.37162,4.72973,36.25676,12.72727])
-
-說明：當按鈕被放開時，上層按鈕背景顏色會變回原來的顏色，意即變回Button_Top_bg_Color屬性的顏色，
-      按鈕文字也會變回原來的顏色，意即變回Button_Text_Color屬性的顏色，
-      並且也將上、中、下層按鈕以及按鈕文字的位置都變回原位。
-
-# 5. 結果
-<img class="ex-image" src="./manualImg/image131.gif"><br/>
-
-
-## 渲染元素(Render HTML)
-在圖標內的渲染元素為，當畫面一執行時，就給予此圖標進行指令動作，
-如按鈕圖標範例為例，下圖為此按鈕的渲染元素程式碼指令：
-<img class="ex-image" src="./manualImg/image132.jpg"><br/>
-
-
-**程式碼:**
-data.a('btnText', data.a('Button_Text'));
-data.a('btntxtColor', data.a('Button_Text_Color'));
-data.a('btntxtFont', data.a('Button_Text_Font'));
-data.a('topbgcolor', data.a('Button_Top_bg_Color'));
-data.a('topbordercolor', data.a('Button_Top_border_Color'));
-data.a('middlebgcolor', data.a('Button_Middle_bg_Color'));
-data.a('middlebordercolor', data.a('Button_Middle_border_Color'));
-data.a('underbgcolor', data.a('Button_Under_bg_Color'));
-
-**程式碼說明：**
-data.a('btnText', data.a('Button_Text'));
-> 按鈕文字的Text>Text:btnText屬性，文字設定值是透過Button_Text屬性給予，
-並在一執行時就將按鈕文字渲染成設定的文字。
-
-data.a('btntxtFont', data.a('Button_Text_Font'));
-
-> 按鈕文字顏色的Text>Color:btntxtColor屬性，顏色設定值是透過Button_Text_Color屬性給予，
-並在一執行時就將按鈕文字渲染成設定的顏色。
-
-data.a('btntxtFont', data.a('Button_Text_Font'));
-
-> 按鈕文字字形的Text>Font:btntxtFont屬性，文字大小與字形設定值是透過Button_Text_Font屬性給予，
-       並在一執行時就將按鈕文字渲染成設定的文字大小與字形。
-
-data.a('topbgcolor', data.a('Button_Top_bg_Color'));
-> 上層按鈕背景顏色Background>Background:topbgcolor屬性，上層背景顏色設定值是透過Button_Top_bg_Color屬性給予，
-       並在一執行時就將背景顏色渲染成設定的顏色。
-
-data.a('topbordercolor', data.a('Button_Top_border_Color'));
-> 上層按鈕框線顏色Border>Color:topbordercolor屬性，上層框線顏色設定值是透過Button_Top_border_Color屬性給予，
-       並在一執行時就將上層框線顏色渲染成設定的顏色。
-
-data.a('middlebgcolor', data.a('Button_Middle_bg_Color'));
-> 中層按鈕背景顏色Background>Background:middlebgcolor屬性，中層背景顏色設定值是透過Button_Middle_bg_Color屬性給予，       並在一執行時就將背景顏色渲染成設定的顏色。
-
-data.a('middlebordercolor', data.a('Button_Middle_border_Color'));
-> 中層按鈕框線顏色Border>Color:middlebordercolor屬性，中層框線顏色設定值是透過Button_Middle_border_Color屬性給予，       並在一執行時就將中層框線顏色渲染成設定的顏色。
-
-data.a('underbgcolor', data.a('Button_Under_bg_Color'));
-> 下層按鈕背景顏Background>Background:underbgcolor屬性，下層背景顏色設定值是透過Button_Under_bg_Color屬性給予，
-       並在一執行時就將下層背景色渲染成設定的顏色。
-          </p>
-        </pre>
-        <div class="markLoad"></div>
-      </div>
-      <div class="ex-contain" id="section7_5">
-        <h3>管道繪製</h3>
-        <pre>
-          <p>
-            管道利用不規則圖形來繪製，管道的動態效果利用圖形虛線的偏移屬性來完成
-
-# 1-管道效果圖
-<img class="ex-image" src="./manualImg/image133.gif"><br/>
-
-
-# 2-管道繪製
-<img class="ex-image" src="./manualImg/image134.gif"><br/>
-
-
-
-管道繪製步驟：
-1. 左上角選擇不規則圖形，然後繪製一條線，可自行條件長度以及轉捩點
-2. 點擊繪製的線，右側找到圖形（邊框）欄，修改其中的寬度、顏色等屬性來繪製管道外觀
-3. 選擇右側圖形（虛線）欄，勾選虛線，出現管道內部樣式，修改虛線屬性來繪製管道內部
-
-# 3-管道動態效果
-<img class="ex-image" src="./manualImg/image135.gif"><br/>
-
-
-管道動態效果繪製步驟：
-1. 通過修改虛線偏移值可以做到管道流水的動態效果
-2. 在開啟場景中定義一個全域變數 i
-3. 點擊右側圖形（虛線）欄鐘偏移屬性右邊的小連結，打開資料綁定頁面
-4. 在動畫中選擇 Advanced
-5. 在函數框內寫入如下函數：     
-function(input,output){
-        i+=5;
-        return i;
-        //5 代表水流每次的移動量，可自行定義      
-}    
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section7_6">
-        <h3>彈跳視窗</h3>
-        <pre>
-          <p>
-            畫面上呈現彈跳視窗的方式有許多種，以下是其中一較快速的方式：
-
-需要由一個主"Symbol"來做操控，和另一個物件來做彈跳視窗的顯示（可以是 symbols 或是 Assets，依照使用需求)
-
-## 1. 按鈕物件(symbol) :
-    建立Symbol來當作"按鈕物件"，
-    <img class="ex-image" src="./manualImg/image136.jpg"><br/>
-
-
-    在symbol屬性內，點選/開啟Event Handlers屬性，
-    <img class="ex-image" src="./manualImg/image137.jpg"><br/>
-
-    
-    在"click"事件裡貼上以下的Javascript邏輯
-
-        var nodes = data._69O?data._69O._as:[]
-        for(var i = 0;i < nodes.length;i++){
-            nodes[i].s('2d.visible', !nodes[i].s('2d.visible'))
-        }
-        //針對步驟6，吸附圖示連接到按鈕物件，做顯示或隱藏
-    儲存symbol檔案
-    
-## 2. 建立需要被彈跳的物件，以下由assets .jpg圖檔作為彈跳呈現
-
-## 3. 拖拉建立好的 按鈕symbol跟彈跳assets到圖紙中
-
-<img class="ex-image" src="./manualImg/image138.jpg"><br/>
-
-## 4. 針對2個物件的在Events屬性,勾選"Event Handlers"
-<img class="ex-image" src="./manualImg/image139.jpg"><br/>
-
-## 5. 到圖紙屬性，選擇"Connect Action" 改成 "Host"
-<img class="ex-image" src="./manualImg/image140.jpg"><br/>
-
-## 6. 拖拉彈跳物件的吸附圖示連接到按鈕物件
-<img class="ex-image" src="./manualImg/image141.jpg"><br/>
-
-## 7. 存檔後，點擊按鈕物件即可顯示或隱藏彈跳物件
-          </p>
-        </pre>
-      </div>
+      <markdown-div id="section7_1" data-markdown="./md/2DSpecialActions/EventProcessing_tw.md" data-color="dark"  data-en="./md/2DSpecialActions/EventProcessing_en.md"></markdown-div>
+      <markdown-div id="section7_2" data-markdown="./md/2DSpecialActions/DisplayEventDetail_tw.md" data-color="dark"  data-en="./md/2DSpecialActions/DisplayEventDetail_en.md"></markdown-div>
+      <markdown-div id="section7_3" data-markdown="./md/2DSpecialActions/SymbolsEventDetail_tw.md" data-color="dark"  data-en="./md/2DSpecialActions/SymbolsEventDetail_en.md"></markdown-div>
+      <markdown-div id="section7_4" data-markdown="./md/2DSpecialActions/AnimationPath_tw.md" data-color="dark"  data-en="./md/2DSpecialActions/AnimationPath_en.md"></markdown-div>
+      <markdown-div id="section7_5" data-markdown="./md/2DSpecialActions/SketchingPipes_tw.md" data-color="dark"  data-en="./md/2DSpecialActions/SketchingPipes_en.md"></markdown-div>
+      <markdown-div id="section7_6" data-markdown="./md/2DSpecialActions/Popupwindow_tw.md" data-color="dark"  data-en="./md/2DSpecialActions/Popupwindow_en.md"></markdown-div>
+      <markdown-div id="section7_7" data-markdown="./md/2DSpecialActions/Flow_tw.md" data-color="dark"  data-en="./md/2DSpecialActions/Flow_en.md"></markdown-div>
     </div>
   </section>
   <section id="section8">
     <div class="container">
       <h2>2D封裝圖鏢</h2>
-      <div class="ex-contain" id="section8_1">
-        <h3>HTML圖標</h3>
-        <pre>
-          <p>
-            SaaS Composer 的 builtIn 檔中有封裝的 html 圖示：
-圖示類型共有六種：
-     -div
-     -echarts
-     -image
-     -sound
-     -video
-     -dashvideo
-
-# 1-div
-<img class="ex-image" src="./manualImg/image142.png"><br/>
-
-
-div 圖示功能：
-   使用 div 圖示來內嵌入一個 div 
-內容參數使用說明：
-   1. main content：div的內容如：
-     <h2> SaaS Composer </h2>
-     <hr>
-     <p></p>
-   2. main color：div 內容的顏色
-   3. Background Color：div 背景顏色
-   4. Margin：div 的 margin寬度
-   
-# 2-echarts
-<img class="ex-image" src="./manualImg/image143.png"><br/>
-
-
-echarts 圖示功能：
-   使用 echarts 圖示來內嵌入一個 表格參數使用說明：
-   1. data_1、data_2：兩條數據的名稱
-   2. line smooth：折線、曲線選擇
-   3. line color1、line color2：兩條資料線段的顏色
-   4. text color：文本顏色
-   5. line data1、line data2：表格形式填入兩條資料
-   6. x-axis data：橫坐標的數據
-
-# 3-image, sound, video
-<img class="ex-image" src="./manualImg/image144.png"><br/>
-<img class="ex-image" src="./manualImg/image145.png"><br/>
-<img class="ex-image" src="./manualImg/image146.png"><br/>
-
-
-
-
-
-image、sound、video 圖示功能：
-   使用 image、sound、video 圖示來內嵌入對應的圖示、
-音訊和視頻參數使用說明：
-   URL：當前嵌入內容的路徑
-   例：可用 image 圖示來嵌入 gif 圖片
-
-# 4-dashvideo
-<img class="ex-image" src="./manualImg/image147.png"><br/>
-
-
-dashvideo圖示功能：
-   使用 dashvideo圖示來內嵌入一個dashvideo視頻使用方法說明：
-   1. 在management配置頁面配置dashvideo的資料來源，方式如下圖
-   2. 將 builtIn 中 html 資料夾下的 dashvideo 圖示拖入圖紙
-   3. 點擊 dashinfo 屬性右側的資料綁定連結打開綁定介面
-   4. 選擇配置好的 dashvideo 資料來源
-   5. 填寫 channel 號，點擊保存即可
-   6. URL、USER、PASSWORD、IVSID資訊將自動填好且不可改變
-   <img class="ex-image" src="./manualImg/image148.png"><br/>
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section8_2">
-        <h3>反向控制</h3>
-        <pre>
-          <p>
-            SaaS Composer 支援對 scada 以及 RMM 的反向控制功能實現方式有兩種：
-     1. 直接在事件處理中調用反向控制的介面方法
-     2. 使用反向控制的封裝圖示 (需要勾選反向控制圖示的事件處理選項）
-注：scada 的反向控制功能需要使用連接 portal-scada APP 的方式來綁定 scada 資料來源          
-
-# 1-直接在事件處理中調用反向控制的介面方法
-<img class="ex-image" src="./manualImg/image149.png"><br/>
-
-
-反向控制方法及其參數說明
-    dataRefreshUtil.setValue(datasourceName,datasourceType,{
-        "target" : target,
-        "value" : "123"
-    })
-        // datasourceName : 資料來源名稱
-        // datasourceType : plugin 名稱所對應的 plugin type   例如：scada-simple-json-datasource-sso
-        // target : 所要控制的目標資料  
-
-# 2-使用封裝圖示
-2.1 封裝開關圖示
-<img class="ex-image" src="./manualImg/image150.png"><br/>
-
-封裝開關圖示使用方式：
-1. 圖示所在位置
-        圖示 builtIn 目錄下，reverse_control 資料夾中的 switch button1 圖示
-        路徑：symbols/builtIn/reverse_control/switch button1.json
-2. 需要參數及填寫方式
-        如上圖
-3. 功能
-        開關控制，即設置 0、1 值        
-
-2.2 封裝設置資料圖示
-<img class="ex-image" src="./manualImg/image151.png"><br/>
-
-
-封裝設置值圖示使用方式：
-該功能可以和 input 框進行結合
-1. 圖示所在位置
-        button 圖示 builtIn 目錄下，reverse_control 資料夾中的 Set value button 圖示
-        路徑：symbols/builtIn/reverse_control/Set value button.json
-        input 框圖標 builtIn 目錄下，ui 資料夾中的 input 圖示
-        路徑：symbols/builtIn/ui/input.json
-2. 需要參數及填寫方式
-        如上圖
-3. 功能
-       設置值
-       3.1 使用吸附功能將 button 吸附到 input 框上，即可實現動態設置 input 框內數值
-       3.2 若不吸附，無 input 框，則設置 sourceValue 的值        
-
-2.3 群控
-<img class="ex-image" src="./manualImg/image152.png"><br/>
-
-
-群控功能使用方式：
-該功能可以使用一個按鈕來控制多個設備的反向控制
-1. 要求多個資料綁定的來源相同，
-2. 需要參數及填寫方式
-       如上圖
-3. 功能
-       與設置值封裝圖示相同       
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section8_3">
-        <h3>地圖使用</h3>
-        <pre>
-          <p>
-            # SaaS Composer 地圖功能使用手冊
-使用 symbols/builtIn/map/map.json 這個圖示來實現地圖功能
-#### 1、創建圖紙，在圖示的 builtIn 資料夾 map 目錄下找到地圖圖示並拖入圖紙中
-#### 2、勾選掉右側 zoomMove 屬性，調整地圖大小以及位置
-<img class="ex-image" src="./manualImg/image153.png"><br/>
-
-#### 3、點擊圖紙空白頁，在右側調整顯示範圍使地圖可以完整的顯示在螢幕中，並且勾選取消移動和取消縮放選項
-<img class="ex-image" src="./manualImg/image154.png"><br/>
-
-#### 4、設置地圖屬性
-<img class="ex-image" src="./manualImg/image155.png"><br/>
-
-
-#### 5、軌跡功能使用說明
-    1、點擊綁定按鈕，打開綁定頁面，輸入需要綁定的軌跡數量，分別綁定對應的資料
-    2、根據輸入的軌跡數量修改其餘軌跡功能屬性的陣列長度，並分別設置數值
-    3、軌跡顏色不填則默認 "#008BD5" 顏色
-    4、軌跡寬度為軌跡路徑的寬度數值，若不填，默認為 1
-    5、軌跡節點值為節點處顏色屬性，若不填，預設不顯示
-    6、額外標注為額外顯示標注的標籤值，若不填，默認不設置
-    <img class="ex-image" src="./manualImg/image156.png"><br/>
-
-
-#### 6、特殊功能說明
-6-1、吸附與同步功能（followAction屬性）
-    SaaS Composer 支援將部分元素吸附在地圖上    
-    連接屬性選擇吸附，創建一個新的圖元吸附在地圖上，該屬性可以控制該圖元是否隨著地圖的拖拽和縮放進行同步移動
-    <img class="ex-image" src="./manualImg/image157.png"><br/>
-
-
-6-2、軌跡功能的額外標注屬性
-    創建一個圖元，設置他的標籤屬性，並將標籤值填入 icon 屬性中
-    在預覽時候該元素會出現在軌跡的最新位置
-    <img class="ex-image" src="./manualImg/image158.png"><br/>
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section8_4">
-        <h3>熱點圖圖標</h3>
-        <pre>
-          <p>
-            # 2D 熱點圖
-1、熱點以及熱點圖像呈現媒介繪製：選擇右上角的熱點，在圖紙中繪製出熱點；選擇圓矩形體或者矩形體繪製熱點圖像呈現媒介（熱點圖像將呈現在該媒介所在位置）
-<img class="ex-image" src="./manualImg/image159.png"><br/>
-
-
-2、熱點圖像綁定：
-
-a) 填寫熱點圖像呈現媒介標籤
-<img class="ex-image" src="./manualImg/image160.png"><br/>
-
-
-b) 將改標籤內容填寫在熱點的 HeatFloor 屬性中
-<img class="ex-image" src="./manualImg/image161.png"><br/>
-
-
-3、熱點屬性
-
-heatValue：當前熱點的數值，數值不同顏色深淺不同
-
-heatRadius：熱點圖像的半徑
-<img class="ex-image" src="./manualImg/image162.png"><br/>
-
-
-4、將熱點隱藏即可預覽
-<img class="ex-image" src="./manualImg/image163.png"><br/>
-          </p>
-        </pre>
-      </div>
+      <markdown-div id="section8_1" data-markdown="./md/2DMaskIcons/HTML_en.md" data-color="dark"  data-en="./md/2DMaskIcons/HTML_en.md"></markdown-div>
+      <markdown-div id="section8_2" data-markdown="./md/2DMaskIcons/ReverseControl_tw.md" data-color="dark"  data-en="./md/2DMaskIcons/ReverseControl_en.md"></markdown-div>
+      <markdown-div id="section8_3" data-markdown="./md/2DMaskIcons/Map_tw.md" data-color="dark"  data-en="./md/2DMaskIcons/Map_en.md"></markdown-div>
+      <markdown-div id="section8_4" data-markdown="./md/2DMaskIcons/Heatmap_tw.md" data-color="dark"  data-en="./md/2DMaskIcons/Heatmap_en.md"></markdown-div>
+      <markdown-div id="section8_5" data-markdown="./md/2DMaskIcons/MenuTree_tw.md" data-color="dark"  data-en="./md/2DMaskIcons/MenuTree_en.md"></markdown-div>
+      <markdown-div id="section8_6" data-markdown="./md/2DMaskIcons/ComboBox_tw.md" data-color="dark"  data-en="./md/2DMaskIcons/ComboBox_en.md"></markdown-div>
+      <markdown-div id="section8_7" data-markdown="./md/2DMaskIcons/Table_tw.md" data-color="dark"  data-en="./md/2DMaskIcons/Table_en.md"></markdown-div>
+      <markdown-div id="section8_7" data-markdown="./md/2DMaskIcons/Chart_tw.md" data-color="dark"  data-en="./md/2DMaskIcons/Chart_en.md"></markdown-div>
     </div>
   </section>
   <section id="section9">
     <div class="container">
       <h2>2D & 3D導入導出</h2>
-      <div class="ex-contain" id="section9_1">
-        <h3>2D導入檔案格式</h3>
-        <pre>
-          <p>
-            # 1. 導入檔案格式
-匯入的檔案要照著SaaS Composer上檔案的分類同步，以下範例在2D**圖紙**中包含了**圖標**，**組件**和**資源**的檔案。
-<img class="ex-image" src="./manualImg/image164.png"><br/>
-
-
-exportFile.zip 內包含了 **displays**, **symbols**, **components**, and **assets**等4種主要類別。
-匯入的檔案副檔名一定要是**.zip**
-<img class="ex-image" src="./manualImg/image165.png"><br/>
-
-
-## Display包含:
-<img class="ex-image" src="./manualImg/image166.png"><br/>
-
--以圖紙命名的.json檔 (敘述圖紙內的所有物件位置與各自的屬性)
--以圖紙命名的.png檔 (縮小的圖紙畫面截圖檔)
-
-## Symbols包含:
-<img class="ex-image" src="./manualImg/image167.png"><br/>
-
--以圖標命名的.json檔 (敘述圖標內的所有物件位置與各自的屬性)
--以圖標命名的.png檔 (縮小的圖標畫面截圖檔)
-
-## Components包含:
-<img class="ex-image" src="./manualImg/image168.png"><br/>
-
--以組件命名的.json檔 (敘述組件內的所有物件位置與各自的屬性)
--以組件命名的.png檔 (縮小的組件畫面截圖檔)
-
-## Assets包含:
-<img class="ex-image" src="./manualImg/image169.png"><br/>
-
--所有圖紙中有使用到的資源檔案都會在這裡列出
-
-# 2. 檔案內容
-
-範例畫面中有使用的檔案包含
-<img class="ex-image" src="./manualImg/image170.png"><br/>
-
-
-一個symbol檔名稱為"symbols fan.json"，路徑為"symbols/symbols fan.json"
-
-一個component檔名稱為"component fan.json"，路徑為"components/component fan.json"
-
-兩個assets檔取分別名稱為
-1. "ring.png"，路徑為"assets/ring.png"
-2. "Ducati.png"，路徑為"assets/folder abc/Ducati.png"
-<img class="ex-image" src="./manualImg/image171.png"><br/>
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section9_2">
-        <h3>3D導入檔案格式</h3>
-        <pre>
-          <p>
-            # 1. 3D導入檔案格式
-匯入的檔案要照著SaaS Composer上檔案的分類同步，以下範例在3D**場景**中包含了**模型**，**圖標**，**組件**和**資源**的檔案。
-<img class="ex-image" src="./manualImg/image172.png"><br/>
-
-
-exportFile.zip 內包含了 **scenes**, **models**, **symbols**, **components**, and **assets**等5種主要類別。
-匯入的檔案副檔名一定要是**.zip**
-<img class="ex-image" src="./manualImg/image173.png"><br/>
-
-
-## Scenes包含:
-<img class="ex-image" src="./manualImg/image174.png"><br/>
-
--以場景命名的.json檔 (敘述場景內的所有物件位置與各自的屬性)
--以場景命名的.png檔 (縮小的場景畫面截圖檔)
-
-## Models包含:
-<img class="ex-image" src="./manualImg/image175.png"><br/>
-
--以模型命名的.json檔 (敘述模型內的所有物件位置與各自的屬性)
--以模型命名的.png檔 (縮小的模型畫面截圖檔)
-
-## Symbols包含:
-<img class="ex-image" src="./manualImg/image176.png"><br/>
-
--以圖標命名的.json檔 (敘述圖標內的所有物件位置與各自的屬性)
--以圖標命名的.png檔 (縮小的圖標畫面截圖檔)
-
-## Components包含:
-<img class="ex-image" src="./manualImg/image177.png"><br/>
-
--以組件命名的.json檔 (敘述組件內的所有物件位置與各自的屬性)
--以組件命名的.png檔 (縮小的組件畫面截圖檔)
-
-## Assets包含:
-<img class="ex-image" src="./manualImg/image178.png"><br/>
-
--所有圖紙中有使用到的資源檔案都會在這裡列出
-
-# 2. 3D檔案內容
-
-範例畫面中有使用的檔案包含
-<img class="ex-image" src="./manualImg/image179.png"><br/>
-
-
-一個scenes檔名稱為"import 3D sample"，路徑為"scenes/import 3D sample.json" 
-一個models檔名稱為"solar"，路徑為"models/solar.json"
-一個symbol檔名稱為"symbols fan.json"，路徑為"symbols/symbols fan.json"
-一個component檔名稱為"component fan.json"，路徑為"components/component fan.json"
-
-五個assets檔取分別名稱為
-1. "ring.png"，路徑為"assets/ring.png"
-2. "solar1.jpg"，路徑為"assets/solar folder/solar1.jpg"
-3. "solar2.jpg"，路徑為"assets/solar folder/solar2.jpg"
-4. "solar.obj"，路徑為"assets/solar folder/solar.obj"
-5. "solar.mtl"，路徑為"assets/solar folder/solar.mtl"
-<img class="ex-image" src="./manualImg/image180.png"><br/>
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section9_3">
-        <h3>導入功能</h3>
-        <pre>
-          <p>
-            將匯出的壓縮包拖入將要導入目錄中即可。
-            <img class="ex-image" src="./manualImg/image181.png"><br/>
-            <img class="ex-image" src="./manualImg/image182.png"><br/>
-
-
-
-    分以下三種導入方式：
-    1.將包含圖紙、3D場景的壓縮包導入圖紙、3D場景目錄下
-        圖紙、3D場景檔放在當前導入目錄下，其所有依賴檔放回檔原本所在路徑，        
-    2.將包含圖紙、3D場景的壓縮包導入非圖紙、3D場景目錄（圖示、元件等）下
-        圖紙、3D場景文件及其依賴文件都放回檔原本所在路徑，        
-    3.將不包含圖紙、3D場景的壓縮包導入
-        圖示、模型、元件、資源等及其依賴文件都放回檔原本所在路徑    
-    導入文件重名解決辦法：
-        導入文件時，若導入文件不存在，則創建該文件；若導入檔存在，則創建該檔的副本。
-        檔副本命名規則為：檔案名後添加 -i（i>1，每次創建時累加）。
-    例如：
-        1.導入symblos/abc.json文件
-            a.該文件不存在，創建檔案名為symblos/abc.json的文件；
-            b.該文件存在，創建檔案名為symblos/abc-2.json的文件；
-              再次導入symblos/abc.json文件，則創建symblos/abc-3.json的文件；
-            c.若內部有symblos/abc-2.json，symblos/abc-3.json，則創建symblos/abc-4.json文件；
-              若內部有symblos/abc-2.json，symblos/abc-5.json，則創建symblos/abc-3.json文件；
-        2.導入symblos/abc-2.json文件
-            a.該文件不存在，創建檔案名為symblos/abc-2.json的文件；
-            b.該文件存在，創建檔案名為symblos/abc-2-2.json的文件；
-              再次導入symblos/abc.json文件，則創建symblos/abc-2-3.json的文件
-        
-## 靜態檔導入匯出    
-    靜態檔導入匯出由 setting.yaml 中 static_file_import_export 參數控制。
-    true：支援靜態檔導入匯出，遵循導入匯出規則；
-    false：不支援靜態檔導入匯出，導入匯出時均忽略靜態檔，其餘檔正常導入匯出。
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section9_4">
-        <h3>導出功能</h3>
-        <pre>
-          <p>
-            **SaaS Composer 支援將製作好的內容以 zip 包的形式進行匯出、   也支援將合適的內容打包成 zip 包導入到SaaS Composer中**
-
-右鍵需要匯出檔，點擊匯出按鈕匯出。
-匯出檔均放在一個以匯出時間戳記為名的壓縮包中。
-<img class="ex-image" src="./manualImg/image183.png"><br/>
-<img class="ex-image" src="./manualImg/image184.png"><br/>
-
-
-分以下兩種匯出方式：
-1. 圖紙、3D場景匯出
-    匯出圖紙、3D場景的同時匯出其依賴檔，所有檔使用本身的路徑和檔案名存儲。
-2. 圖示、模型、元件、資源匯出
-    圖示、模型、元件、資源匯出時同時匯出裡面的依賴檔，所有檔使用本身的路徑和檔案名存儲，匯出的同時會在壓縮包中創建一個displays.tree檔，記錄圖示、模型、元件、資源的路徑。
-          </p>
-        </pre>
-      </div>
+      <markdown-div id="section9_1" data-markdown="./md/ImportAndExport/2DImportFileFormat_tw.md" data-color="dark"  data-en="./md/ImportAndExport/2DImportFileFormat_en.md"></markdown-div>
+      <markdown-div id="section9_2" data-markdown="./md/ImportAndExport/3DImportFileFormat_tw.md" data-color="dark"  data-en="./md/ImportAndExport/3DImportFileFormat_en.md"></markdown-div>
+      <markdown-div id="section9_3" data-markdown="./md/ImportAndExport/Export_tw.md" data-color="dark"  data-en="./md/ImportAndExport/Export_en.md"></markdown-div>
+      <markdown-div id="section9_4" data-markdown="./md/ImportAndExport/Import_tw.md" data-color="dark"  data-en="./md/ImportAndExport/Import_en.md"></markdown-div>
     </div>
   </section>
   <section id="section10">
     <div class="container">
-      <h2>3D文件創建</h2>
-      <div class="ex-contain" id="section10_1">
-        <h3>3D場景創建</h3>
-        <pre>
-          <p>
-            **創建3D場景：**
-            <img class="ex-image" src="./manualImg/image185.png"><br/>
-1. 左上角有一個顯示為 “三條橫杠” 的按鈕，點擊此按鈕，滑鼠移動到“新建場景”，點擊即可生成一個空白場景。
-<img class="ex-image" src="./manualImg/image186.png"><br/>
-
-
-2. 點擊右上角操作欄裡面的保存，填寫場景名稱，即可創建出3D場景檔
-<img class="ex-image" src="./manualImg/image187.gif"><br/>
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section10_2">
-        <h3>3D模型創建</h3>
-        <pre>
-          <p>
-            **創建3D模型：**
-            <img class="ex-image" src="./manualImg/image188.png"><br/>
-
-
-1. 左上角有一個顯示為 “三條橫杠” 的按鈕，點擊此按鈕，滑鼠移動到“新建模型”，在移動到“新建OBJ模型”，點擊即可打開模型創建視窗。
-<img class="ex-image" src="./manualImg/image189.png"><br/>
-
-
-2. 填寫 OBJ 模型創建的內容即可創建一個新的模型
-<img class="ex-image" src="./manualImg/image190.gif"><br/>
-
-
-OBJ 模型創建參數說明：
-1. 創建模型所必須檔
-       模型 obj 檔、mtl 檔、以及 mtl 檔中所依賴的其他 PNG 等檔
-2. 參數說明
-       路徑：當前模型所在路徑
-       obj：模型 obj 檔路徑
-       mtl：模型 mtl 檔路徑
-       貼圖首碼：mtl 檔中依賴的PNG檔所在目錄
-             若不填，mtl 中需寫完整的檔路徑，
-             若填寫，mtl 中可只寫檔案名稱
-       圖片：模型顯示的縮略圖的路徑，若不填，系統自動生成一個縮略圖
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section10_3">
-        <h3>3D鍵盤操作</h3>
-        <pre>
-          <p>
-            **鍵盤操作**
-Sketchboard 3D 預置了很多鍵盤操作功能
-
-w：前進，如果同時按下shift鍵則為上移
-s：後退，如果同時按下shift鍵則為下移
-a：左移
-d：右移
-左方向鍵：第一人稱模式左旋轉
-右方向鍵：第一人稱模式右旋轉
-上方向鍵：第一人稱模式上旋轉
-下方向鍵：第一人稱模式下旋轉
-ctrl或command鍵：進行框選
-space空白鍵：調用reset()進行復位
-shift鍵：按住shift鍵盤時，預設操作變成pan的平移效果
-Sketchboard 預設情況下移動圖元是沿著xz平面移動，當按住以下鍵時將改變移動模式：
-
-按住shift鍵，或者同時按下x、y和z鍵時，則進行xyz三維空間的移動
-同時按下x和y鍵時，則進行沿xy平面的移動
-同時按下x和z鍵時，則進行沿xz平面的移動
-同時按下y和z鍵時，則進行沿yz平面的移動
-僅按下x鍵時，則進行沿x軸方向的移動
-僅按下y鍵時，則進行沿y軸方向的移動
-僅按下z鍵時，則進行沿z軸方向的移動
-          </p>
-        </pre>
-      </div>
+      <h2>3D 文件創建</h2>
+      <markdown-div id="section10_1" data-markdown="./md/3DFileCreation/3DSceneCreation_en.md" data-color="dark"  data-en="./md/3DFileCreation/3DSceneCreation_en.md"></markdown-div>
+      <markdown-div id="section10_2" data-markdown="./md/3DFileCreation/3DModelCreation_en.md" data-color="dark"  data-en="./md/3DFileCreation/3DModelCreation_en.md"></markdown-div>
+      <markdown-div id="section10_3" data-markdown="./md/3DFileCreation/3DHot-key_en.md" data-color="dark"  data-en="./md/3DFileCreation/3DHot-key_en.md"></markdown-div>
+      <markdown-div id="section10_4" data-markdown="./md/3DFileCreation/3DEvents_en.md" data-color="dark"  data-en="./md/3DFileCreation/3DEvents_en.md"></markdown-div>
+      <markdown-div id="section10_5" data-markdown="./md/3DFileCreation/2D3DLayers_en.md" data-color="dark"  data-en="./md/3DFileCreation/2D3DLayers_en.md"></markdown-div>
     </div>
   </section>
   <section id="section11">
     <div class="container">
       <h2>3D場景屬性</h2>
-      <div class="ex-contain" id="section11_1">
-        <h3>3D場景屬性介紹</h3>
-        <pre>
-          <p>
-            **場景相關屬性**
-
-# 1-場景Editor頁面
-<img class="ex-image" src="./manualImg/image191.png"><br/>
-
-1. 3D模式下簡單的模型的繪製
-           依次為：六面體、圓柱、球體、牆面、門窗、地板、管道
-2. 3D模式主要的四種檔分類：
-           場景、模型、圖示、資源（其中圖示、資源與2D模式共用）
-3. 與選取的檔種類相對的目錄結構
-4. 所選擇檔的相對路徑
-5. 檔、介面相關功能操作
-6. 繪圖物件快速排版快速鍵
-7. 物件屬性欄
-8. 檔案內容清單及json資料
-9. 3D檔編輯的俯視動作頁面
-10. 3D檔的編輯動作頁面
-
-# 2-屬性欄
-1.擴展部分
-<img class="ex-image" src="./manualImg/image192.png"><br/>
-
-  1. 與2D相同屬性
-        開啟場景。執行期間、流覽器關閉、更新頻率、資料綁定
-  2. 燈光控制
-        設置頭燈、點光燈、聚光燈等燈光效果
-  3. 設置導航巡視功能
-        導航相機路徑、導航目標路徑、導航速度      
-
-2.基礎部分
-<img class="ex-image" src="./manualImg/image193.png"><br/>
-
-  1. 預覽地址：
-        表示場景的縮略圖，若不填會自動生成一個縮略圖
-  2. 相機、目標
-        兩個位置控制對3D模型的觀察角度
-  3. 近遠端位置
-        可顯示的最遠以及最近位置
-  4. 背景顏色
-        3D場景的背景色
-  5. 網格顏色、格線數、網格間距
-        3D場景繪製時的網路輔助線屬性
-  6. 環境光貼圖
-  7. 高亮
-          滑鼠選中或者懸浮時，模型高亮顯示
-  8. 輝光
-          場景模型添加輝光效果
-  9. 反序列化前、反序列化後
-          與2D相同
-  10. 正交投影
-          3D場景的觀察角度
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section11_2">
-        <h3>3D熱點圖</h3>
-        <pre>
-          <p>
-            # 3D 熱點圖
-1、熱點以及熱點圖像呈現媒介繪製：選擇右上角的熱點，在圖紙中繪製出熱點；選擇六面體繪製熱點圖像呈現媒介（熱點圖像將呈現在該媒介所在位置，六面體可調整高度）
-<img class="ex-image" src="./manualImg/image194.png"><br/>
-
-
-2、熱點圖像綁定：
-a) 選中六面體填寫熱點圖像呈現媒介標籤
-<img class="ex-image" src="./manualImg/image195.png"><br/>
-
-b) 選中熱點，點擊右側資料綁定，選中heat point，將改標籤內容填寫在HeatFloor屬性中
-
-
-3、熱點屬性
-heatValue：當前熱點的數值，數值不同顏色深淺不同
-heatRadius：熱點圖像的半徑
-<img class="ex-image" src="./manualImg/image196.png"><br/>
-
-4、將熱點隱藏即可預覽
-<img class="ex-image" src="./manualImg/image198.png"><br/>
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section11_3">
-        <h3>3D導航路徑</h3>
-        <pre>
-          <p>
-            **導航巡視**
-
-導航巡視一共由3部分組成：
-1. 導航相機路徑
-           相機的移動軌跡路徑
-2. 導航目標路徑
-           目標的移動軌跡路徑
-3. 導航速度
-           移動的速度
-
-           <img class="ex-image" src="./manualImg/image199.gif"><br/>
-
-
-導航巡視效果
-# 方法#1-設置導航巡視路徑
-導航巡視設置方式：
-<img class="ex-image" src="./manualImg/image200.gif"><br/>
-
-
-1. 選擇場景，在場景中繪製兩條管道，分別在***"標籤"***中命名，例如 path1，path2
--path1 等同於觀看者的位置。
--path2 等同於觀看者眼睛所注視的方向
-以上圖的gif檔範例，觀看者在外圈移動的同時，注視者內圈的線道軌跡。
-2. 為了增加移動的流暢度，建議雙擊管線折點，以弧線型的路徑進行移動，避免直角的轉折。
-3. 如果希望流暢度接近動畫，每1秒呈現30幀的比例，可以把畫面更新頻率跟資料更新頻率調為0.03（秒）
--依照客戶需求來調適更新頻率。
-4.在**"導航相機路徑"**輸入 觀看者的位置***"標籤"***名稱 ex. path1
-5.在**"導航目標路徑"**輸入 眼睛注視的方向***"標籤"***名稱 ex. path2
-6.在**"導航速度"**輸入 相對移動的刷新幅度 
-單位為總長度的百分比，ex. 輸入 "0.1" 等同每次更新會移動管線總長的10%距離。 
-如以上圖的gif檔範例，輸入0.005 等同每次0.5%的位置遞增
--填寫導航速度來控制整個導航巡視時間，
-    導航巡視時間 = 刷新頻率 ÷ 導航速度
-4. 可以將兩個管道分成相等的段數來實現導航巡視分段的功能
-5. 設置分段長度足夠小來實現旋轉巡視功能
-
-# 方法#2-通過代碼完成動畫路徑
-可以在執行期間中寫標準JavaScript代碼來實現導航巡視功能
-方式及調用介面如下：
-    次方法將整個運動過程按照區間劃分為獨立的運行過程，在某一個狀態欄間值 [minValue,maxValue] 之內執行一個簡單的運動過程。
-
-    根據當前狀態值 currentValue 和初始狀態值 startValue（例如時間）之間的差值 diffValue 來判斷執行哪一個區間的軌跡函數。
-    1. 環繞旋轉
-        animate3D.overlooking(diffValue,minValue,maxValue,circle)
-            // diffValue: 當前狀態值 currentValue 和初始狀態值 startValue（例如時間）之間的差值
-            // minValue : 運動軌跡的起始狀態值
-            // maxValue : 運動軌跡的結束狀態值
-            // circle    : 運動軌跡的旋轉圈數
-    2. 相機移動
-        animate3D.eyeMove(diffValue,minValue,maxValue,eyeArray)
-            // diffValue: 當前狀態值 currentValue 和初始狀態值 startValue（例如時間）之間的差值
-            // minValue : 運動軌跡的起始狀態值
-            // maxValue : 運動軌跡的結束狀態值
-            // eyeArray  : 運動軌跡結束時相機的位置座標，x、y、z 組成的一個陣列 [x,y,z]
-    3. 目標移動
-        animate3D.centerMove(diffValue,minValue,maxValue,centerArray)
-            // diffValue   : 當前狀態值 currentValue 和初始狀態值 startValue（例如時間）之間的差值
-            // minValue    : 運動軌跡的起始狀態值
-            // maxValue    : 運動軌跡的結束狀態值
-            // centerArray  : 運動軌跡結束時目標的位置座標，x、y、z 組成的一個陣列 [x,y,z]
-
-
-設置動畫迴圈功能：
-    獲取初始位置座標
-    initValue = animate3D.record()
-        // initValue: 將頁面動畫開始時相機以及目標的座標以一個陣列形式返回
-                       陣列長度為6，前三位為相機座標，後三位元為目標座標
-    設置迴圈動畫
-    startValue = animate3D.setCirculation = function (startValue,cycleLength,initValue)
-        // startValue  : 迴圈動畫的初始狀態值，並返回一個初始狀態值
-        // cycleLength ：迴圈週期
-        // initValue   ：陣列形式的初始狀態座標，陣列長度為6，前三位為相機座標，後三位元為目標座標
-
-例如：
-   //獲取當前狀態值（此處時間值）
-   current_value = new Date().getTime();
-    if (typeof(start_value) == "undefined"){
-          start_value = current_value;
-        //獲取起始位置座標
-        init_value = animate3D.record()
-    }
-
-    //設置動畫迴圈週期
-    diff_value = current_value - start_value;
-    start_value = animate3D.setCirculation(start_value,25*1000,init_value);
-    //視角環繞
-    animate3D.overlooking(diff_value,0,10*1000,1)
-    //相機位置移動
-    animate3D.eyeMove(diff_value,10*1000,25*1000,[144,81,-203])
-    //目標位置移動
-    animate3D.centerMove(diff_value,10*1000,25*1000,[-267,181,-38])
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section11_4">
-        <h3>3D燈光控制</h3>
-        <pre>
-          <p>
-            燈光控制共分為四種：
-1. 頭燈
-        SC默認內置了一盞頭燈，頭燈相當於在相機的位置有一個點光燈， 該燈源的位置隨相機位置變化自行變化
-        用戶即使不做任何頭光設置，漫遊到任何位置都能體驗到基本光照效果。也可以手動設置關閉和開啟。
-2. 點光燈
-        點燈光從光源位置各個方向發出光線，影響其影響範圍內的所有物體
-3. 聚光燈
-        聚光燈從光源位置，以到目標點的位置為方向，在指定的張角和影響範圍內的物體受其影響
-4. 方向光
-        方向光源在無窮遠處，以指定的方向照射到場景內的所有物體，方向有光球到中心點的連線方向決定    
-
-# 1-頭燈
-<img class="ex-image" src="./manualImg/image201.gif"><br/>
-
-
-無頭燈效果
-<img class="ex-image" src="./manualImg/image202.gif"><br/>
-
-
-有頭燈效果
-<img class="ex-image" src="./manualImg/image203.gif"><br/>
-
-頭燈設置方式：
-<img class="ex-image" src="./manualImg/image204.png"><br/>
-
-
-1. 選擇場景，在右側屬性欄找到燈光控制，點擊打開燈光設置視窗
-2. 選擇頭燈，設置頭燈屬性
-3. 啟用燈光控制頭燈的開啟和關閉，勾選開啟
-4. 點擊確定保存設置
-
-# 2-點光燈
-<img class="ex-image" src="./manualImg/image205.png"><br/>
-<img class="ex-image" src="./manualImg/image206.gif"><br/>
-
-
-
-點光燈效果展示
-
-
-點光燈設置方式：
-<img class="ex-image" src="./manualImg/image207.png"><br/>
-
-
-1. 選擇場景，在右側屬性欄找到燈光控制，點擊打開燈光設置視窗
-2. 選擇點光燈，點擊Add按鈕添加一個點光燈物件
-3. 設置點光燈屬性
-4. 啟用燈光控制點光燈燈的開啟和關閉，勾選開啟
-5. 啟用燈光球控制光源處小球是否顯示，勾選顯示
-6. 點擊確定保存設置
-
-
-# 3-聚光燈
-<img class="ex-image" src="./manualImg/image208.gif"><br/>
-
-
-聚光燈效果展示
-<img class="ex-image" src="./manualImg/image209.png"><br/>
-
-
-聚光燈設置方式：
-
-1. 選擇場景，在右側屬性欄找到燈光控制，點擊打開燈光設置視窗
-2. 選擇聚光燈，點擊Add按鈕添加一個聚光燈物件
-3. 設置聚光燈屬性
-4. 啟用燈光控制聚光燈的開啟和關閉，勾選開啟
-5. 啟用燈光球控制光源處小球是否顯示，勾選顯示
-6. 點擊確定保存設置
-
-# 4-方向光
-<img class="ex-image" src="./manualImg/image210.gif"><br/>
-
-
-方向光效果展示
-<img class="ex-image" src="./manualImg/image211.gif"><br/>
-
-方向光設置方式：
-<img class="ex-image" src="./manualImg/image212.png"><br/>
-<img class="ex-image" src="./manualImg/image213.png"><br/>
-
-
-
-1. 選擇場景，在右側屬性欄找到燈光控制，點擊打開燈光設置視窗
-2. 選擇方向光，點擊Add按鈕添加一個方向光物件
-3. 設置方向光屬性
-4. 啟用燈光控值方向光的開啟和關閉，勾選開啟
-5. 啟用燈光球控制光源處小球是否顯示，勾選顯示
-6. 點擊確定保存設置
-
-# 5-通過代碼完成燈光控制
-可以在開啟場景中寫標準JavaScript代碼來實現設置燈光效果的功能調用如下如下：
-        animate3D.setLightingEffect(jsonData)
-        // jsonDate: 燈光的一個json陣列，可以同時設置多個燈光，每一個燈都是一個json物件
-        例：
-            var jsonDate= [{
-                "name":"lightOne",
-                "type" : "point",
-                "color" : "rgb(255,0,0)",
-                "range" : "300",
-                "location" : [-191,100,225]
-            },{
-                "name":"lightTwo",
-                "type" : "point",
-                "color" : "rgb(0,255,0)",
-                "range" : "300",
-                "location" : [263,100,166]
-             },{
-                "name":"lightThree",
-                "type" : "point",
-                "color" : "rgb(0,0,255)",
-                "range" : "300",
-                "location" : [222,100,-314]
-            }]
-
-        //燈物件json物件的參數
-            {
-                'name': 燈物件的名稱，可根據這個名字控制修改燈光效果
-                'type': 默認為point點光燈，可設置為spot聚光燈，以及directional的方向光類型
-                'location': 燈的位置座標 （x、y、z 的陣列）
-                'color': 燈顏色
-                'intensity': 燈強度，默認為1，大於1增強，小於1減弱
-                'disabled': 關閉燈光效果，默認為false，可設置為true關閉燈效果
-                'range': 燈影響範圍，默認為0代表可照射到無窮遠處，如果設置了值則光照射效果隨物體遠離光影而衰減（以燈位置作參考）
-                'angle': 聚光燈照射的張角弧度
-                'center': 聚光燈光源照射方向的中心點位置（x、y、z 的陣列），預設為原點[0, 0, 0]
-                'exponent': 聚光燈光照射衰減指數，預設值為0，值越大離中心方向越遠的物體受光照影響效果越弱（以照射中心center做參考）
-             }
-
-# 6-控制設置好的燈光
-可以在執行期間的函數中對設置好的燈光物件進行控制方法如下：
-   “燈光名稱” .s(“設置屬性”，“設置屬性值”）
-例如：
-   lightOne.s('light.color','rgb(200,100,80)');
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section11_5">
-        <h3>3D總覽指標</h3>
-        <pre>
-          <p>
-            **總覽指標**
-
-**在 3D 圖像中展示一個 2D 面板，該面板不會隨著 3D 圖像的移動而改變位置，即為總覽指標**
-
-# 方法#1-設置總覽指標
-<img class="ex-image" src="./manualImg/image214.png"><br/>
-<img class="ex-image" src="./manualImg/image215.gif"><br/>
-
-總覽指標效果展示
-<img class="ex-image" src="./manualImg/image216.gif"><br/>
-
-
-總覽指標設置方式：
-
-1. 選擇場景，在右側屬性欄找到燈光控制，點擊打開燈光設置視窗
-2. 選擇總覽指標，設置總覽指標屬性
-       URL：2D圖示預覽頁面的URL
-       間距以及寬高度：可以使用百分比，也可以使用圖元（例如：50px）
-3. 點擊確定保存設置
-<img class="ex-image" src="./manualImg/image217.png"><br/>
-
-
-# 方法#2-通過代碼完成總覽指標
-
-可以在開啟場景中寫標準JavaScript代碼來實現總覽指標功能方式及調用介面如下：
-
-    animate3D.setOverViewBoard(jsonData)
-        // jsonData: 總覽指標頁面的json陣列物件
-        例：
-             var jsonData= [{
-                "attribute":"http://127.0.0.1:4000/display.html?tag=displays/all_Item.json&org_id=2&&fullscreen=1",
-                "style": {
-                    "position":"absolute",
-                    "top" :"160px", 
-                   "left":"0px",
-                    "width" : ($("#mainDiv").width()/6) + "px",
-                    "height" : ($("#mainDiv").width()/6)*(415/220) + "px",
-                    "border" : "0px"
-                }
-            }]
-        //總覽指標頁面的json物件的參數
-            {
-                "attribute": 總覽指標面板的路徑
-                "style": 總覽指標面板在頁面中的位置，由其中的CSS屬性控制
-            }
-          </p>
-        </pre>
-      </div>
+      <markdown-div id="section11_1" data-markdown="./md/3DSceneAttributes/3DSceneAttributes_tw.md" data-color="dark"  data-en="./md/3DSceneAttributes/3DSceneAttributes_en.md"></markdown-div>
+      <markdown-div id="section11_2" data-markdown="./md/3DSceneAttributes/3DHeatmap_tw.md" data-color="dark"  data-en="./md/3DSceneAttributes/3DHeatmap_en.md"></markdown-div>
+      <markdown-div id="section11_3" data-markdown="./md/3DSceneAttributes/3DNavigationPath_tw.md" data-color="dark"  data-en="./md/3DSceneAttributes/3DNavigationPath_en.md"></markdown-div>
+      <markdown-div id="section11_4" data-markdown="./md/3DSceneAttributes/3DLightingControl_tw.md" data-color="dark"  data-en="./md/3DSceneAttributes/3DLightingControl_en.md"></markdown-div>
+      <markdown-div id="section11_5" data-markdown="./md/3DSceneAttributes/3DOverviewIndicator_tw.md" data-color="dark"  data-en="./md/3DSceneAttributes/3DOverviewIndicator_en.md"></markdown-div>
     </div>
   </section>
   <section id="section12">
     <div class="container">
       <h2>3D模型拓展</h2>
-      <div class="ex-contain" id="section12_1">
-        <h3>3DS模型</h3>
-        <pre>
-          <p>
-            將 3ds 模型直接拖曳加入到 extend3D 目錄下。  
-
-下列使用範例將以 builtIn/fence.3ds 作為使用說明：  
-
-1. 將模型拖曳進入到繪圖區，會將模型中物件拆開成個別元件  
-<img class="ex-image" src="./manualImg/image218.png"><br/>
-
-
-2. 使用 `asset` 中存在的圖片配置貼皮 `shape3d.image`  
-<img class="ex-image" src="./manualImg/image219.png"><br/>
-
-
-3. 分別將每個物件的貼皮添加到物件上  
-<img class="ex-image" src="./manualImg/image220.png"><br/>
-          </p>
-        </pre>
-      </div>
+      <markdown-div id="section12_1" data-markdown="./md/3DextendModel/3dsModels_tw.md" data-color="dark"  data-en="./md/3DextendModel/3dsModels_en.md"></markdown-div>
+      <markdown-div id="section12_2" data-markdown="./md/3DextendModel/3DtextureOffset_tw.md" data-color="dark"  data-en="./md/3DextendModel/3DtextureOffset_en.md"></markdown-div>
     </div>
   </section>
   <section id="section13">
     <div class="container">
       <h2>3D模型屬性</h2>
-      <div class="ex-contain" id="section13_1">
-        <h3>3D動畫路徑</h3>
-        <pre>
-          <p>
-            **3D動畫路徑與2D功能相同，即實現一個元素沿著另一個元素的軌跡運動**
-
-# 1-動畫路徑演示
-<img class="ex-image" src="./manualImg/image221.gif"><br/>
-
-
-# 2-動畫路徑設置方式
-動畫路徑設置方式：
-1. 在圖紙中繪製兩元素，一個元素（物體）沿著另一個元素（路徑）的軌跡運動
-2. 選中路徑，在標籤中自訂名稱
-3. 選中物體，在綁定標籤中填寫剛才自訂的路徑標籤名稱
-4. 點擊物體，在動畫路徑的資料綁定中完成對動畫路徑的邏輯處理，返回值在0和1之間
-    返回值代表物體運動到整條路徑的位置的占比
-
-本例中物體沿著軌跡運動然後返回
-<img class="ex-image" src="./manualImg/image222.gif"><br/>
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section13_2">
-        <h3>3D數據綁定</h3>
-        <pre>
-          <p>
-            需要先在Management裡面綁定好資料來源，綁定方式見資料來源綁定manual
-目前3D資料綁定支援位置、旋轉、大小、錨點、縮放的x、y、z屬性的資料綁定
-
-## 綁定操作
-<img class="ex-image" src="./manualImg/image223.png"><br/>
-
-1. 在management 頁面綁定好資料來源
-2. 選中元素，點擊資料綁定按鈕，打開3D資料綁定頁面
-3. 選擇將要綁定的資料Tab頁，點擊對應資料旁邊的小連結圖示，打開綁定動作頁面
-4. 同2D綁定相同操作方式進行綁定資料，然後點擊保存
-5. 有綁定資料的屬性小連結顯示為橘色連結狀態，沒有綁定的為灰色打開狀態
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section13_3">
-        <h3>3D模塊化組件</h3>
-        <pre>
-          <p>
-            
-## 模組化組件軌跡環繞功能
-將整個運動過程按照區間劃分為獨立的運行過程，在某一個狀態欄間值 [minValue,maxValue] 之內執行一個簡單的運動過程。
-根據當前狀態值 currentValue 和初始狀態值 startValue（例如時間）之間的差值 diffValue 來判斷執行哪一個區間的軌跡函數。
-1. 環繞旋轉
-    animate3D.overlooking(diffValue,minValue,maxValue,circle)
-        // diffValue: 當前狀態值 currentValue 和初始狀態值 startValue（例如時間）之間的差值
-        // minValue : 運動軌跡的起始狀態值
-        // maxValue : 運動軌跡的結束狀態值
-        // circle    : 運動軌跡的旋轉圈數
-2. 相機移動
-    animate3D.eyeMove(diffValue,minValue,maxValue,eyeArray)
-        // diffValue: 當前狀態值 currentValue 和初始狀態值 startValue（例如時間）之間的差值
-        // minValue : 運動軌跡的起始狀態值
-        // maxValue : 運動軌跡的結束狀態值
-        // eyeArray  : 運動軌跡結束時相機的位置座標，x、y、z 組成的一個陣列 [x,y,z]
-3. 目標移動
-    animate3D.centerMove(diffValue,minValue,maxValue,centerArray)
-        // diffValue   : 當前狀態值 currentValue 和初始狀態值 startValue（例如時間）之間的差值
-        // minValue    : 運動軌跡的起始狀態值
-        // maxValue    : 運動軌跡的結束狀態值
-        // centerArray  : 運動軌跡結束時目標的位置座標，x、y、z 組成的一個陣列 [x,y,z]
-
-## 模組化元件燈光效果顯示功能
-animate3D.setLightingEffect(jsonData)
-    // jsonDate: 燈光的一個json陣列，可以同時設置多個燈光，每一個燈都是一個json物件
-    例：
-        var jsonLight = [{
-            "name":"lightOne",
-            "type" : "point",
-            "color" : "rgb(255,0,0)",
-            "range" : "300",
-            "location" : [-191,100,225]
-        },{
-            "name":"lightTwo",
-            "type" : "point",
-            "color" : "rgb(0,255,0)",
-            "range" : "300",
-            "location" : [263,100,166] 
-        },{
-            "name":"lightThree",
-            "type" : "point",
-            "color" : "rgb(0,0,255)",
-            "range" : "300",
-            "location" : [222,100,-314]
-        }]
-    //燈物件json物件的參數
-        {
-            'name': 燈物件的名稱，可根據這個名字控制修改燈光效果
-            'type': 默認為point點光燈，可設置為spot聚光燈，以及directional的方向光類型
-            'location': 燈的位置座標 （x、y、z 的陣列）
-            'color': 燈顏色 
-            'intensity': 燈強度，默認為1，大於1增強，小於1減弱
-            'disabled': 關閉燈光效果，默認為false，可設置為true關閉燈效果 
-            'range': 燈影響範圍，默認為0代表可照射到無窮遠處，如果設置了值則光照射效果隨物體遠離光影而衰減（以燈位置作參考）
-
-            'angle': 聚光燈照射的張角弧度
-            'center': 聚光燈光源照射方向的中心點位置（x、y、z 的陣列），預設為原點[0, 0, 0]
-            'exponent': 聚光燈光照射衰減指數，預設值為0，值越大離中心方向越遠的物體受光照影響效果越弱（以照射中心center做參考） 
-        }
-
-## 模組化元件頁面跳轉功能
-將一個按鈕圖片掛在頁面上，並且綁定一個onclick方法，點擊之後跳轉到別的頁面
-animate3D.setPageTurn(jsonData)
-    // jsonData：頁面跳轉按鈕的json物件
-    例：
-        var jsonButten = {
-            "butten": "http://127.0.0.1:4000/symbols/Scorecard/按鈕.png",
-            "style" :{
-                "position": "absolute",
-                "top": "80px",
-                "left": "20px",
-                "width": "120px",
-                "height": "55px"
-            },
-            "URL":"http://127.0.0.1:4000/scene.html?tag=scenes/%E5%AE%A4%E5%86%85demo/%E5%B1%95%E5%8E%85demo.json&org_id=2"
-        }
-    //頁面跳轉按鈕的json物件的參數
-        {
-            "butten": 按鈕圖片路徑
-            "style": 按鈕圖片在頁面中的位置，由其中的CSS屬性控制
-            "URL": 點擊按鈕之後跳越網頁面的URL
-        }
-
-
-## 模組化組件總覽指標展示功能
-製作一個2D的總覽指標頁面，掛在當前3D的頁面之上
-animate3D.setOverViewBoard(jsonData)
-    // jsonData: 總覽指標頁面的json物件
-    例： 
-        var jsonStr = {
-            "attribute":"http://127.0.0.1:4000/display.html?tag=displays/all_Item.json&org_id=2&&fullscreen=1",
-            "style": {
-                "position":"absolute",
-                "top" :"160px",
-                "left":"0px",
-                "width" : ($("#mainDiv").width()/6) + "px",
-                "height" : ($("#mainDiv").width()/6)*(415/220) + "px",
-                "border" : "0px"
-            }
-            
-        }
-    //總覽指標頁面的json物件的參數
-        {
-            "attribute": 總覽指標面板的路徑
-            "style": 總覽指標面板在頁面中的位置，由其中的CSS屬性控制
-        }
-
-## 動畫迴圈
-獲取初始位置座標
-initValue = animate3D.record()
-    // initValue: 將頁面動畫開始時相機以及目標的座標以一個陣列形式返回 
-                  陣列長度為6，前三位為相機座標，後三位元為目標座標
-
-設置迴圈動畫
-startValue = animate3D.setCirculation = function (startValue,cycleLength,initValue)
-    // startValue  : 迴圈動畫的初始狀態值，並返回一個初始狀態值
-    // cycleLength ：迴圈週期
-    // initValue   ：陣列形式的初始狀態座標，陣列長度為6，前三位為相機座標，後三位元為目標座標
-          </p>
-        </pre>
-      </div>
-      <div class="ex-contain" id="section13_4">
-        <h3>3D額外屬性</h3>
-        <pre>
-          <p>
-            **3D額外屬性包括：圖片、重複、顏色、透明、可見、背顏色、背拷貝、背裁切**
-            <img class="ex-image" src="./manualImg/image224.png"><br/>
-
-# 1-圖片
-在六面或者指定面貼圖片的路徑可以將該圖片貼在模型的對應面
-<img class="ex-image" src="./manualImg/image225.png"><br/>
-
-
-# 2-顏色
-在六面或者指定面選擇顏色可以給此面塗色
-<img class="ex-image" src="./manualImg/image226.png"><br/>
-
-
-# 3-透明和可見
-在六面或者指定面勾選可以設置此面的可見和透明色
-可見和透明在設置一面時基本相同，但是在設置六面時，可見會使物體不可見，透明不會
-<img class="ex-image" src="./manualImg/image227.png"><br/>
-
-
-# 4-背顏色、背拷貝、背裁切
-設置六個面的背面屬性
-
- 
-          </p>
-        </pre>
-      </div>
+      <markdown-div id="section13_1" data-markdown="./md/3DModelAttributes/3DAnimationPath_tw.md" data-color="dark"  data-en="./md/3DModelAttributes/3DAnimationPath_en.md"></markdown-div>
+      <markdown-div id="section13_2" data-markdown="./md/3DModelAttributes/3DDataBinding_tw.md" data-color="dark"  data-en="./md/3DModelAttributes/3DDataBinding_en.md"></markdown-div>
+      <markdown-div id="section13_3" data-markdown="./md/3DModelAttributes/Additional3DAttributes_tw.md" data-color="dark"  data-en="./md/3DModelAttributes/Additional3DAttributes_en.md"></markdown-div>
+      <markdown-div id="section13_4" data-markdown="./md/3DModelAttributes/3DmodelSymbols_tw.md" data-color="dark"  data-en="./md/3DModelAttributes/3DmodelSymbols_en.md"></markdown-div>
+      <markdown-div id="section13_5" data-markdown="./md/3DModelAttributes/3DReflector_tw.md" data-color="dark"  data-en="./md/3DModelAttributes/3DReflector_en.md"></markdown-div>
+      <markdown-div id="section13_6" data-markdown="./md/3DModelAttributes/3DLightNode_tw.md" data-color="dark"  data-en="./md/3DModelAttributes/3DLightNode_en.md"></markdown-div>
+      <markdown-div id="section13_7" data-markdown="./md/3DModelAttributes/3DClip_tw.md" data-color="dark"  data-en="./md/3DModelAttributes/3DClip_en.md"></markdown-div>
     </div>
   </section>
   <section id="section14">
     <div class="container">
-      <h2>Dashboard Panel</h2>
-      <div class="ex-contain" id="section14_1">
-        <h3>SaaS-Composer Viewer Panel</h3>
-        <p>
-          SaaS-Composer Viewer Panel Plugin 可將您事先在 SaaS-Composer 中設計好的圖紙
-          藉由 Panel 呈現於 Dashboard 上。
-          數據來源具有相當的自由度，您可選擇在 SaaS-Composer 中完成數據綁定，亦可選擇在此 
-          Dashboard 中重新綁定來自其他數據來源之數據。
-        </p>
-        <div class="content-title">起始設定</div>
-        <div class="content-subtitle">在 Dashboard 新增一個 SaaS-Composer Viewer 的 Panel</div>
-        <img class="ex-image" src="./manualImg/panelReadme/panel_1.png"><br/>
-        <div class="content-subtitle">點擊 "Edit" 進入 Panel 的編輯介面 </div>
-        <img class="ex-image" src="./manualImg/panelReadme/panel_2.png"><br/>
-        <div class="content-subtitle">至 General 分頁設定 Panel 標題</div>
-        <img class="ex-image" src="./manualImg/panelReadme/general.png"><br/>
-        <div class="content-subtitle">至 Options 分頁設定連線資訊</div>
-        <img class="ex-image" src="./manualImg/panelReadme/panel_3.png"><br/>
-        <div class="content-subtitle">於 Domain URL 欄位填入 SaaS-Composer 網址  </div>
-        <img class="ex-image" src="./manualImg/panelReadme/panel_4.png"><br/>
-        <p>
-          範例：<br/>
-          若網址為：https://saas-composer-2-0-2-adviiot-webacces-composer.wise-paas.com/#/zh/main/orglist<br/>
-          只需填入「 https://saas-composer-2-0-2-adviiot-webacces-composer.wise-paas.com 」這一段即可。<br/>
-        </p>
-        <div class="content-subtitle">點擊 "Connect" 按鈕進行連線 </div>
-        <p>
-          "Connect Status" 欄位將顯示是否連線成功。若連線成功，"Current Domain" 欄位將會持續連線至此網址，
-          直到被下一個成功連線的網址替換。
-           ( 文章稍後將對替換網址有更詳細之說明，請見 "Domain 替換" 區塊)
-        </p>
-        <img class="ex-image" src="./manualImg/panelReadme/panel_4.png"><br/>
-        <div class="content-subtitle">於 "Org. Name" 欄位輸入組織名稱</div>
-        <img class="ex-image" src="./manualImg/panelReadme/panel_4.png"><br/>
-        <div class="content-subtitle">設定 SaaS Composer frame 內容  </div>
-        <img class="ex-image" src="./manualImg/panelReadme/frame_1.png"><br/>
-        <div class="content-subtitle">至 "Displays" 分頁並點擊 "Add" 按鈕，加入圖紙</div>
-        <img class="ex-image" src="./manualImg/panelReadme/panel_5.png"><br/>
-        <div class="content-subtitle">於 "SaaS Composer File" 下拉選單中選擇圖紙檔案</div>
-        <img class="ex-image" src="./manualImg/panelReadme/panel_6.png"><br/>
-        <p>
-          在有多個圖紙檔案的狀況下，勾選 "Default" 框可預設優先顯示此圖紙。
-          (另一個切換顯示圖紙的方法是使用 "[File Indicator](#File-Indicator)", 文章後段將詳細說明此一功能) 
-        </p>
-        <div class="content-subtitle">於 "Data Source" 下拉選單中選擇數據來源 </div>
-        <p>
-          預設數據來源選項為 "Dashboard"，需先至 "Metric" 分頁設定數據綁定相關資訊，
-          詳細請見下方 "[數據綁定](#數據綁定)" 段落。 
-        </p>
-        <p>
-          另一數據來源選項為 "SaaS Composer"，亦即可先在 SaaS Composer 頁面將綁定資訊設定好，
-          在 Dashboard 處便不需要再額外進行設定，而是直接導入 SaaS Composer 的原先設定。
-        </p>
-        <div class="content-title">數據綁定</div>
-        <div class="content-subtitle"></div>
-        <div class="content-subtitle"></div>
-        <img class="ex-image" src="./manualImg/panelReadme/panel_12.png"><br/>
-        <div class="content-title">File Indicator 檔案標籤</div>
-        <div class="content-subtitle">Dashboard 的 "Variables"(變數) 功能可為檔案標記上標籤</div>
-        <img class="ex-image" src="./manualImg/panelReadme/panel_7.png"><br/>
-        <div class="content-subtitle">新增變數</div>
-        <p>
-          於 "Name" 欄位填入變數組名稱，於 "Type" 下拉選單選擇 "Custom"，於 "Custom Options" 填入自訂的變數組。
-          勾選 "Multi-value" 框，最後點選下方的 "Add" 按鈕來完成變數組的新增。
-        </p>
-        <img class="ex-image" src="./manualImg/panelReadme/panel_8.png"><br/>
-        <div class="content-subtitle">儲存變數</div>
-        <p>點選 "New" 按鈕來儲存更動。 </p>
-        <img class="ex-image" src="./manualImg/panelReadme/panel_9.png"><br/>
-        <div class="content-subtitle">更新變數</div>
-        <p>於 "Displays" 分頁，點選 "Update Variables" 更新變數按鈕。 </p>
-        <img class="ex-image" src="./manualImg/panelReadme/panel_10.png"><br/>
-        <div class="content-subtitle">指派變數</div>
-        <img class="ex-image" src="./manualImg/panelReadme/panel_11.png"><br/>
-        <div class="content-subtitle">切換變數</div>
-        <img class="ex-image" src="./manualImg/panelReadme/panel_13.png"><br/>
-      </div>
-      <div class="ex-contain" id="section14_2">
-        <h3>與 Dashboard 連動</h3>
-        <p>
-          與 Dashboard 互動 (change URl, change dashboard, open window)
-        </p>
-        <p>分步指南</p>
-        <ol>
-          <li>在圖紙中添加按紐.</li>
-          <li>勾選"事件".</li>
-          <li>開啟事件對話框.</li>
-          <li>在點擊事件中加入下列語法.</li>
-        </ol>
-        <div class="content-title">Change Url</div>
-        <pre>
-          <code>
-            window.parent.postMessage({
-              "createUid":commonUtil.msgUid(),
-              "method":'changeUrl',
-              "params":['http://172.16.13.21:5000/display.html?tag=displays/3.json&org_id=2&fullscreen=1']
-            }, "*");
-          </code>
-        </pre>
-        <ul>
-          <li>commonUtil.msgUid() 取得當前 panel 的 Id 作為 Dashboard 接收端的識別使用.</li>
-          <li>method 填入 changeUrl</li>
-          <li>params 在陣列填入希望轉跳的 url.</li>
-        </ul>
-        <div class="content-title">Change Dashboard</div>
-        <p>Change the url in params.</p>
-        <pre>
-          <code>
-            window.parent.postMessage({
-              "createUid":commonUtil.msgUid(),
-              "method":'changeDashboard',
-              "params":['/d/J-pFSo5Wz/chagnedashboard?orgId=1']
-            }, "*");
-          </code>
-        </pre>
-        <div class="content-title">Open Window</div>
-        <p>Change the url in params.</p>
-        <pre>
-          <code>
-            window.parent.postMessage({
-              "createUid":commonUtil.msgUid(),
-              "method":'openWindowUrl',
-              "params":['http://172.16.13.21:5000/display.html?tag=displays/3.json&org_id=2&fullscreen=1']
-            }, "*");
-          </code>
-        </pre>
-        <img class="ex-image" src="./manualImg/changeUrl_01.png"><br/>
-        <img class="ex-image" src="./manualImg/changeUrl_02.png"><br/>
-        <div class="content-subtitle">postMessage from SaaS Composer </div>
-        <pre>
-          <code>
-            window.parent.postMessage({  
-              "createUid":commonUtil.msgUid(),  
-              "method":'setVariable',  
-              "params":['var1',['1']]  
-            }, "*");  
-          </code>
-        </pre>
-        <table>
-          <thead>
-            <tr>
-              <th>Method</th>
-              <th>params</th>
-              <th>example</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>setVariable</td>
-              <td>['variable name',['value']] </td>
-              <td>['var1',['1']]</td>
-            </tr>
-            <tr>
-              <td>setValue</td>
-              <td>[Defined object by data source] </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>changeURl</td>
-              <td>['url']</td>
-              <td>['']</td>
-            </tr>
-            <tr>
-              <td>changeDashboard</td>
-              <td>['dashboard path'] </td>
-              <td>['/d/J-pFSo5Wz/chagnedashboard?orgId=1']</td>
-            </tr>
-            <tr>
-              <td>openWindowUrl</td>
-              <td>['url']  </td>
-              <td>['']</td>
-            </tr>
-          </tbody>
-          
-        </table>
-      </div>
+      <h2>3D BIM</h2>
+      <markdown-div id="section14_1" data-markdown="./md/3DBIM/BIM_Server_en.md" data-color="dark"  data-en="./md/3DBIM/BIM_Server_en.md"></markdown-div>
     </div>
   </section>
+  <section id="section15">
+    <div class="container">
+      <h2>Dashboard Panel</h2>
+      <markdown-div id="section15_1" data-markdown="./md/DashboardPanel/ViewerPanel_tw.md" data-color="dark"  data-en="./md/DashboardPanel/ViewerPanel_en.md"></markdown-div>
+      <markdown-div id="section15_2" data-markdown="./md/DashboardPanel/InteractWithDashboard_tw.md" data-color="dark"  data-en="./md/DashboardPanel/InteractWithDashboard_en.md"></markdown-div>
+    </div>
+  </section>
+  <!-- <section id="section15">
+    <div class="container">
+      <h2>Dashboard Panel</h2>
+      <markdown-div data-markdown="./md/flow/flow_tw.md" data-color="dark"></markdown-div>
+    </div>
+  </section> -->
+  
   <!-- Scroll to Top Button -->
   <div id="scrollToTopBtn" onclick="scrollToTop()" class="no-print">
     &#8679;
   </div>
-  <script src="./js/marked.min.js"></script>
+  
   <script src="./js/main.js"></script>
   <script src="./js/manual.js"></script>
+  
   
 </body>
 </html>
