@@ -115,6 +115,7 @@
           <h3>Overlay</h3>
           <ul>
             <li><a href="#f_layer_01">取得各層 graphview 或 dataModel</a></li>
+            <li><a href="#f_layer_02">下層 tooltip 不顯示</a></li>
           </ul>
         </li>
         <li>
@@ -762,6 +763,17 @@
             之後可以從全域變數中提取，此方法可以避免因檔案複製路徑檔名不同而需要修改的問題。
             其次，可透過全域變數 "commonViewUtil.currentFiles" 取得當前所有開啟的圖紙場景物件，
             包含 graphView 與 dataModel ，使用此方式需要知道要操控的是哪個疊加層檔案名稱。
+          </code>
+        </pre>
+      </div>
+      <div class="ex-contain" id="f_layer_02">
+        <h3>取得各層 graphview 或 dataModel</h3>
+        <p>
+          在要顯示 tooltip 的物件上添加 (move) 互動事件
+        </p>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            ht.Default.showToolTip(event, data.getToolTip())
           </code>
         </pre>
       </div>
