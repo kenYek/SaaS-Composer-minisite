@@ -116,6 +116,8 @@
           <ul>
             <li><a href="#f_layer_01">取得各層 graphview 或 dataModel</a></li>
             <li><a href="#f_layer_02">下層 tooltip 不顯示</a></li>
+            <li><a href="#f_layer_03">在畫面額外特定 div 開啟圖紙</a></li>
+            <li><a href="#f_layer_04">使用疊加層時，編寫 script使用 graphView & dataModel方式</a></li>
           </ul>
         </li>
         <li>
@@ -774,6 +776,92 @@
         <pre class="codeArea">
           <code disabled style="width:100%;resize: none;">
             ht.Default.showToolTip(event, data.getToolTip())
+          </code>
+        </pre>
+      </div>
+      <div class="ex-contain" id="f_layer_03">
+        <h3>在畫面額外特定 div 開啟圖紙</h3>
+        <p>
+          在圖紙中添加，DIV圖標`builtIn/html/div.json`  <br>
+          在 main content中加入下列 DIV 元素  <br>
+          設定DIV大小<br>
+        </p>
+        <code disabled style="width:100%;resize: none;">
+          &lt;div id="small" style="position:relative;width:100%;height:100%;min-height:100px;background:#F00;"&gt;&lt;/div&gt;
+        </code>
+        <p>
+          添加一個按鈕，並設定`click`事件(代碼如下)  
+        </p>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            var obj = {
+              fileName: 'displays/dom1.json', 
+              gvType: 'displays'
+            }
+            if(typeof commonViewUtil != 'undefined'){
+                var exist = false;
+                for(var i=0;i &lt; commonViewUtil.currentFiles.length;i++){
+                    if(commonViewUtil.currentFiles[i]['fileName'] == obj['fileName']){
+                        commonViewUtil.currentFiles[i]['graphView'].addToDOM(document.getElementById('small'));
+                        exist = true;
+                    }
+                }
+                if(!exist){
+                    commonViewUtil.appendDisplayToDOM(obj,{'parentViewId':'small'})
+                }
+              }
+          </code>
+        </pre>
+        <pre>
+          <p>
+            需要注意下方幾點:   
+            - 確認 `commonViewUtil` 是否存在，只有在擁有疊加層的頁面具有此API  
+            - 確認圖紙是否曾經被加載到畫面過，如果有則使用原有的 graphView  
+            - 如果圖紙是第一次被添加到畫面則使用`commonViewUtil.appendDisplayToDOM`，並設定`parentViewId`  
+          </p>
+        </pre>
+      </div>
+      <div class="ex-contain" id="f_layer_04">
+        <h3>使用疊加層時，編寫 script使用 graphView & dataModel方式</h3>
+        <pre>
+          <p>
+            在 commonViewUtil.currentFiles 中，保存所有疊加層的圖紙資訊  
+            依照 'fileName' 可以從 commonViewUtil.currentFiles 找到想要的圖紙  
+            如果只有一層2D疊在3D畫面上，則  
+          </p>
+        </pre>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            commonViewUtil.currentFiles[0] 是 3D場景  
+            commonViewUtil.currentFiles[1] 是 2D疊加層  
+        
+            commonViewUtil.currentFiles[0]['fileName']   圖紙的檔案名稱  
+            commonViewUtil.currentFiles[0]['graphView']  圖紙的graphView  
+            commonViewUtil.currentFiles[0]['dataModel']  圖紙的dataModel  
+            commonViewUtil.currentFiles[0]['isLayer']    判斷是否為圖層  
+          </code>
+        </pre>
+        <p>
+          全域的  
+        </p>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            graphView = commonViewUtil.currentFiles[0]['graphView']  
+            dataModel = commonViewUtil.currentFiles[0]['dataModel']  
+          </code>
+        </pre>
+        <p>
+          獲取graphView & dataModel 建議判斷`commonViewUtil.currentFiles`，如果不存在則直接使用全域的 graphView & dataModel  
+        </p>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            if(commonViewUtil && commonViewUtil.currentFiles){
+              commonViewUtil.currentFiles[0]['graphView']
+              commonViewUtil.currentFiles[0]['dataModel']
+            } else {
+              graphView
+              dataModel
+            }
           </code>
         </pre>
       </div>
