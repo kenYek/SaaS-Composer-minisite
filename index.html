@@ -125,6 +125,7 @@
           <ul>
             <li><a href="#f_data_01">sourceFormPane 使用一般 html 設計</a></li>
             <li><a href="#f_data_02">APM 網路傳輸有資料畫面沒有</a></li>
+            <li><a href="#f_data_03">設定取樣時間及取樣點數</a></li>
           </ul>
         </li>
       </ul>
@@ -177,6 +178,7 @@
           <ul>
             <li><a href="#e_overlay_01">疊加層遙控面板</a></li>
             <li><a href="#e_overlay_02">疊加層圓形拖拽遙控面板</a></li>
+            <li><a href="#e_overlay_03">彈窗顯示圖紙</a></li>
           </ul>
         </li>
         <li>
@@ -954,6 +956,32 @@
         </p>
         <img class="ex-image" src="./assets/f_data_02_01.png"><br/>
       </div>
+      <div class="ex-contain" id="f_data_03">
+        <h3>設定取樣時間及取樣點</h3>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            const timeObj = {
+              "time": {
+                  "from": "now-5m",
+                  "to": "now"
+              },
+              "maxDataPoints": 120
+            }
+            dataRefreshUtil.timeRange.setTimeRangeToMap(timeObj)
+          </code>
+        </pre>
+        <p>
+          SaaS Composer的APM數據源中，默認要求數據要在五分鐘之內，
+          如果超出五分鐘了就會被認為是無效數據而丟棄處理。
+          數據時間落後與實際時間有6、7分鐘以上了，數據會被當作無效數據。
+          可以可以從兩個方面處理此問題<br>
+          1.	確認網關時間是否落後與實際時間，如果有落後同步一下實際時間就可以，
+          還有就是邊緣端上傳數據的時間要在五分鐘之內，
+          超出五分鐘的話後面時間就會被認為是無效數據了<br>
+          2.	加大數據源五分鐘有效範圍，在SaaS Composer中點擊時間屬性，
+          根據實際情況設定大一些的範圍，也可解決此問題（如下圖）
+        </p>
+      </div>
     </div>
   </section>
   <section id="ExampleList" class="no-print">
@@ -1343,6 +1371,13 @@
         <img class="ex-image" src="./assets/e_overlay_02.png"><br/>
         <p>本範例只提供可拖拽的圖標圖紙，可參考前例改寫</p>
         <a href="./example/e_overlay_02.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_overlay_03">
+        <h3>彈窗顯示圖紙</h3>
+        <img class="ex-image" src="./assets/e_overlay_03.png"><br/>
+        <p>本範例使用 ht.widget.Dialog 彈窗，並在彈窗中顯示圖紙</p>
+        <p>彈窗可參考 HT 文件，顯示圖紙可參考 FAQ 疊加層說明</p>
+        <a href="./example/e_overlay_03.zip" target="_blank">Download</a>
       </div>
       <div class="ex-contain" id="e_other_01">
         <h3>Product configuration Sample</h3>
