@@ -214,8 +214,14 @@
           In 2D page (display.html) : <var>graphView</var><br>
           In 3D page (scene.html) : <var>g3d</var><br>
           In Overlay page (sceneAndDisplay.html) : <var>graphView</var> or <var>g3d</var><br>
-          Or<br>
-          <code>commonViewUtil.getFileObjByFileName(dataRefreshUtil.currentFile).graphView</code><br>
+          Or
+        </p>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            commonViewUtil.getFileObjByFileName(dataRefreshUtil.currentFile).graphView
+          </code>
+        </pre>
+        <p>
           或是在每個事件 function 中傳入的 <var>gv</var>、<var>view</var><br>
           使用疊加層時盡量使用事件函數傳入的 <var>graphview</var>.
         </p>
@@ -226,8 +232,14 @@
           In 2D page (display.html) : <var>dataModel</var><br>
           In 3D page (scene.html) : <var>dataModel</var><br>
           In Overlay page (sceneAndDisplay.html) : <var>dataModel</var><br>
-          Or<br>
-          <code>commonViewUtil.getFileObjByFileName(dataRefreshUtil.currentFile).dataModel</code><br>
+          Or
+        </p>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            commonViewUtil.getFileObjByFileName(dataRefreshUtil.currentFile).dataModel
+          </code>
+        </pre>
+        <p>
           或是在每個事件 function 中傳入的 <var>dm</var><br>
           或是從 <var>graphview</var> 物件下使用 <code>graphview.dm()</code><br>
           使用疊加層時盡量使用事件函數傳入的 <var>graphview</var> 或是 <var>dm</var>.
@@ -788,9 +800,11 @@
           在 main content中加入下列 DIV 元素  <br>
           設定DIV大小<br>
         </p>
-        <code disabled style="width:100%;resize: none;">
-          &lt;div id="small" style="position:relative;width:100%;height:100%;min-height:100px;background:#F00;"&gt;&lt;/div&gt;
-        </code>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            &lt;div id="small" style="position:relative;width:100%;height:100%;min-height:100px;background:#F00;"&gt;&lt;/div&gt;
+          </code>
+        </pre>
         <p>
           添加一個按鈕，並設定`click`事件(代碼如下)  
         </p>
