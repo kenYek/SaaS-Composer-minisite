@@ -109,6 +109,8 @@
             <li><a href="#f_3d_06">3D 調適訊息，效能資訊顯示</a></li>
             <li><a href="#f_3d_07">3D 如何複製內建obj模型進行修改</a></li>
             <li><a href="#f_3d_08">3D FBX 模型動態置換材質</a></li>
+            <li><a href="#f_3d_09">3D 看板文字解析度</a></li>
+            <li><a href="#f_3d_10">3D 看板不同系統文字長度問題</a></li>
           </ul>
         </li>
         <li>
@@ -766,6 +768,29 @@
             )
           </code>
         </pre>
+      </div>
+      <div class="ex-contain" id="f_3d_09">
+        <h3>3D 看板文字解析度</h3>
+        <p>
+          默認讀取的是設備的 dpi , 不同設備 dpi 不同，<br>
+          dpi 設置的比較低清晰度會較低。<br>
+          可以使用 g3d.setDevicePixelRatio() 主動設置 dpi。<br>
+          設置較大的貼圖縮放比例，也可提高清晰度。 <br>
+        </p>
+        <img class="ex-image" src="./assets/f_3d_09_01.png">
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            g3d.setDevicePixelRatio()
+          </code>
+        </pre>
+      </div>
+      <div class="ex-contain" id="f_3d_10">
+        <h3>3D 看板不同系統文字長度問題</h3>
+        <img class="ex-image" src="./assets/f_3d_10_01.png">
+        <p>
+          應該是不同系統電腦缺少了字體，導致獲取文本的長度不同，進行了換行。<br>
+          可以適當調大寬度，或者取消自動換行。
+        </p>
       </div>
       <h2>Overlay</h2>
       <div class="ex-contain" id="f_layer_01">
