@@ -174,6 +174,7 @@
             <li><a href="#e_3d_09">3D 燈光控制</a></li>
             <li><a href="#e_3d_10">3D 點雲</a></li>
             <li><a href="#e_3d_11">3D 物理引擎碰撞效果</a></li>
+            <li><a href="#e_3d_12">3D 牆貼上2D或3D場景</a></li>
           </ul>
         </li>
         <li>
@@ -1411,6 +1412,43 @@
           <a href="https://www.hightopo.com/blog/275.html" target="_blank">請參考HT教學</a>
         </p>
         <a href="./example/e_3d_11.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_3d_12">
+        <h3>3D 牆貼上2D或3D場景</h3>
+        <img class="ex-image" src="./assets/e_3d_12_01.png"><br/>
+        <p>
+          此方法可以將 2D或 3D的場景作為貼皮貼到元素表面，需要注意"僅有使用Canvas"繪製的部分可以作為貼皮，
+          若圖標為DOM生成元素則無法在貼皮上呈現。
+        </p>
+        <a href="./example/e_3d_12.zip" target="_blank">Download</a>
+        <pre class="codeArea">
+          <code>
+            let div = document.createElement('DIV'); // 生成承載的 DOM
+            div.id = "hiddenDiv";
+            div.style.width = "2300px";  // 依場景需求設定大小，會影響貼皮的解析度
+            div.style.height = "1375px";
+            div.style.position = "relative";
+            div.style.visibility = "hidden"; // 隱藏DOM的顯示, 勿使用 display: none
+            $('body').append(div);
+            let fileName = "displays/builtIn/SpongFactory/SpongFactory.json" // 設定貼皮的圖紙
+            var obj = {
+                fileName: fileName, 
+                gvType: 'displays' // 2D: displays, 3D: scenes
+            }
+            let option = {
+                json: false,
+                parentViewId: 'hiddenDiv' // 設定 DOM id
+            }
+            commonViewUtil.appendDisplayToDOM(obj, option); // 將圖紙貼到 DOM
+            
+            let canvas = commonViewUtil.getFileObjByFileName(fileName).graphView.getCanvas(); // 獲取 canvas 畫布DOM
+            canvas.dynamic = true;
+            dm.getDataByTag('screen1').s('right.image', canvas); // 貼皮到指定的 Node 元件上
+            setInterval(() => {
+              dm.getDataByTag('screen1').iv(); // 刷新节点，图像才会动16.7)
+            }, 16.7);
+          </code>
+        </pre>
       </div>
       <div class="ex-contain" id="e_overlay_01">
         <h3>疊加層遙控面板</h3>
