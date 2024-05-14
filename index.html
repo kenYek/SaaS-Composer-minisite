@@ -96,6 +96,7 @@
             <li><a href="#f_2d_02">2D 事件無法觸發</a></li>
             <li><a href="#f_2d_03">2D 整合Echart第三方擴充套件</a></li>
             <li><a href="#f_2d_04">2D Table 圖標客製化欄位內容</a></li>
+            <li><a href="#f_2d_05">2D webrtc 影像接入</a></li>
           </ul>
         </li>
         <li>
@@ -692,6 +693,58 @@
             表格章節
           </a>
         </p>
+      </div>
+      <div class="ex-contain" id="f_2d_05">
+        <h3>2D webrtc 影像接入</h3>
+        <p>
+          可使用以下內建套件<br>
+          1. 動態引入 /custom/libs/rision.js<br>
+          2. 先建圖標<br>  
+          3. 添加 videoURL屬性<br>  
+          4. webrtc://172.xx.x.xx:xxxx/xxxxx/xxxx
+        </p>
+        <img class="ex-image" src="./assets/f_2d_05_01.png">
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            let videoURL = data.a('videoURL');
+            var script = document.createElement("script");
+            script.setAttribute("src", "/custom/libs/rision.js");
+            document.getElementsByTagName('head')[0].appendChild(script);
+
+            if (!cache.htmlView) {
+                var video = cache.htmlView = document.createElement('video');
+                video.setAttribute("controls", "controls")
+                video.layoutHTML = function () {
+                    gv.layoutHTML(data, video);
+                };
+            };
+
+            var r = commonUtil.getParamFromURL('org_id');
+
+            setTimeout(() => {
+                const video = document.getElementsByTagName('video')[0];
+                video.autoplay = true;
+                video.muted = true;
+                video.crossOrigin = 'anonymous';
+                const risions = window.rison;
+                let sdk = risions.SrsRtcPlayerAsync();
+                if (video && videoURL) {
+                    video.srcObject = sdk.stream;
+                    sdk
+                        .play(videoURL)
+                        .then(function (session) {
+                            console.log('🚀 ~ session:', session.code);
+                        })
+                        .catch(function (reason) {
+                            console.log('🚀 ~ reason:', reason);
+                            sdk.close();
+                        });
+
+                }
+            }, 500)
+            return cache.htmlView;
+          </code>
+        </pre>
       </div>
       <h2>3D</h2>
       <div class="ex-contain" id="f_3d_01">
