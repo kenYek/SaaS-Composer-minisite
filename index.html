@@ -113,6 +113,8 @@
             <li><a href="#f_3d_09">3D 看板文字解析度</a></li>
             <li><a href="#f_3d_10">3D 看板不同系統文字長度問題</a></li>
             <li><a href="#f_3d_11">3D 點擊平面物件添加標示</a></li>
+            <li><a href="#f_3d_12">3D 點擊物件高亮(highlight)</a></li>
+            <li><a href="#f_3d_13">3D 選中物件變暗</a></li>
           </ul>
         </li>
         <li>
@@ -869,6 +871,51 @@
             view.dm().add(node)
           </code>
         </pre>
+      </div>
+      <div class="ex-contain" id="f_3d_12">
+        <h3>3D 點擊物件高亮(highlight)</h3>
+        <img class="ex-image" src="./assets/f_3d_12_01.png">
+        <p>
+          以通过node上的style属性highlight.mode单独控制高亮的模式<br>
+          setHighlightMode: 设置当前高亮的模式，包括：disabled关闭高亮，selected选中高亮，hover悬浮高亮，style风格设置高亮<br>
+          getHighlightMode: 获取当前高亮的模式，默认为style<br>
+          setHighlightColor: 设置当前高亮的颜色<br>
+          getHighlightColor: 获取当前高亮的颜色，默认为rgba(190, 210, 250, 1)<br>
+          setHighlightWidth: 设置当前高亮的线宽<br>
+          getHighlightWidth: 获取当前高亮的线宽，默认为0.8<br>
+        </p>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            g3d.setHighlightMode('mouseover');
+            g3d.setHighlightColor('#FEB64D');
+            g3d.setHighlightWidth(3);
+          </code>
+        </pre>
+        <p>
+          或是參考 hightopo  
+          <a href="https://www.hightopo.com/guide/guide/core/3d/ht-3d-guide.html#ref_highlight" target="_blank">
+            物体高亮效果
+          </a>
+        </p>
+      </div>
+      <div class="ex-contain" id="f_3d_13">
+        <h3>3D 選中物件變暗</h3>
+        <p>
+          節點選中變暗是因為選中亮度默認是 0.7，調整為 1 即可<br>
+          不變暗，node.s("select.brightness", 1) <br>
+        </p>
+        <img class="ex-image" src="./assets/f_3d_13_01.png">
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            node.s("select.brightness", 1)
+          </code>
+        </pre>
+        <p>
+          或是參考 hightopo  
+          <a href="https://hightopo.com/guide/sdkeditor/#/zh/SDK/other/style?id=htstyle" target="_blank">
+            風格
+          </a>
+        </p>
       </div>
       <h2>Overlay</h2>
       <div class="ex-contain" id="f_layer_01">
