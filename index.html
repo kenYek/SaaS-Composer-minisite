@@ -111,6 +111,7 @@
             <li><a href="#f_3d_08">3D FBX 模型動態置換材質</a></li>
             <li><a href="#f_3d_09">3D 看板文字解析度</a></li>
             <li><a href="#f_3d_10">3D 看板不同系統文字長度問題</a></li>
+            <li><a href="#f_3d_11">3D 點擊平面物件添加標示</a></li>
           </ul>
         </li>
         <li>
@@ -178,6 +179,7 @@
             <li><a href="#e_3d_10">3D 點雲</a></li>
             <li><a href="#e_3d_11">3D 物理引擎碰撞效果</a></li>
             <li><a href="#e_3d_12">3D 牆貼上2D或3D場景</a></li>
+            <li><a href="#e_3d_13">3D 點擊平面物件添加標示</a></li>
           </ul>
         </li>
         <li>
@@ -796,6 +798,24 @@
           應該是不同系統電腦缺少了字體，導致獲取文本的長度不同，進行了換行。<br>
           可以適當調大寬度，或者取消自動換行。
         </p>
+      </div>
+      <div class="ex-contain" id="f_3d_11">
+        <h3>3D 點擊平面物件添加標示</h3>
+        <img class="ex-image" src="./assets/f_3d_11_01.png">
+        <p>
+          在平面上貼上道路貼皮<br>
+          點選物件上道路的點，在該位置添加標示。
+        </p>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            const point = view.intersectObject(event,data)
+
+            const node = new ht.Node()
+            node.s3(30,30,30);
+            node.setPosition3d(point.local.x, point.local.y + 30, point.local.z)
+            view.dm().add(node)
+          </code>
+        </pre>
       </div>
       <h2>Overlay</h2>
       <div class="ex-contain" id="f_layer_01">
@@ -1485,6 +1505,17 @@
             }, 16.7);
           </code>
         </pre>
+      </div>
+      <div class="ex-contain" id="e_3d_13">
+        <h3>3D 點擊平面物件添加標示</h3>
+        <img class="ex-image" src="./assets/f_3d_11_01.png"><br/>
+        <img class="ex-image" src="./assets/e_3d_13_01.png"><br/>
+        <p>
+          g3d.intersectObject(event,data)<br/>
+          使用 intersectObject 獲取交點座標，在將交點座標物件中的座標點取出，用於添加新物件<br/>
+          <a href="https://www.hightopo.com/guide/doc/ht.graph3d.Graph3dView.html#intersectObject" target="_blank">請參考HT教學</a>
+        </p>
+        <a href="./example/e_3d_13.zip" target="_blank">Download</a>
       </div>
       <div class="ex-contain" id="e_overlay_01">
         <h3>疊加層遙控面板</h3>
