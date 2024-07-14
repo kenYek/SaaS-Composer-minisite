@@ -87,6 +87,7 @@
             <li><a href="#f17">不支持變量的數據源動態切換綁訂數據 </a></li>
             <li><a href="#f18">數據源的 datasourcetype 取得</a></li>
             <li><a href="#f19">Assets目錄支援格式</a></li>
+            <li><a href="#f20">頁面過場、轉場特效</a></li>
           </ul>
         </li>
         <li>
@@ -564,6 +565,97 @@
           <li>html</li>
           <li>htm</li>
         </ul>
+      </div>
+      <div class="ex-contain" id="f20">
+        <h3>頁面過場、轉場特效</h3>
+        <img class="ex-image" src="./assets/f20_01.gif"><br/>
+        <p>
+          此功能僅適用於 `3D & 2D 疊加層` 預覽介面.  
+        </p>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            commonViewUtil.sceneTransitionInOutAnimated(currentFileName, newFileName, option)
+          </code>
+          <p>
+            - currentFileName: 當前檔案路徑 (ex. `displays/Acid Exhaust Fan and Scrubber 2.json`)
+            - newFileName: 轉頁的檔案路徑 (ex. `displays/SpongFactory.json`)
+            - option: 包含三個方法. (beforeAnimate, onUpdate, onEnd)
+                - beforeAnimate(tempOutDiv, tempDiv)
+                - onUpdate(tempOutDiv, tempDiv, idx)
+                - onEnd()
+                    - tempOutDiv: 當前頁面的 `< div >` 區塊
+                    - tempDiv: 新頁面的 `< div >` 區塊
+                    - idx: 從 1 降到 0 的數字, 做動畫變換計算功能.
+          </p>
+        </pre>
+        <h4>右方推入</h4>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            commonViewUtil.sceneTransitionInOutAnimated('displays/Acid Exhaust Fan and Scrubber.json', 'displays/SpongFactory.json')
+          </code>
+        </pre>
+        <h4>客製化樣式範例</h4>
+        <p>
+          旋轉縮小、放大  
+        </p>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            commonViewUtil.sceneTransitionInOutAnimated(
+              'displays/SpongFactory.json',
+              'scenes/building.json',
+              {
+                  beforeAnimate: function(tempOutDiv, tempDiv){
+                      tempOutDiv.style.transform = 'scale(1,1) rotateZ(0deg)';
+                      tempDiv.style.transform = 'scale(0,0) rotateZ(360deg)';
+                  },
+                  onUpdate: function(tempOutDiv, tempDiv, idx){
+                      const reversIdx = (1 - idx)
+                      const revers = 360 * (1 - idx)
+                      const rotate = 360 * idx;
+                      const scale = 1 * reversIdx * reversIdx;
+                      if (idx &gt;= 0.5) {
+                          const s1 = (idx * 2 - 1)
+                          const r1 = 360 * (1 - idx) 
+                          tempOutDiv.style.transform = 'scale('+s1+','+s1+') rotateZ('+r1+'deg)';
+                          tempDiv.style.transform = 'scale(0,0) rotateZ(360deg)';
+                      }
+                      if (idx &lt;= 0.5) {
+                          const s2 = (reversIdx * 2 - 1)
+                          const r2 = 360 * (1 - reversIdx) 
+                          tempOutDiv.style.transform = 'scale(0,0) rotateZ(360deg)';
+                          tempDiv.style.transform = 'scale('+s2+','+s2+') rotateZ('+r2+'deg)';
+                      }
+                  }
+              }
+            )
+          </code>
+        </pre>
+        <img class="ex-image" src="./assets/f20_02.gif"><br/>
+        <p>
+          淡出淡入  
+          使用 CSS opacity  
+        </p>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            commonViewUtil.sceneTransitionInOutAnimated('scenes/building.json', 'displays/Acid Exhaust Fan and Scrubber 2.json', {
+              beforeAnimate: function(tempOutDiv, tempDiv){
+                  tempOutDiv.style.opacity = 1;
+                  tempDiv.style.opacity = 0;
+              },
+              onUpdate: function(tempOutDiv, tempDiv, idx){
+                 if (idx >= 0.5) {
+                     tempOutDiv.style.opacity = 2 * idx - 1;
+                     tempDiv.style.opacity = 0;
+                 }
+                 if (idx <= 0.5) {
+                     tempOutDiv.style.opacity = 0;
+                     tempDiv.style.opacity = 2*(1-idx) - 1;
+                 }
+              }
+            })
+          </code>
+        </pre>
+        <img class="ex-image" src="./assets/f20_03.gif"><br/>
       </div>
       <h2>2D</h2>
       <div class="ex-contain" id="f_2d_01">
