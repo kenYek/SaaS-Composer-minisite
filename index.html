@@ -116,6 +116,7 @@
             <li><a href="#f_3d_11">3D 點擊平面物件添加標示</a></li>
             <li><a href="#f_3d_12">3D 點擊物件高亮(highlight)</a></li>
             <li><a href="#f_3d_13">3D 選中物件變暗</a></li>
+            <li><a href="#f_3d_14">3D 中的2D圖標，添加tooltip</a></li>
           </ul>
         </li>
         <li>
@@ -1014,6 +1015,26 @@
             風格
           </a>
         </p>
+      </div>
+      <div class="ex-contain" id="f_3d_14">
+        <h3>3D 中的2D圖標，添加tooltip</h3>
+        <p>
+          先在 3D 開啟場景添加
+        </p>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            g3d.setToolTipEnabled(false) 
+          </code>
+        </pre>
+        <img class="ex-image" src="./assets/f_3d_14_02.png">
+        <p>在2D圖標的事件中添加</p>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            ht.Default.showToolTip(event, 'AAAXrrX');
+            ht.Default.hideToolTip()
+          </code>
+        </pre>
+        <img class="ex-image" src="./assets/f_3d_14_01.png">
       </div>
       <h2>Overlay</h2>
       <div class="ex-contain" id="f_layer_01">
