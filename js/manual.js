@@ -26,4 +26,9 @@ switchLang.addEventListener('click', () => {
         // 這裡處理每個 markdown-div 標籤的邏輯
         markdownDiv.setAttribute('data-language', Language);
     });
+    const langSpans = document.body.querySelectorAll('span-lang');
+    langSpans.forEach(markdownDiv => {
+        // 這裡處理每個 markdown-div 標籤的邏輯
+        markdownDiv.setAttribute('data-language', Language);
+    });
 })
