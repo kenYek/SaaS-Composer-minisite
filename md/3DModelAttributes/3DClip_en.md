@@ -1,7 +1,7 @@
 
 # 3D 裁切  
 
-![3Dclip.gif](/dataSource/resource/1651565511315934107.gif)
+![3Dclip.gif](image252.gif)  
 
 # 概念 
 
@@ -19,21 +19,21 @@
 調整錨點 Anchor point  
 可見: true  
 
-![c_02.png](/dataSource/resource/1651565524857268888.png)  
+![c_02.png](image253.png)  
 
 clip Direction: right to left  
 clip Percentage: 0.5  
 調整錨點 Anchor point  
 可見: false  
 
-![c_03.png](/dataSource/resource/1651565535895088301.png)  
+![c_03.png](image254.png)  
 
 clip Direction: left to right  
 clip Percentage: 0.5  
 調整錨點 Anchor point  
 可見: false  
 
-![c_04.png](/dataSource/resource/1651565546925403771.png)  
+![c_04.png](image255.png)  
 
 ## 開啟場景  
 

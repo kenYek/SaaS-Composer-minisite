@@ -2,17 +2,20 @@ class MarkdownDiv extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: 'open' });
+      this._div = document.createElement('div');
     }
   
     async connectedCallback() {
       const markdownPath = this.getAttribute('data-markdown');
       const color = this.getAttribute('data-color');
+      const languageValue = this.getAttribute('data-language');
+      const enPath = this.getAttribute('data-en');
       if (markdownPath) {
-        const div = document.createElement('div');
-        div.className = 'ex-contain';
-        div.innerHTML = await this.loadMarkdown(markdownPath);
+        // const div = document.createElement('div');
+        this._div.className = 'ex-contain';
+        this._div.innerHTML = await this.loadMarkdown(markdownPath);
         // this.shadowRoot.innerHTML = `<div>${htmlContent}</div>`;
-        this.shadowRoot.appendChild(div);
+        this.shadowRoot.appendChild(this._div);
         // 遍歷所有 <code> 標籤
         const codeTags = this.shadowRoot.querySelectorAll('code');
         codeTags.forEach((codeTag) => {
@@ -69,16 +72,31 @@ class MarkdownDiv extends HTMLElement {
         // 監聽屬性變化事件
         const observer = new MutationObserver(mutationsList => {
             for (const mutation of mutationsList) {
-            if (mutation.type === 'attributes' && mutation.attributeName === 'data-color') {
-                this.updateColor();
+              if (mutation.type === 'attributes' && mutation.attributeName === 'data-color') {
+                  this.updateColor();
+                  break;
+              }
+              if (mutation.type === 'attributes' && mutation.attributeName === 'data-language') {
+                this.updateLanguageDoc();
                 break;
-            }
+              }
             }
         });
         
         observer.observe(this, { attributes: true });
       }
 
+    }
+
+    async updateLanguageDoc() {
+      const markdownPath = this.getAttribute('data-markdown');
+      const languageValue = this.getAttribute('data-language');
+      const enPath = this.getAttribute('data-en');
+      if (enPath && languageValue === 'en-US') {
+        this._div.innerHTML = await this.loadMarkdown(enPath);
+      } else {
+        this._div.innerHTML = await this.loadMarkdown(markdownPath);
+      }
     }
 
     updateColor() {

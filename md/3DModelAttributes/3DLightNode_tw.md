@@ -1,6 +1,6 @@
 # Head Light  
 
-![h_00.png](/dataSource/resource/1651025822998502243.png) 
+![h_00.png](image257.png)  
 
 Property         | default          | Note
 -----------------|------------------|-------------
@@ -13,37 +13,37 @@ AmbientIntensity | 0.7              |
 
 ## Head Light Disable: false  
 
-![h_01.png](/dataSource/resource/1651025837962197029.png)
+![h_01.png](image258.png)  
 
 ## Head Light Disable: true  
 
-![h_02.png](/dataSource/resource/1651025851551718240.png)
+![h_02.png](image259.png)  
 
 ## Head Light Color  
 
-![h_03.png](/dataSource/resource/1651025862311854900.png)
+![h_03.png](image260.png)  
 
 ## Head Light Ragne: 0  
 
-![h_04.png](/dataSource/resource/1651025870029409710.png)
+![h_04.png](image261.png)  
 
 ## Head Light Ragne: Positive Number  
 
-![h_05.png](/dataSource/resource/1651025878298599741.png)
+![h_05.png](image262.png)  
 
 ## Head Light Intensity
 
-![h_06.png](/dataSource/resource/1651025889666773833.png)
+![h_06.png](image263.png)  
 
 ## Head Light Ambient Intensity
 
-![h_07.png](/dataSource/resource/1651025903795243927.png)
+![h_07.png](image264.png)  
 
-![h_08.png](/dataSource/resource/1651025913431421740.png)
+![h_08.png](image265.png)  
 
 # Light  
 
-![l_00.png](/dataSource/resource/1651025969055939688.png)
+![l_00.png](image266.png)  
 
 Property         | default          | Note
 -----------------|------------------|-------------
@@ -60,28 +60,28 @@ Exponent         | 0                |
 
 Depend on light point center, and `light.range`、`light.intensity`. 
 
-![l_01.png](/dataSource/resource/1651025930881785227.png)
+![l_01.png](image267.png)  
 
 ## spot light  
 
 Depend on light point center, and `light.center`、`light.range`、`light.angle`、`light.exponent`.  
 
-![l_02.png](/dataSource/resource/1651025940807712323.png)
+![l_02.png](image268.png)  
 
 ## directional light  
 
 Depend on distance between light point center with [0,0,0]。  
 
-![l_03.png](/dataSource/resource/1651025987887145109.png)
+![l_03.png](image269.png)  
 
-![l_04.png](/dataSource/resource/1651025997375310516.png)
+![l_04.png](image270.png)  
 
 
 ## Shadow  
 
 Enable 3D Scene shadow
 
-![shadow_01.png](/dataSource/resource/1651026007515151719.png)
+![shadow_01.png](image271.png)  
 
 3D Scene shadow property：  
 
@@ -97,7 +97,7 @@ Enable 3D Scene shadow
         "sceneOrthographic": false
     },
 
-![shadow_02.png](/dataSource/resource/1651026018283620060.png)
+![shadow_02.png](image272.png)  
 
 3D object shadow property：  
 

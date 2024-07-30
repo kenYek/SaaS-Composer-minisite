@@ -162,7 +162,7 @@ If you click "**reset data**", the "**Current Domain** (words in green)" will be
 
 don't reset                            |  reset data
 :-------------------------------------:|:--------------------------------------:
-![panelPlugIn_domain4.png](option0.png)  |  ![panelPlugIn_domain5.PNG](option06.png) 
+![panelPlugIn_domain4.png](option05.png)  |  ![panelPlugIn_domain5.PNG](option06.png) 
 
 
 

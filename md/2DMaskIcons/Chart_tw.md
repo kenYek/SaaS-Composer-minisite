@@ -18,7 +18,7 @@ symbols > chart
         "rgb(240,225,19)"
     ]
 
-![symbol_columnChart_01.png](/dataSource/resource/1581917517978731567.png)  
+![symbol_columnChart_01.png](chart01.png)  
 
 
 # Chart  
@@ -45,7 +45,7 @@ symbols > chart
         }
     ]
 
-![symbol_chart_04.png](/dataSource/resource/1581917496576910904.png)  
+![symbol_chart_04.png](chart02.png)  
 
 **type = "line"**  
 
@@ -122,7 +122,7 @@ symbols > chart
         }
     ]
 
-![symbol_chart_05.png](/dataSource/resource/1581917502842714332.png)  
+![symbol_chart_05.png](chart03.png)  
 
 Property：  
 
@@ -213,7 +213,7 @@ Property：
         }
     ]
 
-![symbol_chart_06.png](/dataSource/resource/1581917510476049175.png)
+![symbol_chart_06.png](chart04.png)
 
     {
         type: // 
@@ -271,7 +271,7 @@ Property：
 
 Edit symbols property add `d.tag1`, `d.tag2` for two series data.  
 
-![symbol_chart_01.png](/dataSource/resource/1581917468003691129.png)  
+![symbol_chart_01.png](chart05.png)  
 
 Set CahrtSeries  
 
@@ -291,12 +291,12 @@ Set CahrtSeries
         }
     ]
 
-![symbol_chart_04.png](/dataSource/resource/1581917496576910904.png)  
+![symbol_chart_04.png](chart06.png)  
 
 `d.tag1` is bar, and `d.tag2` is line.  
 
-![symbol_chart_02.png](/dataSource/resource/1581917476941607642.png)  
+![symbol_chart_02.png](chart07.png)  
 
 Use format-type (`F-Type`) `Array`.
 
-![symbol_chart_03.png](/dataSource/resource/1581917488237242448.png)  
+![symbol_chart_03.png](chart08.png)  

@@ -2,7 +2,7 @@
 The 3D animation path is the same as that of the 2D function, which is to realize the movement of one element along the trajectory of another element
 ## I.	Animation path demo
 
-![3D动画路径展示.gif](/dataSource/resource/1571904809153895138.gif)
+![3D动画路径展示.gif](image250.gif)
 
 ## II.	How to set the animation path
 
@@ -16,4 +16,4 @@ How to set the animation path:
 In this case, the object moves along the trajectory and returns. The function is as follows: `function(input,output){  i = (i+0.005)%1;  return i;}`
 
 
-![3D动画路径设置1.gif](/dataSource/resource/1580879943095329936.gif)
+![3D动画路径设置1.gif](image251.gif)

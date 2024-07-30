@@ -1,7 +1,7 @@
 # 3D texture offset  
 
 
-![flow02.gif](/dataSource/resource/1651565102339878073.gif)
+![flow02.gif](offset01.gif)
 
 # 使用情境：  
 
@@ -16,11 +16,11 @@
 設定物件 `tag` = road  
 
 設定貼皮，此範例為`top.image`  
-![uv_01.png](/dataSource/resource/1651565116174499500.png)
+![uv_01.png](offset02.png)
 
 
 設定貼皮uv值，此範例為`top.uv.scale`  
-![uv_02.png](/dataSource/resource/1651565127757639041.png)
+![uv_02.png](offset03.png)
 
 設定 `uv` 值移動  
 
@@ -35,7 +35,7 @@
     window.offset += 0.1
     dataModel.getDataByTag('road').s('top.uv.offset', [offset, 0]);
 
-![flow01.gif](/dataSource/resource/1651565140592210525.gif)
+![flow01.gif](offset04.gif)
 
 
 # 各面向參數  

@@ -1,16 +1,16 @@
 **Create a 3D model:**
 
-![模型创建v2.png](/dataSource/resource/1578965987281280319.png)
+![模型创建v2.png](image244.png)
 
 1. In the upper left corner, there is a button with three bars. Click this button and move the mouse to "**New Model**", then move the mouse to "**New OBJ Model**" and click it to open the model creation window.
 
-![新建模型1v2.png](/dataSource/resource/1578966005305383812.png)
+![新建模型1v2.png](image245.png)
 
 2. Create a new model by filling in the content for creating the OBJ model.
 
 
 
-![新建3D模型v2.gif](/dataSource/resource/1578966039961294935.gif)
+![新建3D模型v2.gif](image246.gif)
 
 Description of the OBJ model creation parameters:
 1.  Files required for creating the model

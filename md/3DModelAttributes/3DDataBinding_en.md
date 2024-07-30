@@ -4,7 +4,7 @@ Currently, 3D data binding supports the binding of the x, y, and z attributes of
 
 ## I.	Binding operation
 
-![3D数据绑定v2.png](/dataSource/resource/1581067450267140790.png)
+![3D数据绑定v2.png](image256.png)  
 
 1.	Bind the data source on the Management page.
 2.	Select the element and click the data binding button to open the 3D data binding page.

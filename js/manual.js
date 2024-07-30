@@ -14,3 +14,16 @@ function mdToHTML () {
     // 將轉換後的 HTML 放入 <div> 中
     markdownArea.innerHTML = htmlContent;
 }
+
+let Language = 'zh-TW';
+const switchLang = document.getElementById('switchLanguage');
+switchLang.innerText = Language === 'en-US' ? 'zh-TW' : 'en-US';
+switchLang.addEventListener('click', () => {
+    Language = Language === 'en-US' ? 'zh-TW' : 'en-US';
+    switchLang.innerText = Language === 'en-US' ? 'zh-TW' : 'en-US';
+    const markdownDivs = document.body.querySelectorAll('markdown-div');
+    markdownDivs.forEach(markdownDiv => {
+        // 這裡處理每個 markdown-div 標籤的邏輯
+        markdownDiv.setAttribute('data-language', Language);
+    });
+})
