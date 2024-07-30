@@ -55,6 +55,7 @@ mark {
 section {
   position: relative;
   padding-top: 50px;
+  overflow: hidden;
 }
 section:nth-child(2n+1) {
 
