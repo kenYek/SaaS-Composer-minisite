@@ -1,65 +1,85 @@
-# MongoDB  
+# Using MongoDB as a Data Source in SaaS Composer  
 
-## 1. Add datasource
-**Go to the data source list page of an organization**
+This guide provides step-by-step instructions on how to add and configure MongoDB as a data source in SaaS Composer.  
 
-![Add datasource image](MongoDB01.png)
+## Table of Contents  
+1. [Add Datasource](#add-datasource)  
+2. [Data Binding](#data-binding)  
+    - [Data Binding Format (Timeseries)](#data-binding-format-timeseries)  
+    - [Data Binding Format (Table)](#data-binding-format-table)  
+3. [Preview Bound Data](#preview-bound-data)  
 
-Sequential steps:
-1. Add a new data source.
-2. Give the data source name.
-3. Select “MongoDB” as the data source type.
-4. Set the connection information.
-5. Click “Save” to save the data source.
-6. If the connection is successful, “Data Source Connection Successful” will pop up at the top of the page.
+## Add Datasource  
 
-## 2.1 Data Binding
-Sequential steps:
+### Go to the Data Source List Page  
+Navigate to the data source list page of your organization.  
 
-1. Add text, the words displayed in the text can be changed at will, click on the new text message.
-2. On the right side of the page, text → content → click the paperclip pattern to pop out the window of data binding.
+![Add datasource image](MongoDB01.png)  
+
+### Steps to Add a New Data Source  
+
+1. **Add a new data source**: Click the button to add a new data source.  
+2. **Give the data source a name**: Enter a unique name for your MongoDB data source.  
+3. **Select “MongoDB” as the data source type**: From the dropdown menu, choose “MongoDB”.  
+4. **Set the connection information**: Enter the necessary connection details (e.g., URI, username, password).  
+5. **Verify the connection**: If the connection is successful, a “Data Source Connection Successful” message will appear at the top of the page.  
+6. **Save the data source**: Click the “Save” button.  
+
+## Data Binding
+
+### Bind Text to Data
+
+1. **Add a text element**: Insert a text element where the data will be displayed.
+2. **Open the data binding window**: On the right side of the page, go to `text → content` and click the paperclip icon to open the data binding window.
 
 ![Methods to display data image](MongoDB02.png)
 
-## 2.2.1 Data Binding Format (Timeseries)
 
-1. Unified binding format:
-* Source selection, the data source name added in the data source list, the type must be “MongoDB”
-* The format is “timeseries”
-2. Method to display data
-* Only support **aggregate** , ex : db.collection_name.aggregate
-* The field names that must be included in “timeseries” are “value, ts”. If your own data table does not have these two fields, you can use **$project**.
+### Data Binding Format (Timeseries)
 
-![Methods to display data image](MongoDB03.png)
+1. **Unified Binding Format**:
+    - **Source selection**: Choose the data source name added in the data source list. The type must be “MongoDB”.
+    - **Format**: Select “timeseries”.
+2. **Display Method**:
+    - Only supports **aggregate** queries, e.g., `db.collection_name.aggregate`.
+    - The fields required in “timeseries” are `value` and `ts`. If these fields do not exist in your data, use **$project** to rename them.
 
-example:  
+Example query:
+```javascript
+db.datatest.aggregate({ "$project": { "value": "$A", "ts": "$B" }})  
 ```
-db.datatest.aggregate({"$project": { "value": "$A", "ts":"$B" }})
-```
 
-## 2.2.2 Data Binding Format (Table)
-1. Unified binding format:
-* Source selection, the data source name added in the data source list, the type must be “MongoDB”
-* The format is “table”
-2. Method to display data
-* Only support **aggregate** , ex : db.collection_name.aggregate
-* NO field names restriction
+![Methods to display data image](MongoDB03.png)  
+
+### Data Binding Format (Table)    
+
+1. **Unified Binding Format**:  
+    - Source selection: Choose the data source name added in the data source list. The type must be “MongoDB”.  
+    - Format: Select “table”.  
+2. **Display Method**:  
+    - Only supports aggregate queries, e.g., db.collection_name.aggregate.  
+    - No field name restrictions.  
+
+
+Example query:
+```javascript
+db.datatest.aggregate({ "$project": { "value": "$A", "time": "$B", "zg": "$_id", "_id": 0 }})
+```
+Set "_id": 0 if you don't want to include the _id field from the collection
+
 
 ![Methods to display data image](MongoDB04.png)
 
-example:  
-```
-db.datatest.aggregate({"$project": { "value": "$A", "time":"$B", "zg":"$_id","_id":0 }})
-```
-Set `"_id":0`, if you don't want to query `_id` field from collection.   
+## Preview Bound Data  
 
-## 2.3 Preview the text message of the bound data source
-Sequential steps:
-
-1. Click the pattern of the save button at the top right to save the text message settings.
-2. Click the triangle pattern on the upper right to preview. (The preview page is shown below)
+### Preview the Text Message of the Bound Data Source  
+  - **Save the text message settings**: Click the save button at the top right to save the settings.
+  - **Preview the data**: Click the triangle icon at the top right to preview the data. The preview page is shown below.
 
 ![To preview page image](MongoDB05.png)
 
-3. Result
-![Result](MongoDB06.png)
+### Result  
+
+![result](MongoDB06.png)
+
+By following these steps, you can successfully add and configure a MongoDB data source in SaaS Composer, bind data to text elements, and preview the results.
