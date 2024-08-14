@@ -88,6 +88,7 @@
             <li><a href="#f18">數據源的 datasourcetype 取得</a></li>
             <li><a href="#f19">Assets目錄支援格式</a></li>
             <li><a href="#f20">頁面過場、轉場特效</a></li>
+            <li><a href="#f21">執行 Duration function時，使用 requestAnimationFrame 取代 setInterval</a></li>
           </ul>
         </li>
         <li>
@@ -657,6 +658,22 @@
           </code>
         </pre>
         <img class="ex-image" src="./assets/f20_03.gif"><br/>
+      </div>
+      <div class="ex-contain" id="f21">
+        <h3>執行 Duration function時，使用 requestAnimationFrame 取代 setInterval</h3>
+        <p>
+          如果想要用 requestAnimationFrame執行動畫而不是 setInterval的話，可以添加 attribute 參數
+          custom.requestAnimationFrame。
+          一般情況下，使用者會透過修改 refresh time來加速執行期間的動畫更新，如果將refrash time設定到 0.01時，
+          建議可以改用 requestAnimationFrame 來取代。
+        </p><br/>
+        <img class="ex-image" src="./assets/f21_01.png"><br/>
+        <pre class="codeArea">
+          <code disabled style="width:100%;resize: none;">
+            "custom.requestAnimationFrame": true
+          </code>
+        </pre>
+        <img class="ex-image" src="./assets/f21_02.png"><br/>
       </div>
       <h2>2D</h2>
       <div class="ex-contain" id="f_2d_01">
