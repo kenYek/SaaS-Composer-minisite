@@ -187,6 +187,7 @@
             <li><a href="#e_3d_12">3D 牆貼上2D或3D場景</a></li>
             <li><a href="#e_3d_13">3D 點擊平面物件添加標示</a></li>
             <li><a href="#e_3d_14">3D 點雲 2</a></li>
+            <li><a href="#e_3d_15">3D 文字</a></li>
           </ul>
         </li>
         <li>
@@ -1758,6 +1759,38 @@
         <h3>3D 點雲 2</h3>
         <img class="ex-image" src="./assets/e_3d_14_01.png"><br/>
         <a href="./example/e_3d_14.zip" target="_blank">Download</a>
+      </div>
+      <div class="ex-contain" id="e_3d_15">
+        <h3>3D 文字</h3>
+        <img class="ex-image" src="./assets/e_3d_15_01.png"><br/>
+        <ol>
+          <li>將字體檔轉成 json, 可使用 <a href="https://gero3.github.io/facetype.js/">facetype.js</a>網站進行轉換。</li>
+          <li>使用 ht.Default.loadFontFace(url, callback) 載入字型</li>
+        </ol>
+        <pre class="codeArea">
+          <code>
+            ht.Default.loadFontFace('assets/Roboto_Regular.json?org_id=36', function() {
+              text = new ht.Node();
+              text.p3([ -150, 0, 0 ]);
+              text.s({
+                  'shape3d' : 'text',
+                  'shape3d.text' : 'Hello ~'
+              });
+              dm.add(text);
+            });
+
+            // shape3d.text：需要顯示的文本，該屬性被設置則文本最優先使用其。為空時優先使用node的name，再次使用node的label
+            // shape3d.text.amount：默認值為0.5，決定文字相對厚度
+            // shape3d.text.size：默認值為1，決定文字的放大系數，當然也可以通過（也建議通過）node自身縮放來達成
+            // shape3d.text.fill：默認值為true，決定圖形是否實心
+            // shape3d.text.curveSegments：默認值為4，決定圖形的曲線采樣頻率，越大越精細（注意性能的平衡）
+            // shape3d.text.spacing：默認值為1，決定字之間的間隔大小
+            // shape3d.text.font：字體名，注意是json字體文件中的familyName。為空則使用已加載字庫中的第一個
+            // shape3d.text.style：默認值為normal，表明字體是normal（標準）、italic（斜體）、oblique（傾斜）
+            // shape3d.text.weight：默認值為normal，表明字體是normal（標準）、bold（加粗）
+          </code>
+        </pre>
+        <a href="./example/e_3d_15.zip" target="_blank">Download</a>
       </div>
       <div class="ex-contain" id="e_overlay_01">
         <h3>疊加層遙控面板</h3>
